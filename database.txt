@@ -1,0 +1,73 @@
+Table documentation - Version 1.0
+
+greatrealestate_listings:
+- id mediumint NOT NULL AUTO_INCREMENT
+	A unique identifier for each rom in this table
+- pageid mediumint NOT NULL
+	Corresponds to the id in the Post table this listing is associated with
+	One to one relationship
+- address VARCHAR(100)
+	The street address including street number, apartment, etc
+	Recommend you use the abbreviated format recognized by Google Maps
+- city VARCHAR(50)
+	Name of the city
+- state VARCHAR(40)
+	Name of the state or province, or postal abbreviation
+- postcode VARCHAR(10)
+	Postal code, zip code, etc
+- mlsid VARCHAR(15)
+	The MLS listing identifier
+- status tinyint NOT NULL
+	Corresponds to the listing status, for sale, sold, etc
+- blurb VARCHAR(255)
+	Short description for use on index pages, thumbnails, featured homes
+- bedrooms VARCHAR(10)
+	Number of bedrooms
+- bathrooms VARCHAR(10)
+	Number of full baths
+- halfbaths VARCHAR(10)
+	Number of half baths
+- garage VARCHAR(10)
+	Number of garage parking spaces
+- acsf VARCHAR(10)
+	Air conditioned, heated, or "living" square feet
+- totsf VARCHAR(10)
+	Overall square footage - covered area including garages, porches, etc
+- acres VARCHAR(10)
+	Fractional number of acres 
+- featureid VARCHAR(30)
+	List of feature ids, separated by commas
+- listprice int NOT NULL
+	Listing "asking" price
+- saleprice int
+	Final sale price
+- listdate date
+	Date property was first listed
+- saledate date
+	Date the property was transferred to the new owner
+- galleryid VARCHAR(30)
+	List of NextGen gallery ids, separated by commas
+	Currently only one is supported
+- videoid VARCHAR(30)
+	List of WordTube video ids, separated by commas
+	Currently only one is supported. WordTube playlist currently not supported
+- downloadid VARCHAR(30)
+	List of WP-Downloadmanager ids, separated by commas
+	Each of these should correspond to a PDF
+- panoid VARCHAR(30)
+	List of Media Center (default WP gallery photos) ids of .mov files
+	The MOV files must be attached to the current post
+	The MOV files should be Quicktime VR 360 panoramas
+- latitude VARCHAR(20)
+	Digital latitude in standard fractional notation, eg: 26.123456
+- longitude VARCHAR(20)
+	Digital longitude fractional, eg: -80.123456
+- featured VARCHAR(30)
+	Indicates if property is featured
+	Currently, Y means featured, and blank means not featured
+- agentid VARCHAR(20)
+	Identification of the listing agent
+	Future use - currently not supported
+
+
+
