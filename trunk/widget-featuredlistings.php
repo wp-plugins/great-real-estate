@@ -3,7 +3,7 @@
 Plugin Name: Great Real Estate - Featured Listings Widget
 Plugin URI: 
 Description: Sidebar widget to display featured listings, requires Great Real Estate plugin
-Version: 1.0
+Version: 1.1
 Author: Roger Theriault
 Author URI: http://www.rogertheriault.com/agents/
 */
