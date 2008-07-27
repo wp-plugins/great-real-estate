@@ -142,7 +142,7 @@ function greatrealestate_defaultlistingindex() {
 		$line1 .= __(' Baths','greatrealestate') . "</div>"; 
               }	?>
 	<?php if (get_listing_garage()) 
-		$line1 .= "<div>" . get_listing_garage() . __(' Garage Spaces'.'greatrealestate') . "</div>"; ?>
+		$line1 .= "<div>" . get_listing_garage() . __(' Garage Spaces','greatrealestate') . "</div>"; ?>
 	<?php if (get_listing_acsf()) 
 		$line2 .= "<div>" . get_listing_acsf() . 
 			__(' Sq/Ft Under Air','greatrealestate') . "</div>"; ?>

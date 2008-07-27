@@ -15,6 +15,13 @@
  *
  */
 
+/*
+ * Changelog:
+ * [2008-07-27] added quote escaping in google map popup the_listing_js_mapinfo() to avoid JavaScript errors
+ * [2008-06-27] added map option to show_listings_featured()
+ * [2008-06-27] changed map_canvas id to gre_map_canvas to reduce conflicts
+ *
+ */
 
 function is_listing() {
 	global $post;
@@ -489,17 +496,17 @@ function the_listing_map_content() {
 ?>
 <div id="map">
    <h2>Location Map</h2>
-   <div><div id="map_canvas"></div></div>
+   <div><div id="gre_map_canvas"></div></div>
 <script type="text/javascript">
 /* <![CDATA[ */
 	function gre_setupmap() {
 		var prop_point = new google.maps.LatLng(<?php echo get_listing_latitude(); ?>,<?php echo get_listing_longitude(); ?>);
-		map.setCenter(prop_point, 13);
-		var prop_marker = createMarker(prop_point, '<?php the_listing_js_mapinfo(); ?>');
-		map.addOverlay(prop_marker);
+		gre_map.setCenter(prop_point, 13);
+		var prop_marker = gre_createMarker(prop_point, '<?php the_listing_js_mapinfo(); ?>');
+		gre_map.addOverlay(prop_marker);
 	}
 	google.load("maps", "2");
-	google.setOnLoadCallback(mapinitialize);
+	google.setOnLoadCallback(gre_mapinitialize);
 	
 
 /* ]]> */
@@ -512,8 +519,8 @@ function the_listing_js_mapinfo() {
 	// stick in JS, do not add linefeeds, no single quotes!
 	// escape </ to <\/
 	echo '<div id="gmap-info">' . 
-		'<h3>' . get_listing_blurb() . '<\/h3>' .
-		get_listing_thumbnail();
+		'<h3>' . addslashes(get_listing_blurb()) . '<\/h3>' .
+		addslashes(get_listing_thumbnail());
 	echo "<div>";
 	the_listing_address();
 	echo "<br />";
@@ -560,7 +567,12 @@ function the_listing_community_content() {
 
 // display featured homes on sidebar or on home page
 // uses different display types
+// v1.1 - added map type, rewrote to support shortcodes (added get_)
 function show_listings_featured($maxlistings = '',$sort = 'random',$type = 'basic',$heading = 'Featured Listings') {
+	echo get_listings_featured($maxlistings,$sort,$type,$heading);
+}
+
+function get_listings_featured($maxlistings = '',$sort = 'random',$type = 'basic',$heading = 'Featured Listings') {
 	$maxtoshow = (int) $maxlistings;
 	if ((!$maxlistings) || $maxlistings == '' || ($maxtoshow <= 0)) {
 		// use default setting
@@ -568,54 +580,78 @@ function show_listings_featured($maxlistings = '',$sort = 'random',$type = 'basi
 	}
 	global $wpdb;
 
+	// handle map type - does not use db call, uses XML feed
+	if (( 'map' == $type ) && 
+	    ( get_option('greatrealestate_googleAPIkey') ) ) {
+		    $output = <<<ENDOFHTMLBLOCK
+<div id="featuredlistings-map" class="featuredlistings-map">
+<h2>$heading</h2>
+<div id="gre_map_multi"></div>
+</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+	google.load("maps", "2");
+	google.setOnLoadCallback(gre_initmultimap);
+/* ]]> */
+</script>
+ENDOFHTMLBLOCK;
+		return $output;
+	}
+
  	$featured = get_pages_with_featured_listings($maxtoshow,$sort);
 	if (! $featured) {
-		echo "<!-- no featured listings -->";
-		return;
+		return "<!-- no featured listings -->";
 	}
 	// definitely have something to show - spit it out
-?>
-<div id="featuredlistings">
-<h2><?php echo $heading; ?></h2>
-<?php
+	$output = <<<ENDOFHTMLBLOCK
+<div id="featuredlistings" class="featuredlistings-${type}">
+<h2>$heading</h2>
+ENDOFHTMLBLOCK;
+
 	global $post;
-	if ($type == 'text') {
-?>
-<ul>
-<?php	}
+	$oldpost = $post; // save for after the loop - IMPORTANT
+
+	if ( 'text' == $type ) {
+		$output .= "<ul>";
+	}
   	foreach ($featured as $post) {
 		setup_postdata($post);
 		setup_listingdata($post);
 		switch ($type) {
 		case 'text':
-?>
-<li><a href="<?php the_permalink(); ?>" title="<?php _e('More about ','greatrealestate'); ?><?php the_title(); ?>"><?php the_title(); ?></a>
-<br /><?php the_listing_status(); ?> <?php the_listing_listprice(); ?></li>
-		
-<?php
+			$output .= '<li><a href="' . get_permalink() . '" ' .
+			 'title="' . __('More about ','greatrealestate') .
+			 get_the_title() . '">';
+			$output .= get_the_title() . '</a>';
+			$output .= "<br />";
+			$output .= get_listing_status() . " " .
+			 get_listing_listprice() . '</li>';
 			break;
 		case 'basic' :
 		default :
-?>
-<div class="prop-box-featured">
-<div class="prop-thumb">
-<?php the_listing_thumbnail(); ?>
-</div>
-<h3><a href="<?php the_permalink(); ?>" title="<?php _e('More about','greatrealestate'); ?><?php the_title(); ?>"><?php the_title(); ?></a></h3>
-<p><em><?php the_listing_blurb(); ?></em></p>
-<p><?php the_listing_status(); ?> <?php the_listing_listprice(); ?></p>
-</div>
-<?php
+			$output .= '<div class="prop-box-featured">';
+			$output .= '<div class="prop-thumb">';
+			$output .= get_listing_thumbnail();
+			$output .= "</div>";
+			$output .= '<h3><a href="' . get_permalink() .
+			 '" title="' . __('More about','greatrealestate') .
+			 get_the_title() . '">' . get_the_title() .
+			 '</a></h3>';
+			$output .= '<p><em>' . get_listing_blurb() .
+				'</em></p>';
+			$output .= '<p>' . get_listing_status() .
+			       ' ' . get_listing_listprice() . '</p>';
+			$output .= '</div>';
 			break;
 		}
 	} 
-	if ($type == 'text') {
-?>
-</ul>
-<?php	}
-?>
-</div>
-<?php
+	if ( 'text' == $type ) {
+		$output .= "</ul>";
+	}
+	$output .= "</div>";
+
+	$post = $oldpost; // restore saved post - IMPORTANT!
+	return $output;
 }
 
 /* Database related functions

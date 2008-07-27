@@ -72,7 +72,9 @@ function greatrealestate_add_edit() {
 	global $wpdb;
 	global $listing;
 	# only add this stuff if the Page is subpage of the Listings Main Page
-	if (get_option('greatrealestate_pageforlistings') == $post->post_parent) {
+	# [2008-07-22] added logic to handle case where post has no parent
+	#              and option has not been set
+	if ($post->post_parent && (get_option('greatrealestate_pageforlistings') == $post->post_parent)) {
 		# get the listing data associated with the post/page
 		$listing = $wpdb->get_row("SELECT * FROM $wpdb->gre_listings WHERE pageid = '$post_ID'");
 		include (dirname (__FILE__).'/editpage.php');
@@ -84,7 +86,9 @@ add_action('edit_page_form', 'greatrealestate_add_edit', 90);
 function greatrealestate_add_edit_js() {
 	// We're trying not to toss this in every dang admin page
 	global $post;
-	if (get_option('greatrealestate_pageforlistings') == $post->post_parent) {
+	# [2008-07-22] added logic to handle case where post has no parent
+	#              and option has not been set
+	if ($post->post_parent && (get_option('greatrealestate_pageforlistings') == $post->post_parent)) {
 		    # wp_enqueue_script('jquery');
 		    # for some reason enqueue doesn't work in admin screens
 ?>
