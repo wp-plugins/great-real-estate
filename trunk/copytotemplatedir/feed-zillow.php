@@ -17,55 +17,43 @@ function zstatus($mystatus) {
 $siteurl = get_option('siteurl');
 $max_pics = 20; /* Zillow max is 50 */
 
-if (!function_exists(get_re_listprice)) {
+if (!function_exists(get_listing_listprice)) {
 	return;
 }
 ?>
 <?php   
 
-$querystr = "
-    SELECT wposts.*
-    FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta
-    WHERE wposts.ID = wpostmeta.post_id 
-    AND wpostmeta.meta_key = 'rehomes_propstatus' 
-    AND wposts.post_status = 'publish' 
-    AND (wpostmeta.meta_value = 'For Sale' OR wpostmeta.meta_value = 'Sale Pending'
-         OR wpostmeta.meta_value = 'Sold')
-    AND wposts.post_type = 'page' 
-    ORDER BY wposts.post_title ASC
- ";
+ $pageposts = get_pages_with_listings('','title','');
 
- $pageposts = $wpdb->get_results($querystr, OBJECT);
-
- $email = 'roger@rogertheriault.com';
+ $email = get_option('admin_email');
 
 ?>
 <Listings>
 <?php if ($pageposts): ?>
 <?php foreach ($pageposts as $post): ?>
     <?php setup_postdata($post); ?>
-	<?php $propstatus = get_re_propstatus(); ?>
-	<?php $propblurb = get_re_blurb(); ?>
-	<?php $listprice = get_re_listprice(); ?>
-	<?php $saleprice = get_re_saleprice(); ?>
-	<?php if (get_re_saletime()) $saledate = date('Y-m-d',intval(get_re_saletime())); ?>
-	<?php $galleryid = get_re_galleryid(); ?>
-	<?php $numbr = get_re_numbr(); ?>
-	<?php $numfba = get_re_numfba(); ?>
-	<?php $numhba = get_re_numhba(); ?>
-	<?php $numgar = get_re_numgar(); ?>
-	<?php $numacsf = get_re_numacsf(); ?>
-	<?php $numtotsf = get_re_numtotsf(); ?>
-	<?php $numacres = get_re_numacres(); ?>
-	<?php $has_pool = get_re_haspool(); ?>
-	<?php $has_water = get_re_haswater(); ?>
-	<?php $has_golf = get_re_hasgolf(); ?>
- 	<?php $line1 = ''; $line2 = ''; $line3 = ''; ?>
-<?php $address = get_re_address();
-	$city = get_re_city();
- 	$state = get_re_state();
-	$zip = get_re_zip();
-	$MLSID = get_re_mlsid();  ?>
+    <?php setup_listingdata($post); ?>
+	<?php $propstatus = get_listing_status(); ?>
+	<?php $propblurb = get_listing_blurb(); ?>
+	<?php $listprice = get_listing_listprice(); ?>
+	<?php $saleprice = get_listing_saleprice(); ?>
+	<?php $saledate = get_listing_saledate(); ?>
+	<?php $galleryid = get_listing_galleryid(); ?>
+	<?php $numbr = get_listing_bedrooms(); ?>
+	<?php $numfba = get_listing_bathrooms(); ?>
+	<?php $numhba = get_listing_halfbaths(); ?>
+	<?php $numgar = get_listing_garage(); ?>
+	<?php $numacsf = get_listing_acsf(); ?>
+	<?php $numtotsf = get_listing_totsf(); ?>
+	<?php $numacres = get_listing_acres(); ?>
+	<?php $has_pool = get_listing_haspool(); ?>
+	<?php $has_water = get_listing_haswater(); ?>
+	<?php $has_golf = get_listing_hasgolf(); ?>
+<?php $address = get_listing_address();
+	$city = get_listing_city();
+ 	$state = get_listing_state();
+	$zip = get_listing_postcode();
+	$MLSID = get_listing_mlsid();  ?>
 
 <?php if ($address && $city && $state && $zip && $propstatus) { ?>
   <Listing>
@@ -74,8 +62,8 @@ $querystr = "
       <City><?php echo $city; ?></City>
 			<State><?php echo $state; ?></State>
 			<Zip><?php echo $zip; ?></Zip>
-<?php if (($longitude = get_re_longitude()) && 
-          ($latitude = get_re_latitude())) {	?>
+<?php if (($longitude = get_listing_longitude()) && 
+          ($latitude = get_listing_latitude())) {	?>
 			<Lat><?php echo $latitude; ?></Lat>
 			<Long><?php echo $longitude; ?></Long>
 <?php } ?>
@@ -90,8 +78,8 @@ $querystr = "
 <?php } ?>
 			<ListingUrl><?php the_permalink(); ?></ListingUrl>
 			<MlsId><?php echo $MLSID; ?></MlsId>
-			<MlsName>RMLS</MlsName>
-			<DateListed><?php echo $listdate; ?></DateListed>
+			<MlsName><?php echo get_option('greatrealestate_mls'); ?></MlsName>
+			<DateListed><?php the_listing_listdate(); ?></DateListed>
 <?php if (($propstatus == 'Sold') && $saledate) { ?>
 			<DateSold><?php echo $saledate; ?></DateSold>
 <?php } ?>
@@ -106,8 +94,8 @@ $querystr = "
 			<LivingArea><?php echo $numacsf; ?></LivingArea>
 			<LotSize><?php echo $numacres; ?></LotSize>
 		</BasicDetails>
-<?php if (function_exists(rehomes_picturelist)) { ?>
-	<?php $piclist = rehomes_picturelist(); ?>
+<?php if (function_exists(nextgengallery_picturelist)) { ?>
+	<?php $piclist = nextgengallery_picturelist(get_listing_galleryid()); ?>
 
 	<?php if (!empty($piclist)) { ?>
 		<Pictures>
@@ -125,23 +113,26 @@ $querystr = "
 	<?php } ?>
 <?php } ?>
 		<Agent>
-			<FirstName>Roger</FirstName>
-			<LastName>Theriault</LastName>
+<?php $agent = split(' ',get_option('greatrealestate_agent')); ?>
+			<FirstName><?php echo $agent[0]; ?></FirstName>
+			<LastName><?php echo $agent[1]; ?></LastName>
 			<EmailAddress><?php echo $email; ?></EmailAddress>
 			<PictureUrl><?php 
 		$out = 'http://www.gravatar.com/avatar/';
 		$out .= md5( strtolower( $email ) );
  		$out .= '?s=96';
  		echo $out; ?></PictureUrl>
-			<MobilePhoneLineNumber>561-827-0899</MobilePhoneLineNumber>
+			<MobilePhoneLineNumber><?php echo get_option('greatrealestate_agentphone'); ?></MobilePhoneLineNumber>
 		</Agent>
 		<Office>
-			<BrokerageName>Illustrated Properties</BrokerageName>
-			<StreetAddress>6177 Jog Rd</StreetAddress>
-			<UnitNumber>D-6</UnitNumber>
-			<City>Lake Worth</City>
-			<State>Florida</State>
-			<Zip>33467</Zip>
+			<BrokerageName><?php echo get_option('greatrealestate_broker'); ?></BrokerageName>
+<?php /*
+			<StreetAddress></StreetAddress>
+			<UnitNumber></UnitNumber>
+			<City></City>
+			<State></State>
+			<Zip></Zip>
+ */ ?>
 		</Office>
 	</Listing>
 	<?php } ?>

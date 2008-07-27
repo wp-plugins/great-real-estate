@@ -3,7 +3,7 @@
 Plugin Name: Great Real Estate
 Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Description: The Real Estate plugin for Wordpress
-Version: 1.0
+Version: 1.1
 Author: Roger Theriault
 Author URI: http://RogerTheriault.com/agents/
 */
@@ -28,6 +28,18 @@ Author URI: http://RogerTheriault.com/agents/
 
 */
 
+/*
+ * changelog
+ * Version 1.1
+ * [2008-07-27] updated for WP2.6
+ * 		added localization (correctly)
+ * Version 1.01
+ * [2008-06-27] added shortcode handler for featured listings block
+ * Version 1.0 (original)
+ *
+ */
+
+
 // STOP DIRECT CALLS
 if( preg_match( '#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'] ) ) { die( 'You are not allowed to call this page directly.' ); }
 
@@ -41,8 +53,16 @@ global $greatrealestate_db_version;
 # some functions found here are not guaranteed to be upgrade compatible
 
 $greatrealestate_db_version = "1.0";
-define( 'GREFOLDER', dirname( plugin_basename(__FILE__) ) );
-define( 'GRE_URLPATH', get_option( 'siteurl' ).'/wp-content/plugins/' . GREFOLDER.'/' );
+// backward compatibility (pre- WP2.6)
+if ( !defined('WP_CONTENT_URL') ) {
+	define( 'WP_CONTENT_URL', get_option('siteurl') . '/wp-content');
+}
+if ( !defined('WP_CONTENT_DIR') ) {
+	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
+}
+define( 'GREFOLDER', WP_CONTENT_DIR . '/plugins/' . dirname(plugin_basename(__FILE__) ));
+# define( 'GREFOLDER', plugin_basename(dirname(__FILE__) ));
+define( 'GRE_URLPATH',  WP_CONTENT_URL .'/plugins/' .  dirname(plugin_basename(__FILE__) ) . '/');
 
 # add database pointer
 $wpdb->gre_listings = $wpdb->prefix . "greatrealestate_listings";
@@ -50,8 +70,6 @@ $wpdb->gre_listings = $wpdb->prefix . "greatrealestate_listings";
 // Check for WP2.5 installation
 define( 'IS_WP25', version_compare( $wp_version, '2.4', '>=' ) );
 
-// time to get any translations
-load_plugin_textdomain( 'greatrealestate', GREFOLDER );
 
 //This works only in WP2.5 or higher
 if ( IS_WP25 == FALSE ){
@@ -86,6 +104,13 @@ function greatrealestate_activate( ) {
 register_deactivation_hook( __FILE__, 'greatrealestate_deactivate' );
 function greatrealestate_deactivate( ) {
 	# remove database files ??? no thats a separate user-initiated action
+}
+
+// load language / localization file
+add_action('init','greatrealestate_init');
+function greatrealestate_init() {
+	// time to get any translations
+	load_plugin_textdomain( 'greatrealestate', false, dirname(plugin_basename(__FILE__)) );
 }
 
 
@@ -143,7 +168,7 @@ jQuery(document).ready(function() {
    jQuery('a[href=#map]').bind('click',fixMap);
 
    function fixMap(event) {
-	   setTimeout("map.checkResize()",500);
+	   setTimeout("gre_map.checkResize()",500);
    }
 
 } );
@@ -262,6 +287,24 @@ if ( 'true' == get_option( 'greatrealestate_nobrand' ) ) {
 	}
 	add_filter('bloginfo', 'gre_nobrand_hide_title', 1, 2);
 }
+
+/*
+ * SHORTCODE HANDLERS
+ *
+ */
+
+add_shortcode( 'featured-listings', 'greatrealestate_fl_sc_handler' );
+
+function greatrealestate_fl_sc_handler( $attr ) {
+	$attr = shortcode_atts( array ( 
+		'max' => '',
+		'sort' => 'random',
+		'type' => 'basic',
+		'head' => ''
+		 ) , $attr );
+	return get_listings_featured( $attr[max], $attr[sort], $attr[type], $attr[head] );
+}
+
 
 /* HACKS (or Interfaces if you will...)
  * here go the interfaces to other plugins we access - which are likely to

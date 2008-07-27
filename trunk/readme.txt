@@ -3,8 +3,8 @@ Contributors: RogerTheriault
 Donate link: http://www.rogertheriault.com/agents/
 Tags: real estate,ajax,listings,real,estate,homes
 Requires at least: 2.5
-Tested up to: 2.5.1
-Stable tag: trunk
+Tested up to: 2.6
+Stable tag: 1.1
 
 Great Real Estate provides functionality to turn your WordPress installation into a content managed real estate website.
 
