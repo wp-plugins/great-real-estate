@@ -6,15 +6,23 @@
  */
 
 #activelistings {
+	clear: left;
 }
 
 #pendingsales {
+	clear: left;
 }
 
 #soldlistings {
+	clear: left;
 }
 
-#map_canvas {
+#gre_map_canvas {
+	width: 400px;
+	height: 400px;
+	border: 1px solid black;
+}
+#gre_map_multi {
 	width: 400px;
 	height: 400px;
 	border: 1px solid black;
