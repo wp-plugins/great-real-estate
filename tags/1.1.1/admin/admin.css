@@ -1,0 +1,122 @@
+/* 
+ * great real estate admin CSS
+ *
+ */
+
+#gre-dashboard-widgets-wrap h5 {
+	font-size: 12px;
+	line-height: 16px;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 4px;
+}
+#gre-dashboard-widgets-wrap h5  img {
+	vertical-align: text-bottom;
+}
+#gre-dashboard-widgets-wrap h4 {
+	font-size: 16px;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 4px;
+}
+#gre-dashboard-widgets-wrap a {
+	text-decoration: none;
+}
+div.gre-dashboard-widget, div.gre-dashboard-sidebar-widget {
+	border-style: solid;
+	border-width: 1px;
+	font-size: 11px;
+	margin-right: 20px;
+	overflow: auto;
+	padding: 2px;
+	position: relative;
+	margin-top: 20px;
+}
+div.gre-dashboard-sidebar-widget {
+	width: 250px;
+}
+div.gre-dashboard-widget {
+	width: 100%;
+	height: 27em;
+}
+div.gre-dashboard-widget-content {
+	padding: 10px 15px;
+}
+div.gre-widget-holder {
+	float: left;
+	margin-top: 20px;
+	width: 20%;
+}
+#gre-dashboard-sidebar {
+	float: right;
+	width: 250px;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 20px;
+}
+#gre-dashboard-main {
+	float: left;
+	width: 700px;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 20px;
+}
+h3.gre-dashboard-widget-title {
+	font-size: 14px;
+	line-height: 2;
+	margin: 0pt;
+	padding: 0pt 7px;
+}
+h3.gre-dashboard-widget-title small {
+	float: right;
+	display: block;
+	font-size: 75%;
+	line-height: 2.67;
+	text-align: right;
+}
+h3.gre-dashboard-widget-title a {
+	text-decoration: underline;
+}
+h3.gre-dashboard-widget-title span {
+	display: block;
+	float: left;
+	text-align: left;
+}
+
+div.gre-dashboard-widget, div.gre-dashboard-sidebar-widget {
+	border-color:#CCCCCC;
+}
+
+h3.gre-dashboard-widget-title, h3.gre-dashboard-widget-title span, h3.gre-dashboard-widget-title small {
+	background-color:#EAF3FA;
+}
+
+
+#map_canvas {
+	width: 400px;
+	height: 400px;
+	border: 1px solid black;
+}
+
+#gmap-info {
+	padding: 0;
+	margin: 0;
+}
+#gmap-info h3 {
+	padding: 0;
+	text-align: left;
+	font-size: 14px;
+	margin: 0px 0px 0px 0px;
+}
+
+#gmap-info .listing-thumb {
+	float: left;
+	padding-right: 5px;
+}
+#gmap-info p {
+	text-align: left;
+	vertical-align: top;
+}
+
+
+
