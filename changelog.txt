@@ -1,5 +1,10 @@
 Changelog for Great-Real-Estate
 
+v1.1.1
+[2008-07-30] created 1.1.1 tag.
+[2008-07-30] BUGFIX: css/listings.css update did not get included in 1.1, was
+needed for other Google Map changes. 
+
 v1.1
 [2008-07-27] created 1.1 tag and set repository stable tag to 1.1. Trunk will
 now contain unreleased updates, tagged directory will contain official
