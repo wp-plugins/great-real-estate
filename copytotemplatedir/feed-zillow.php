@@ -3,6 +3,9 @@
  *  CUSTOM   ----   RSS2 Feed Template for Zillow
  *
  * @package WordPress
+ *
+ * [2008-07-30] corrected list date format to mm/dd/yyyy
+ * [2008-07-30] added PropertyType tag
  */
 
 header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
@@ -23,7 +26,8 @@ if (!function_exists(get_listing_listprice)) {
 ?>
 <?php   
 
- $pageposts = get_pages_with_listings('','title','');
+ // omit rentals; sort by title
+ $pageposts = get_pages_with_listings('','title','allsales');
 
  $email = get_option('admin_email');
 
@@ -43,10 +47,11 @@ if (!function_exists(get_listing_listprice)) {
 	<?php $numfba = get_listing_bathrooms(); ?>
 	<?php $numhba = get_listing_halfbaths(); ?>
 	<?php $numgar = get_listing_garage(); ?>
-	<?php $numacsf = get_listing_acsf(); ?>
-	<?php $numtotsf = get_listing_totsf(); ?>
-	<?php $numacres = get_listing_acres(); ?>
+	<?php $numacsf = get_listing_acsf_noformat(); ?>
+	<?php $numacres = get_listing_acres_noformat(); ?>
 	<?php $has_pool = get_listing_haspool(); ?>
+	<?php $has_condo = get_listing_hascondo(); ?>
+	<?php $has_townhome = get_listing_hastownhome(); ?>
 	<?php $has_water = get_listing_haswater(); ?>
 	<?php $has_golf = get_listing_hasgolf(); ?>
 <?php $address = get_listing_address();
@@ -54,7 +59,10 @@ if (!function_exists(get_listing_listprice)) {
  	$state = get_listing_state();
 	$zip = get_listing_postcode();
 	$MLSID = get_listing_mlsid();  ?>
-
+<?php 	$propertytype = "Single-Family Home";
+	if ($has_townhome) { $propertytype = "Townhouse"; }
+	if ($has_condo) { $propertytype = "Condo"; }
+?>
 <?php if ($address && $city && $state && $zip && $propstatus) { ?>
   <Listing>
     <Location>
@@ -79,13 +87,14 @@ if (!function_exists(get_listing_listprice)) {
 			<ListingUrl><?php the_permalink(); ?></ListingUrl>
 			<MlsId><?php echo $MLSID; ?></MlsId>
 			<MlsName><?php echo get_option('greatrealestate_mls'); ?></MlsName>
-			<DateListed><?php the_listing_listdate(); ?></DateListed>
+			<DateListed><?php echo get_listing_listdate(); ?></DateListed>
 <?php if (($propstatus == 'Sold') && $saledate) { ?>
 			<DateSold><?php echo $saledate; ?></DateSold>
 <?php } ?>
 			<VirtualTourUrl><?php the_permalink(); ?></VirtualTourUrl>
 		</ListingDetails>
 		<BasicDetails>
+			<PropertyType><?php echo $propertytype; ?></PropertyType>
 			<Title><![CDATA[<?php echo $propblurb . " :: "; the_title(); ?>]]></Title>
 			<Description><![CDATA[<?php the_excerpt_rss(); ?>]]></Description>
 			<Bedrooms><?php echo $numbr; ?></Bedrooms>

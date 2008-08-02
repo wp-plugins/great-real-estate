@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/great-real-estate\n"
-"POT-Creation-Date: 2008-06-22 16:38+0000\n"
+"POT-Creation-Date: 2008-07-30 11:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,229 +16,229 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin/editpage.php:24
+#: admin/editpage.php:27
 msgid "Real Estate - Property Information"
 msgstr ""
 
-#: admin/editpage.php:29
+#: admin/editpage.php:32
 msgid "Great Real Estate Controls"
 msgstr ""
 
-#: admin/editpage.php:35 admin/listings.php:20 admin/listings.php:34
+#: admin/editpage.php:39 admin/listings.php:20 admin/listings.php:34
 msgid "Featured"
 msgstr ""
 
-#: admin/editpage.php:36
+#: admin/editpage.php:40
 msgid "check to feature this listing"
 msgstr ""
 
-#: admin/editpage.php:43
+#: admin/editpage.php:47
 msgid "Listing Information (Pricing and Sales Information)"
 msgstr ""
 
-#: admin/editpage.php:50
+#: admin/editpage.php:54
 msgid "Select a Status"
 msgstr ""
 
-#: admin/editpage.php:52
+#: admin/editpage.php:56
 msgid "Property Status"
 msgstr ""
 
-#: admin/editpage.php:58
+#: admin/editpage.php:62
 msgid "List Price"
 msgstr ""
 
-#: admin/editpage.php:62
+#: admin/editpage.php:66
 msgid "List Date"
 msgstr ""
 
-#: admin/editpage.php:63
+#: admin/editpage.php:67
 msgid "mm/dd/yyyy E.G.: 04/01/2008"
 msgstr ""
 
-#: admin/editpage.php:69
+#: admin/editpage.php:73
 msgid "Sale Price (if sold)"
 msgstr ""
 
-#: admin/editpage.php:73
+#: admin/editpage.php:77
 msgid "Sale Date (if sold)"
 msgstr ""
 
-#: admin/editpage.php:74
+#: admin/editpage.php:78
 msgid "mm/dd/yyyy E.G.: 10/31/2008"
 msgstr ""
 
-#: admin/editpage.php:79
+#: admin/editpage.php:83
 msgid "Brief Blurb"
 msgstr ""
 
-#: admin/editpage.php:80
+#: admin/editpage.php:84
 msgid "e.g., \"Nice 4BR home west of Lantana\""
 msgstr ""
 
-#: admin/editpage.php:86
+#: admin/editpage.php:90
 msgid "Street Address"
 msgstr ""
 
-#: admin/editpage.php:87
+#: admin/editpage.php:91
 msgid "e.g., \"123 Main St\""
 msgstr ""
 
-#: admin/editpage.php:93
+#: admin/editpage.php:97
 msgid "City"
 msgstr ""
 
-#: admin/editpage.php:94
+#: admin/editpage.php:98
 msgid "e.g., \"Anytown\""
 msgstr ""
 
-#: admin/editpage.php:100
+#: admin/editpage.php:104
 msgid "State"
 msgstr ""
 
-#: admin/editpage.php:101
+#: admin/editpage.php:105
 msgid "2 letter abbreviation, e.g. FL for Florida"
 msgstr ""
 
-#: admin/editpage.php:106
+#: admin/editpage.php:110
 msgid "Zip Code"
 msgstr ""
 
-#: admin/editpage.php:107
+#: admin/editpage.php:111
 msgid "e.g., \"33462\""
 msgstr ""
 
-#: admin/editpage.php:112
+#: admin/editpage.php:116
 msgid "MLS ID"
 msgstr ""
 
-#: admin/editpage.php:113
+#: admin/editpage.php:117
 msgid "The listing's MLS ID, e.g., \"R2916712\""
 msgstr ""
 
-#: admin/editpage.php:119 privatefunctions.php:137 privatefunctions.php:304
+#: admin/editpage.php:123 privatefunctions.php:137 privatefunctions.php:304
 msgid "Bedrooms"
 msgstr ""
 
-#: admin/editpage.php:124
+#: admin/editpage.php:128
 msgid "Full Baths"
 msgstr ""
 
-#: admin/editpage.php:128
+#: admin/editpage.php:132
 msgid "Half Baths"
 msgstr ""
 
-#: admin/editpage.php:132 privatefunctions.php:312
+#: admin/editpage.php:136 privatefunctions.php:312
 msgid "Garage Spaces"
 msgstr ""
 
-#: admin/editpage.php:138
+#: admin/editpage.php:142
 msgid "Sqft (Living)"
 msgstr ""
 
-#: admin/editpage.php:142
+#: admin/editpage.php:146
 msgid "Sqft (Total)"
 msgstr ""
 
-#: admin/editpage.php:146 privatefunctions.php:319
+#: admin/editpage.php:150 privatefunctions.php:319
 msgid "Acres"
 msgstr ""
 
-#: admin/editpage.php:152
+#: admin/editpage.php:156
 msgid "Select Feature(s)"
 msgstr ""
 
-#: admin/editpage.php:155
+#: admin/editpage.php:159
 msgid "Features"
 msgstr ""
 
-#: admin/editpage.php:157 admin/editpage.php:191 admin/editpage.php:205
+#: admin/editpage.php:161 admin/editpage.php:195 admin/editpage.php:209
 msgid "Select one or more"
 msgstr ""
 
-#: admin/editpage.php:164
+#: admin/editpage.php:168
 msgid "Multimedia Content (Video, Photos, Brochures, etc)"
 msgstr ""
 
-#: admin/editpage.php:169
+#: admin/editpage.php:173
 msgid "Select a Gallery"
 msgstr ""
 
-#: admin/editpage.php:171 admin/main.php:90
+#: admin/editpage.php:175 admin/main.php:90
 msgid "NextGen Gallery"
 msgstr ""
 
-#: admin/editpage.php:172
+#: admin/editpage.php:176
 msgid "Leave page and manage galleries"
 msgstr ""
 
-#: admin/editpage.php:172
+#: admin/editpage.php:176
 msgid "Manage Galleries"
 msgstr ""
 
-#: admin/editpage.php:177
+#: admin/editpage.php:181
 msgid "Select a Video"
 msgstr ""
 
-#: admin/editpage.php:179
+#: admin/editpage.php:183
 msgid "WordTube Video"
 msgstr ""
 
-#: admin/editpage.php:180
+#: admin/editpage.php:184
 msgid "Leave page and manage videos"
 msgstr ""
 
-#: admin/editpage.php:180
+#: admin/editpage.php:184
 msgid "Manage Videos"
 msgstr ""
 
-#: admin/editpage.php:185
+#: admin/editpage.php:189
 msgid "Select Download(s)"
 msgstr ""
 
-#: admin/editpage.php:188
+#: admin/editpage.php:192
 msgid "DownloadManager Items (PDF)"
 msgstr ""
 
-#: admin/editpage.php:189
+#: admin/editpage.php:193
 msgid "Leave page and manage downloads"
 msgstr ""
 
-#: admin/editpage.php:189
+#: admin/editpage.php:193
 msgid "Manage Downloads"
 msgstr ""
 
-#: admin/editpage.php:197
+#: admin/editpage.php:201
 msgid "Select Panorama(s)"
 msgstr ""
 
-#: admin/editpage.php:200 templatefunctions.php:415 templatefunctions.php:424
+#: admin/editpage.php:204 templatefunctions.php:422 templatefunctions.php:431
 msgid "Panoramas"
 msgstr ""
 
-#: admin/editpage.php:201
+#: admin/editpage.php:205
 msgid "use the Add media button"
 msgstr ""
 
-#: admin/editpage.php:203
+#: admin/editpage.php:207
 msgid "above the page window to upload a QTVR file"
 msgstr ""
 
-#: admin/editpage.php:211
+#: admin/editpage.php:215
 msgid "Latitude (eg: 26.123456)"
 msgstr ""
 
-#: admin/editpage.php:217
+#: admin/editpage.php:221
 msgid "Longitude (eg: -80.123456)"
 msgstr ""
 
-#: admin/editpage.php:224
+#: admin/editpage.php:228
 msgid ""
 "This information about the property listing will be used for custom display "
 "and searching. You should provide as much information as possible."
 msgstr ""
 
-#: admin/editpage.php:225
+#: admin/editpage.php:229
 msgid ""
 "If you did not intend for this page to be a property listing, change Page "
 "Parent (below) and save, and this section should disappear."
@@ -268,7 +268,8 @@ msgstr ""
 msgid "Listed"
 msgstr ""
 
-#: admin/listings.php:25 privatefunctions.php:53
+#: admin/listings.php:25 copytotemplatedir/feed-googlemaps.php:33
+#: privatefunctions.php:53
 msgid "Sold"
 msgstr ""
 
@@ -512,7 +513,7 @@ msgstr ""
 msgid "e.g.: John Smith Listings, John Smith Homes For Sale, etc."
 msgstr ""
 
-#: admin/settings.php:108 templatefunctions.php:301
+#: admin/settings.php:108 templatefunctions.php:308
 msgid "Description"
 msgstr ""
 
@@ -556,32 +557,32 @@ msgstr ""
 msgid "Update Options "
 msgstr ""
 
-#: great-real-estate.php:58
+#: copytotemplatedir/feed-googlemaps.php:29 privatefunctions.php:51
+msgid "For Sale"
+msgstr ""
+
+#: copytotemplatedir/feed-googlemaps.php:30 privatefunctions.php:54
+msgid "For Rent"
+msgstr ""
+
+#: copytotemplatedir/feed-googlemaps.php:31 privatefunctions.php:52
+msgid "Sale Pending"
+msgstr ""
+
+#: copytotemplatedir/feed-googlemaps.php:32 privatefunctions.php:55
+msgid "Lease Pending"
+msgstr ""
+
+#: copytotemplatedir/feed-googlemaps.php:34 privatefunctions.php:56
+msgid "Rented"
+msgstr ""
+
+#: great-real-estate.php:76
 msgid "Sorry, Great Real Estate works only under WordPress 2.5 or higher"
 msgstr ""
 
 #: interfaces/interface-nggallery.php:48
 msgid "property photo"
-msgstr ""
-
-#: privatefunctions.php:51
-msgid "For Sale"
-msgstr ""
-
-#: privatefunctions.php:52
-msgid "Sale Pending"
-msgstr ""
-
-#: privatefunctions.php:54
-msgid "For Rent"
-msgstr ""
-
-#: privatefunctions.php:55
-msgid "Lease Pending"
-msgstr ""
-
-#: privatefunctions.php:56
-msgid "Rented"
 msgstr ""
 
 #: privatefunctions.php:63
@@ -609,7 +610,7 @@ msgid "My Active Listings"
 msgstr ""
 
 #: privatefunctions.php:127 privatefunctions.php:190 privatefunctions.php:220
-#: templatefunctions.php:592
+#: templatefunctions.php:623
 msgid "More about "
 msgstr ""
 
@@ -701,128 +702,108 @@ msgstr ""
 msgid " at "
 msgstr ""
 
-#: templatefunctions.php:50 templatefunctions.php:55 templatefunctions.php:62
-#: templatefunctions.php:67
+#: templatefunctions.php:57 templatefunctions.php:62 templatefunctions.php:69
+#: templatefunctions.php:74
 msgid "$"
 msgstr ""
 
-#: templatefunctions.php:300
+#: templatefunctions.php:307
 msgid "Property description"
 msgstr ""
 
-#: templatefunctions.php:370 templatefunctions.php:380
+#: templatefunctions.php:377 templatefunctions.php:387
 msgid "Photo Gallery"
 msgstr ""
 
-#: templatefunctions.php:371
+#: templatefunctions.php:378
 msgid "Gallery"
 msgstr ""
 
-#: templatefunctions.php:392 templatefunctions.php:402
+#: templatefunctions.php:399 templatefunctions.php:409
 msgid "Video Walkthrough"
 msgstr ""
 
-#: templatefunctions.php:393
+#: templatefunctions.php:400
 msgid "Videos"
 msgstr ""
 
-#: templatefunctions.php:414
+#: templatefunctions.php:421
 msgid "360&deg; Panoramas"
 msgstr ""
 
-#: templatefunctions.php:440 templatefunctions.php:441
+#: templatefunctions.php:447 templatefunctions.php:448
 msgid "Downloads"
 msgstr ""
 
-#: templatefunctions.php:475
+#: templatefunctions.php:482
 msgid "Location Map"
 msgstr ""
 
-#: templatefunctions.php:476
+#: templatefunctions.php:483
 msgid "Map"
 msgstr ""
 
-#: templatefunctions.php:546
+#: templatefunctions.php:553
 msgid "Community Information"
 msgstr ""
 
-#: templatefunctions.php:547
+#: templatefunctions.php:554
 msgid "Community"
 msgstr ""
 
-#: templatefunctions.php:604
+#: templatefunctions.php:637
 msgid "More about"
 msgstr ""
 
-#: widget-current-issue.php:100 widget-featuredlistings.php:106
+#: widget-featuredlistings.php:111
 msgid "Title:"
 msgstr ""
 
-#: widget-current-issue.php:106
-msgid "Text:"
-msgstr ""
-
-#: widget-current-issue.php:112
-msgid "Thumbnail jpg:"
-msgstr ""
-
-#: widget-current-issue.php:118
-msgid "PDF Filename:"
-msgstr ""
-
-#: widget-current-issue.php:130
-msgid "Current Issue - download link"
-msgstr ""
-
-#: widget-current-issue.php:132
-msgid "CurrentIssue"
-msgstr ""
-
-#: widget-featuredlistings.php:112
+#: widget-featuredlistings.php:117
 msgid "Display type: "
 msgstr ""
 
-#: widget-featuredlistings.php:114
+#: widget-featuredlistings.php:119
 msgid "Thumbnail list"
 msgstr ""
 
-#: widget-featuredlistings.php:115
+#: widget-featuredlistings.php:120
 msgid "Text links"
 msgstr ""
 
-#: widget-featuredlistings.php:121
+#: widget-featuredlistings.php:126
 msgid "Number of homes: "
 msgstr ""
 
-#: widget-featuredlistings.php:127
+#: widget-featuredlistings.php:132
 msgid "Sort by:"
 msgstr ""
 
-#: widget-featuredlistings.php:129
+#: widget-featuredlistings.php:134
 msgid "Random order"
 msgstr ""
 
-#: widget-featuredlistings.php:130
+#: widget-featuredlistings.php:135
 msgid "Page title order"
 msgstr ""
 
-#: widget-featuredlistings.php:131
+#: widget-featuredlistings.php:136
 msgid "Highest price"
 msgstr ""
 
-#: widget-featuredlistings.php:132
+#: widget-featuredlistings.php:137
 msgid "Lowest price"
 msgstr ""
 
-#: widget-featuredlistings.php:133
+#: widget-featuredlistings.php:138
 msgid "Recently listed"
 msgstr ""
 
-#: widget-featuredlistings.php:144
+#: widget-featuredlistings.php:149
 msgid "Featured real estate listings"
 msgstr ""
 
-#: widget-featuredlistings.php:146
+#: widget-featuredlistings.php:151
 msgid "Featured Listings"
 msgstr ""
 

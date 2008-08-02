@@ -1,15 +1,8 @@
 <?php
-/*
-Plugin Name: Great Real Estate - Featured Listings Widget
-Plugin URI: 
-Description: Sidebar widget to display featured listings, requires Great Real Estate plugin
-Version: 1.1
-Author: Roger Theriault
-Author URI: http://www.rogertheriault.com/agents/
-*/
 
 /*
  * Changelog:
+ * [2008-08-02] removed plugin header and included from main code; widget will now automatically be enabled when the plugin is activated. This avoids having to keep the header in sync and also avoids any confusion.
  * [2008-06-27] updated version number to conform to main file
  *
  */

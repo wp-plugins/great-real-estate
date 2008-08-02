@@ -5,6 +5,8 @@
  * it is bad form for our plugin to access another plugin 
  * EXCEPT from this one file, where future changes we can't control can
  * be dealt with without having to mess with any other code
+ *
+ * [2008-07-30] BUGFIX functions weren't checking for empty variables
  */
 
 if (!class_exists('nggallery')) return;
@@ -40,6 +42,8 @@ function get_nextgengallery_dropdown($currid = '') {
 function nextgengallery_showfirstpic($galleryid, $class = '') {
 	global $wpdb;
 	global $ngg_options;
+
+	if (!$galleryid) return;
 
 	$picturelist = $wpdb->get_results("SELECT t.*, tt.* FROM $wpdb->nggallery AS t INNER JOIN $wpdb->nggpictures AS tt ON t.gid = tt.galleryid WHERE t.gid = '$galleryid' AND tt.exclude != 1 ORDER BY tt.$ngg_options[galSort] $ngg_options[galSortDir] LIMIT 1");
 	if ($class) $myclass = ' class="'.$class.'" ';

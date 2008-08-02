@@ -1,5 +1,13 @@
 Changelog for Great-Real-Estate
 
+[2008-08-02] CHANGE: incorporated widget into plugin so it doesn't have a
+separate entry in the plugins list anymore (this was confusing)
+[2008-08-02] CHANGE: updated feed-zillow.php to support Zillow specifications;
+added new filters to get_pages_with_listings (allsales and allrentals); added
+new template functions get_listing_acres_noformat, get_listing_acsf_noformat,
+get_listing_totsf_noformat to return just the numbers for use in feeds or
+calculations
+
 v1.1.1
 [2008-07-30] created 1.1.1 tag.
 [2008-07-30] BUGFIX: css/listings.css update did not get included in 1.1, was
