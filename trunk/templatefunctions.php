@@ -17,6 +17,8 @@
 
 /*
  * Changelog:
+ * [2008-08-02] added filters to get_pages_with_listings to retrieve only homes for sale (allsales) or for rent (allrentals)
+ * [2008-08-02] added functions get_listing_acsf_noformat(), get_listing_totsf_noformat(), get_listing_acres_noformat which return just a number without formatting
  * [2008-07-27] added quote escaping in google map popup the_listing_js_mapinfo() to avoid JavaScript errors
  * [2008-06-27] added map option to show_listings_featured()
  * [2008-06-27] changed map_canvas id to gre_map_canvas to reduce conflicts
@@ -207,6 +209,10 @@ function get_listing_acsf() {
 	global $listing;
 	return number_format($listing->acsf);
 }
+function get_listing_acsf_noformat() {
+	global $listing;
+	return $listing->acsf;
+}
 function the_listing_acsf() {
 	global $listing;
 	echo number_format($listing->acsf);
@@ -215,6 +221,10 @@ function get_listing_totsf() {
 	global $listing;
 	return number_format($listing->totsf);
 }
+function get_listing_totsf_noformat() {
+	global $listing;
+	return $listing->totsf;
+}
 function the_listing_totsf() {
 	global $listing;
 	echo number_format($listing->totsf);
@@ -222,6 +232,10 @@ function the_listing_totsf() {
 function get_listing_acres() {
 	global $listing;
 	return number_format($listing->acres,2);
+}
+function get_listing_acres_noformat() {
+	global $listing;
+	return $listing->acres;
 }
 function the_listing_acres() {
 	global $listing;
@@ -696,6 +710,18 @@ function get_pages_with_listings($limit,$sort,$filter) {
 	// determine how to filter
 	// cant specify a table - TODO fix
 	switch ($filter) {
+	case 'allrentals' :
+		$filterclause = 
+    			"AND (status = " . RE_FORRENT . 
+       			" OR status = " . RE_PENDINGLEASE .
+       			" OR status = " . RE_RENTED . " ) ";
+		break;
+	case 'allsales' :
+		$filterclause = 
+    			"AND (status = " . RE_FORSALE . 
+       			" OR status = " . RE_PENDINGSALE .
+       			" OR status = " . RE_SOLD . " ) ";
+		break;
 	case 'active' :
 		$filterclause = 
     			"AND (status = " . RE_FORSALE . 

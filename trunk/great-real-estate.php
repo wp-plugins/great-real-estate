@@ -30,6 +30,8 @@ Author URI: http://RogerTheriault.com/agents/
 
 /*
  * changelog
+ *
+ * [2008-08-02] included widget file; widget now installed automatically and no longer has a separate (confusing) entry in the plugins list
  * Version 1.1
  * [2008-07-27] updated for WP2.6
  * 		added localization (correctly)
@@ -90,6 +92,7 @@ if ( is_admin() ) {
 
 require_once( dirname (__FILE__).'/privatefunctions.php' );
 require_once( dirname (__FILE__).'/templatefunctions.php' );
+require_once( dirname (__FILE__).'/widget-featuredlistings.php' );
 
 register_activation_hook( __FILE__, 'greatrealestate_activate' );
 function greatrealestate_activate( ) {

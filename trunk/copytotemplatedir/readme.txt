@@ -46,6 +46,5 @@ feed-trulia.php - use with Feed Wrangler to supply Trulia with your listings
            your broker is already feeding listings, Trulia will not process
            and they probably will not give you any feedback
 feed-zillow.php - use with Feed Wrangler to supply Zillow with your listings
-           NOTE: not verified; it is difficult to get a feed status from
-           Zillow. Please report any issues. 
+	Zillow has confirmed this feed as of August 1, 2008, although square foot information does not appear to be displaying correctly on Zillow.
 
