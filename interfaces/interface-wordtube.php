@@ -1,5 +1,7 @@
 <?php
 
+// [2008-08-05] added function returns if db table not there
+
 if (!class_exists('wordtube')) return;
 
 // CALL THIS
@@ -19,6 +21,8 @@ function the_listing_wtvideo($videoid) {
 // DONT CALL THIS
 function get_wordtube_videodropdown($currid = '') {
 	global $wpdb;
+	if (!$wpdb->wordtube) return;
+
 	$tables = $wpdb->get_results("SELECT * FROM $wpdb->wordtube ORDER BY 'vid' ASC ");
 	if($tables) {
 		foreach($tables as $table) {
