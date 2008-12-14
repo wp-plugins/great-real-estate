@@ -1,5 +1,10 @@
 Changelog for Great-Real-Estate
 
+v1.2
+[2008-12-14] created 1.2 tag, release of previous development changes
+[2008-12-14] CHANGE/BUGFIX: for WP 2.6+, use the WP-supplied jQuery ui and tabs
+[2008-12-14] ADD: French translation supplied by Patrice "plwm" ROMEVO
+
 [2008-08-02] CHANGE: incorporated widget into plugin so it doesn't have a
 separate entry in the plugins list anymore (this was confusing)
 [2008-08-02] CHANGE: updated feed-zillow.php to support Zillow specifications;

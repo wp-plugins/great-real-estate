@@ -1,16 +1,14 @@
 
 
 
-Known Issues (version 1.1)
+Known Issues (version 1.2)
 
-[2008-07-30] Google Maps render without a canvas. Solution: upgrade to 1.1.1
 [2007-07-16] the tabbed interface may caouse navigation oddities when combined with paged thumbnails in the gallery. To avoid this, you can disable the paging in the gallery (ie display all thumbnails on one page). A future release will allow disabling of the tabs.
 [2007-07-16] form validation of fractional fields complains about decimals without a leading zero. (eg: .25 acres)
 [2008-06-25] the Inline Google Maps plugin conflicts with this plugin. Symptoms include the map marker not displaying.
 - UPDATE/INSERT code needs to be more robust
 
 TODO List
-- only include JavaScript when really needed
 - lengthier documentation; tutorials
 - detect user templates and redirect first before using filters
 

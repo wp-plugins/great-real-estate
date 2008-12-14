@@ -3,7 +3,7 @@
 Plugin Name: Great Real Estate
 Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Description: The Real Estate plugin for Wordpress
-Version: 1.1.1
+Version: 1.2
 Author: Roger Theriault
 Author URI: http://RogerTheriault.com/agents/
 */
@@ -31,6 +31,8 @@ Author URI: http://RogerTheriault.com/agents/
 /*
  * changelog
  *
+ * version 1.2
+ * [2008-12-14] After WP 2.6, get default WP supplied jQuery ui and tabs
  * [2008-08-02] included widget file; widget now installed automatically and no longer has a separate (confusing) entry in the plugins list
  * Version 1.1
  * [2008-07-27] updated for WP2.6
@@ -71,6 +73,8 @@ $wpdb->gre_listings = $wpdb->prefix . "greatrealestate_listings";
 
 // Check for WP2.5 installation
 define( 'IS_WP25', version_compare( $wp_version, '2.4', '>=' ) );
+define( 'IS_WP26', version_compare( $wp_version, '2.6', '>=' ) );
+define( 'IS_WP27', version_compare( $wp_version, '2.7', '>=' ) );
 
 
 //This works only in WP2.5 or higher
@@ -140,8 +144,13 @@ function greatrealestate_add_javascript( ) {
 		wp_enqueue_script( 'google', $googlepath, FALSE );
 		wp_enqueue_script( 'google-gre', GRE_URLPATH . 'js/google.gre.js', array( 'google' ), '0.1.0' );
 	}
-	wp_enqueue_script( 'jquery-ui', GRE_URLPATH . 'js/ui.core.js', array( 'jquery' ) );
-	wp_enqueue_script( 'jquery-ui-tabs', GRE_URLPATH . 'js/ui.tabs.js', array( 'jquery' ) );
+	if (! IS_WP26) { // pre-2.6 jquery includes
+		wp_enqueue_script( 'jquery-ui', GRE_URLPATH . 'js/ui.core.js', array( 'jquery' ) );
+		wp_enqueue_script( 'jquery-ui-tabs', GRE_URLPATH . 'js/ui.tabs.js', array( 'jquery' ) );
+	} else {
+		wp_enqueue_script( 'jquery-ui-core' );
+		wp_enqueue_script( 'jquery-ui-tabs' );
+	}
 
 }
 add_action( 'wp_print_scripts', 'greatrealestate_add_javascript' );
