@@ -1,0 +1,4 @@
+Please only use the functions in templatefunctions.php in your theme files.
+They shouldn't change from one version to the next.
+
+
