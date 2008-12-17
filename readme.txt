@@ -4,7 +4,7 @@ Donate link: http://www.rogertheriault.com/agents/plugins/great-real-estate-plug
 Tags: real estate,ajax,listings,real,estate,homes
 Requires at least: 2.5
 Tested up to: 2.7
-Stable tag: 1.2
+Stable tag: 1.2.1
 
 Great Real Estate provides functionality to turn your WordPress installation into a content managed real estate website.
 

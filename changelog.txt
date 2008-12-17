@@ -1,5 +1,9 @@
 Changelog for Great-Real-Estate
 
+v1.2.1
+[2008-12-16] Maintenance release to support NextGen Gallery version 1.0+
+(symptom: missing thumbnails, dashboard not recognizing installed plugin)
+
 v1.2
 [2008-12-14] created 1.2 tag, release of previous development changes
 [2008-12-14] CHANGE/BUGFIX: for WP 2.6+, use the WP-supplied jQuery ui and tabs

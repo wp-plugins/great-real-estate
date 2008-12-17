@@ -7,10 +7,11 @@
  * be dealt with without having to mess with any other code
  *
  *
+ * [2008-12-16] added support for NextGen 1.0+ new classname
  * [2008-08-05] added function returns if db table not there
  */
 
-if (!class_exists('nggallery')) return;
+if (!(class_exists('nggallery') || class_exists('nggGallery'))) return;
 
 // USE THESE FUNCTIONS
 function get_listing_gallerydropdown($currid = '') {
@@ -49,11 +50,21 @@ function nextgengallery_showfirstpic($galleryid, $class = '') {
 
 	if (!$wpdb->nggallery) return;
 
+	if (! $ngg_options) {
+		$ngg_options = get_option('ngg_options');
+	}
+
 	$picturelist = $wpdb->get_results("SELECT t.*, tt.* FROM $wpdb->nggallery AS t INNER JOIN $wpdb->nggpictures AS tt ON t.gid = tt.galleryid WHERE t.gid = '$galleryid' AND tt.exclude != 1 ORDER BY tt.$ngg_options[galSort] $ngg_options[galSortDir] LIMIT 1");
 	if ($class) $myclass = ' class="'.$class.'" ';
 	if ($picturelist) { 
 		$pid = $picturelist[0]->pid;
-		$out = '<img alt="' . __('property photo') . '" src="' . nggallery::get_thumbnail_url($pid) . '" ' . $myclass . ' />';
+		if (method_exists('nggGallery','get_thumbnail_url')) {
+			// new NextGen 1.0+
+			$out = '<img alt="' . __('property photo') . '" src="' . nggGallery::get_thumbnail_url($pid) . '" ' . $myclass . ' />';
+		} else {
+			// backwards compatibility - NextGen below 1.0
+			$out = '<img alt="' . __('property photo') . '" src="' . nggallery::get_thumbnail_url($pid) . '" ' . $myclass . ' />';
+		}
 		return $out;
 	}
 }

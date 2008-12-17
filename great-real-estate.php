@@ -3,7 +3,7 @@
 Plugin Name: Great Real Estate
 Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Description: The Real Estate plugin for Wordpress
-Version: 1.2
+Version: 1.2.1
 Author: Roger Theriault
 Author URI: http://RogerTheriault.com/agents/
 */
@@ -31,6 +31,8 @@ Author URI: http://RogerTheriault.com/agents/
 /*
  * changelog
  *
+ * version 1.2.1
+ * [2008-12-16] Added compatibility with NextGen Gallery version 1.0+
  * version 1.2
  * [2008-12-14] After WP 2.6, get default WP supplied jQuery ui and tabs
  * [2008-08-02] included widget file; widget now installed automatically and no longer has a separate (confusing) entry in the plugins list

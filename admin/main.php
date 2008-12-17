@@ -136,7 +136,7 @@ function gre_status($component) {
 		}
 		break;
 	case ('nextgen-gallery') :
-		if (function_exists('nggallery_install')) {
+		if (function_exists('nggallery_install') || class_exists('nggGallery')) {
 			$icon = $ok;
 			$message = __("plugin activated",'greatrealestate');
 		} elseif (gre_is_plugin_there('/nextgen-gallery')) {
