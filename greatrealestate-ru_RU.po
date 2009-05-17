@@ -1,0 +1,836 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: real\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-27 16:08-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Yaroslaw D <argusyk@gmail.com>\n"
+"Language-Team: ita\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: -1,169,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: great-real-estate.php:71
+msgid "Sorry, Great Real Estate works only under WordPress 2.5 or higher"
+msgstr "Извините, Great Real Estate работает только с  версией WordPress 2.5 и выше"
+
+#: privatefunctions.php:51
+#: copytotemplatedir/feed-googlemaps.php:29
+msgid "For Sale"
+msgstr "На продажу"
+
+#: privatefunctions.php:52
+#: copytotemplatedir/feed-googlemaps.php:31
+msgid "Sale Pending"
+msgstr "Продажа приостановлена"
+
+#: privatefunctions.php:53
+#: admin/listings.php:25
+#: copytotemplatedir/feed-googlemaps.php:33
+msgid "Sold"
+msgstr "Продано"
+
+#: privatefunctions.php:54
+#: copytotemplatedir/feed-googlemaps.php:30
+msgid "For Rent"
+msgstr "В аренду"
+
+#: privatefunctions.php:55
+#: copytotemplatedir/feed-googlemaps.php:32
+msgid "Lease Pending"
+msgstr "Освобождение прекращено"
+
+#: privatefunctions.php:56
+#: copytotemplatedir/feed-googlemaps.php:34
+msgid "Rented"
+msgstr "В аренде"
+
+#: privatefunctions.php:63
+msgid "Pool"
+msgstr "Бассейн"
+
+#: privatefunctions.php:64
+#: privatefunctions.php:154
+#: privatefunctions.php:321
+msgid "Waterfront"
+msgstr "На берегу водоема"
+
+#: privatefunctions.php:65
+msgid "Golf"
+msgstr "Площадка для гольфа"
+
+#: privatefunctions.php:66
+msgid "Condo"
+msgstr "Совладение"
+
+#: privatefunctions.php:67
+#: privatefunctions.php:157
+#: privatefunctions.php:324
+msgid "Townhome"
+msgstr "Городской дом"
+
+#: privatefunctions.php:117
+msgid "My Active Listings"
+msgstr "Мои активные объявления"
+
+#: privatefunctions.php:127
+#: privatefunctions.php:190
+#: privatefunctions.php:220
+#: templatefunctions.php:622
+msgid "More about "
+msgstr "Больше о"
+
+#: privatefunctions.php:130
+msgid "- Offered at "
+msgstr "- предлагается по"
+
+#: privatefunctions.php:137
+#: privatefunctions.php:304
+#: admin/editpage.php:119
+msgid "Bedrooms"
+msgstr "Спальня (-и,-ен)"
+
+#: privatefunctions.php:139
+msgid "Full "
+msgstr "Ванная+туалет"
+
+#: privatefunctions.php:141
+msgid "Half "
+msgstr "Ванная"
+
+#: privatefunctions.php:142
+msgid " Baths"
+msgstr "ванных комнат"
+
+#: privatefunctions.php:145
+msgid " Garage Spaces"
+msgstr " - площадь гаража в кв.м"
+
+#: privatefunctions.php:148
+msgid " Sq/Ft Under Air"
+msgstr "- полезная площадь в кв.м"
+
+#: privatefunctions.php:150
+msgid " Sq/Ft Total"
+msgstr "- общая площадь в кв.м"
+
+#: privatefunctions.php:152
+msgid " Acres"
+msgstr "- площадь земли в сотках"
+
+#: privatefunctions.php:153
+#: privatefunctions.php:320
+msgid "Private Pool"
+msgstr "Частный бассейн"
+
+#: privatefunctions.php:155
+#: privatefunctions.php:322
+msgid "On Golf Course"
+msgstr "На гольф-поле"
+
+#: privatefunctions.php:156
+#: privatefunctions.php:323
+msgid "Condominium"
+msgstr "Совладение"
+
+#: privatefunctions.php:181
+msgid "Pending Sale"
+msgstr "Продажа прекращена"
+
+#: privatefunctions.php:211
+msgid "I Sold or Leased"
+msgstr "Продано или освобождено"
+
+#: privatefunctions.php:306
+msgid "Full"
+msgstr "Ванная+туалет"
+
+#: privatefunctions.php:308
+msgid "Half"
+msgstr "Ванная"
+
+#: privatefunctions.php:309
+msgid "Baths"
+msgstr "ванных комнат"
+
+#: privatefunctions.php:312
+#: admin/editpage.php:132
+msgid "Garage Spaces"
+msgstr " - площадь гаража в кв.м"
+
+#: privatefunctions.php:314
+msgid "Sq/Ft Under Air"
+msgstr "- полезная площадь в кв.м"
+
+#: privatefunctions.php:316
+msgid "Sq/Ft Total"
+msgstr "- общая площадь в кв.м"
+
+#: privatefunctions.php:319
+#: admin/editpage.php:146
+msgid "Acres"
+msgstr "- площадь земли в сотках"
+
+#: privatefunctions.php:337
+msgid " for "
+msgstr "для"
+
+#: privatefunctions.php:339
+msgid " - last offered"
+msgstr " - последнее предложение"
+
+#: privatefunctions.php:341
+msgid "- Offered"
+msgstr "- предложено"
+
+#: privatefunctions.php:343
+msgid " at "
+msgstr " по цене в "
+
+#: templatefunctions.php:56
+#: templatefunctions.php:61
+#: templatefunctions.php:68
+#: templatefunctions.php:73
+msgid "$"
+msgstr "$"
+
+#: templatefunctions.php:306
+msgid "Property description"
+msgstr "Полное описание"
+
+#: templatefunctions.php:307
+#: admin/settings.php:108
+msgid "Description"
+msgstr "Описание"
+
+#: templatefunctions.php:376
+#: templatefunctions.php:386
+msgid "Photo Gallery"
+msgstr "Фотогалерея"
+
+#: templatefunctions.php:377
+msgid "Gallery"
+msgstr "Галерея"
+
+#: templatefunctions.php:398
+#: templatefunctions.php:408
+msgid "Video Walkthrough"
+msgstr "Видеопрогулка"
+
+#: templatefunctions.php:399
+msgid "Videos"
+msgstr "Видео"
+
+#: templatefunctions.php:420
+msgid "360&deg; Panoramas"
+msgstr "Панорамы на 360 градусов"
+
+#: templatefunctions.php:421
+#: templatefunctions.php:430
+#: admin/editpage.php:200
+msgid "Panoramas"
+msgstr "Панорамы"
+
+#: templatefunctions.php:446
+#: templatefunctions.php:447
+msgid "Downloads"
+msgstr "Закачки"
+
+#: templatefunctions.php:481
+msgid "Location Map"
+msgstr "Карта расположения"
+
+#: templatefunctions.php:482
+msgid "Map"
+msgstr "Карта"
+
+#: templatefunctions.php:552
+msgid "Community Information"
+msgstr "Информация о сообществе"
+
+#: templatefunctions.php:553
+msgid "Community"
+msgstr "Сообщество"
+
+#: templatefunctions.php:636
+msgid "More about"
+msgstr "Еще информации"
+
+#: widget-featuredlistings.php:106
+msgid "Title:"
+msgstr "Название:"
+
+#: widget-featuredlistings.php:112
+msgid "Display type: "
+msgstr "Тип отображения:"
+
+#: widget-featuredlistings.php:114
+msgid "Thumbnail list"
+msgstr "Список иконок"
+
+#: widget-featuredlistings.php:115
+msgid "Text links"
+msgstr "Текстовые ссылки"
+
+#: widget-featuredlistings.php:116
+msgid "Map (all active)"
+msgstr "Карта (все активно)"
+
+#: widget-featuredlistings.php:122
+msgid "Number of homes: "
+msgstr "Количество домов:"
+
+#: widget-featuredlistings.php:128
+msgid "Sort by:"
+msgstr "Сортировать по"
+
+#: widget-featuredlistings.php:130
+msgid "Random order"
+msgstr "Случайный порядок"
+
+#: widget-featuredlistings.php:131
+msgid "Page title order"
+msgstr "По названию страниц"
+
+#: widget-featuredlistings.php:132
+msgid "Highest price"
+msgstr "Наибольшая цена"
+
+#: widget-featuredlistings.php:133
+msgid "Lowest price"
+msgstr "Наименьшая цена"
+
+#: widget-featuredlistings.php:134
+msgid "Recently listed"
+msgstr "Недавно выложенные"
+
+#: widget-featuredlistings.php:145
+msgid "Featured real estate listings"
+msgstr "Объявления с дополнительными возможностями"
+
+#: widget-featuredlistings.php:147
+msgid "Featured Listings"
+msgstr "Объявления с дополнительными возможностями"
+
+#: admin/editpage.php:24
+msgid "Real Estate - Property Information"
+msgstr "Недвижимость - характеристика"
+
+#: admin/editpage.php:29
+msgid "Great Real Estate Controls"
+msgstr "Элементы управления Great Real Estate"
+
+#: admin/editpage.php:35
+#: admin/listings.php:20
+#: admin/listings.php:34
+msgid "Featured"
+msgstr "С дополнительными возможностями"
+
+#: admin/editpage.php:36
+msgid "check to feature this listing"
+msgstr "отметить для подключения дополнительных возможностей к данной странице-объявлению"
+
+#: admin/editpage.php:43
+msgid "Listing Information (Pricing and Sales Information)"
+msgstr "Информация об объявлении (Цена,статус продажи)"
+
+#: admin/editpage.php:50
+msgid "Select a Status"
+msgstr "Выбрать статус"
+
+#: admin/editpage.php:52
+msgid "Property Status"
+msgstr "Статус объекта"
+
+#: admin/editpage.php:58
+msgid "List Price"
+msgstr "Опубликованная цена"
+
+#: admin/editpage.php:62
+msgid "List Date"
+msgstr "Дата опубликования"
+
+#: admin/editpage.php:63
+msgid "mm/dd/yyyy E.G.: 04/01/2008"
+msgstr "ММ/ДД/ГГГГ Например: 04/01/2008"
+
+#: admin/editpage.php:69
+msgid "Sale Price (if sold)"
+msgstr "Цена продажи (если продано)"
+
+#: admin/editpage.php:73
+msgid "Sale Date (if sold)"
+msgstr "Дата продажи (если продано)"
+
+#: admin/editpage.php:74
+msgid "mm/dd/yyyy E.G.: 10/31/2008"
+msgstr "ММ/ДД/ГГГГ Например: 10/31/2008"
+
+#: admin/editpage.php:79
+msgid "Brief Blurb"
+msgstr "Краткое описание"
+
+#: admin/editpage.php:80
+msgid "e.g., \"Nice 4BR home west of Lantana\""
+msgstr "например: \"Жирный коттедж на западе Василькова\""
+
+#: admin/editpage.php:86
+msgid "Street Address"
+msgstr "Улица"
+
+#: admin/editpage.php:87
+msgid "e.g., \"123 Main St\""
+msgstr "например: \"ул. Пушкина\""
+
+#: admin/editpage.php:93
+msgid "City"
+msgstr "Город"
+
+#: admin/editpage.php:94
+msgid "e.g., \"Anytown\""
+msgstr "например: \"Васильков\""
+
+#: admin/editpage.php:100
+msgid "State"
+msgstr "Область"
+
+#: admin/editpage.php:101
+msgid "2 letter abbreviation, e.g. FL for Florida"
+msgstr "2 буквы аббревиатуры, например: КИ для КИЕВСКОЙ ОБЛ."
+
+#: admin/editpage.php:106
+msgid "Zip Code"
+msgstr "Почтовый индекс"
+
+#: admin/editpage.php:107
+msgid "e.g., \"33462\""
+msgstr "например: \"08656\""
+
+#: admin/editpage.php:112
+msgid "MLS ID"
+msgstr "СМР ID"
+
+#: admin/editpage.php:113
+msgid "The listing's MLS ID, e.g., \"R2916712\""
+msgstr "Идентификатор СМР объявления, например: \"R2916712\""
+
+#: admin/editpage.php:124
+msgid "Full Baths"
+msgstr "Ванных комнат (ванна+туалет)"
+
+#: admin/editpage.php:128
+msgid "Half Baths"
+msgstr "Ванных комнат (только ванная)"
+
+#: admin/editpage.php:138
+msgid "Sqft (Living)"
+msgstr "кв.м (жилая площадь)"
+
+#: admin/editpage.php:142
+msgid "Sqft (Total)"
+msgstr "кв.м (Общая площадь)"
+
+#: admin/editpage.php:152
+msgid "Select Feature(s)"
+msgstr "Выбрать дополнительные возможности"
+
+#: admin/editpage.php:155
+msgid "Features"
+msgstr "Дополнительные возможности"
+
+#: admin/editpage.php:157
+#: admin/editpage.php:191
+#: admin/editpage.php:205
+msgid "Select one or more"
+msgstr "Выбирите одну или несколько"
+
+#: admin/editpage.php:164
+msgid "Multimedia Content (Video, Photos, Brochures, etc)"
+msgstr "Мультимедиа контент (видео, фото, брошурыi, др.)"
+
+#: admin/editpage.php:169
+msgid "Select a Gallery"
+msgstr "Выбрать галерею"
+
+#: admin/editpage.php:171
+#: admin/main.php:90
+msgid "NextGen Gallery"
+msgstr "NextGen Галерея"
+
+#: admin/editpage.php:172
+msgid "Leave page and manage galleries"
+msgstr "Оставить страницу и перейти к настройке галерей"
+
+#: admin/editpage.php:172
+msgid "Manage Galleries"
+msgstr "Настройка галерей"
+
+#: admin/editpage.php:177
+msgid "Select a Video"
+msgstr "Выбрать Видео"
+
+#: admin/editpage.php:179
+msgid "WordTube Video"
+msgstr "WordTube Видео"
+
+#: admin/editpage.php:180
+msgid "Leave page and manage videos"
+msgstr "Оставить страницу и перейти к настройке Видео"
+
+#: admin/editpage.php:180
+msgid "Manage Videos"
+msgstr "Настроить Видео"
+
+#: admin/editpage.php:185
+msgid "Select Download(s)"
+msgstr "Выбрать закачку(-и)"
+
+#: admin/editpage.php:188
+msgid "DownloadManager Items (PDF)"
+msgstr "Элементы DownloadManager (pdf)"
+
+#: admin/editpage.php:189
+msgid "Leave page and manage downloads"
+msgstr "Оставить страницу и настроить закачки"
+
+#: admin/editpage.php:189
+msgid "Manage Downloads"
+msgstr "Настроить закачки"
+
+#: admin/editpage.php:197
+msgid "Select Panorama(s)"
+msgstr "Выбрать панораму (-ы)"
+
+#: admin/editpage.php:201
+msgid "use the Add media button"
+msgstr "Используйте кнопку Add для добавления медиа контента"
+
+#: admin/editpage.php:203
+msgid "above the page window to upload a QTVR file"
+msgstr "над окном страницы для загрузки файла Qtvr"
+
+#: admin/editpage.php:211
+msgid "Latitude (eg: 26.123456)"
+msgstr "Широта (например: 26.123456)"
+
+#: admin/editpage.php:217
+msgid "Longitude (eg: -80.123456)"
+msgstr "Долгота (например: -80.123456)"
+
+#: admin/editpage.php:224
+msgid "This information about the property listing will be used for custom display and searching. You should provide as much information as possible."
+msgstr "Эта информация об объекте недвижимости будет использоваться для отображения и поиска. Предоставьте информации столько, сколько сможете (чем больше, тем лучше)."
+
+#: admin/editpage.php:225
+msgid "If you did not intend for this page to be a property listing, change Page Parent (below) and save, and this section should disappear."
+msgstr "Если данная страница не предназначена для отображения объявлений, выбирите Родителя страницы (снизу) и пересохраните. Данная секция исчезнет."
+
+#: admin/listings.php:15
+msgid "Manage Listings"
+msgstr "Настроить объявления"
+
+#: admin/listings.php:16
+msgid "All Listings"
+msgstr "Все объявления"
+
+#: admin/listings.php:21
+msgid "Thumbnail"
+msgstr "Иконка"
+
+#: admin/listings.php:22
+msgid "Title"
+msgstr "Название"
+
+#: admin/listings.php:23
+msgid "Status"
+msgstr "Статус"
+
+#: admin/listings.php:24
+msgid "Listed"
+msgstr "Выложено"
+
+#: admin/listings.php:35
+msgid "Published"
+msgstr "Опубликованное"
+
+#: admin/listings.php:35
+msgid "Unpublished"
+msgstr "Не опубликованное"
+
+#: admin/listings.php:37
+msgid "View"
+msgstr "Просмотреть"
+
+#: admin/listings.php:39
+msgid "Edit"
+msgstr "Редактировать"
+
+#: admin/listings.php:46
+msgid "Create a<br /> Gallery"
+msgstr "Создать<br /> галерею"
+
+#: admin/listings.php:70
+msgid "Add a listing"
+msgstr "Добавить объявление"
+
+#: admin/main.php:6
+msgid "Great Real Estate"
+msgstr "Great Real Estate"
+
+#: admin/main.php:26
+msgid "Real Estate Summary"
+msgstr "Real Estate Аннотация"
+
+#: admin/main.php:28
+msgid "Listings main page: "
+msgstr "Главная страница объявлений:"
+
+#: admin/main.php:51
+#, php-format
+msgid "You have %d listings: %d available, %d under contract, and %d sold"
+msgstr "У Вас %d объявлений: %d активных, %d под контрактом и %d проданных"
+
+#: admin/main.php:70
+msgid "Unknown - please check your settings"
+msgstr "Неизвестная - пожалуйста, проверьте Ваши настройки"
+
+#: admin/main.php:73
+msgid "WARNING - You must select a main Listings page"
+msgstr "Предупреждение: Вы должны выбрать Главную страницу для объявлений"
+
+#: admin/main.php:82
+msgid "Plugin Status"
+msgstr "Статус плагина"
+
+#: admin/main.php:85
+msgid "Built In Features"
+msgstr "Встроенные возможности"
+
+#: admin/main.php:86
+msgid "Featured Homes Widget"
+msgstr "Виджет Featured Homes"
+
+#: admin/main.php:87
+msgid "Google Maps"
+msgstr "Карты Google"
+
+#: admin/main.php:89
+msgid "Other Plugins"
+msgstr "Другие плагины"
+
+#: admin/main.php:91
+msgid "wordTube (Videos)"
+msgstr "wordTube (Видео)"
+
+#: admin/main.php:92
+msgid "FPP-Pano (Panoramas)"
+msgstr "FPP-Pano (Панорамы)"
+
+#: admin/main.php:93
+msgid "WP-Downloadmanager"
+msgstr "WP-Downloadmanager"
+
+#: admin/main.php:94
+msgid "Feed Wrangler"
+msgstr "Feed Wrangler"
+
+#: admin/main.php:95
+msgid "Note: The status icon indicates whether a plugin is activated; please make sure you have also made the appropriate settings"
+msgstr "Замечание: Иконка статуса показывает активирован ли плагин; пожалуйста, убедитесь также в том, что Вы сделали все необходимые настройки"
+
+#: admin/main.php:105
+msgid "Ready"
+msgstr "Готов"
+
+#: admin/main.php:107
+msgid "Incomplete configuration"
+msgstr "Незаконченная конфигурация"
+
+#: admin/main.php:109
+msgid "Not activated"
+msgstr "Не активирован"
+
+#: admin/main.php:111
+msgid "details unavailable"
+msgstr "детали недоступны"
+
+#: admin/main.php:120
+msgid "widget activated"
+msgstr "виджет активирован"
+
+#: admin/main.php:123
+msgid "widget not activated"
+msgstr "виджет не активирован"
+
+#: admin/main.php:126
+msgid "file not installed"
+msgstr "файл не установлен"
+
+#: admin/main.php:132
+msgid "Google API key present"
+msgstr "Ключ Google API найден"
+
+#: admin/main.php:135
+msgid "Google API Key not present"
+msgstr "Отсутствует ключ Google API"
+
+#: admin/main.php:141
+#: admin/main.php:153
+#: admin/main.php:165
+#: admin/main.php:177
+#: admin/main.php:189
+msgid "plugin activated"
+msgstr "плагин активирован"
+
+#: admin/main.php:144
+#: admin/main.php:156
+#: admin/main.php:168
+#: admin/main.php:180
+#: admin/main.php:192
+msgid "plugin not activated"
+msgstr "плагин не активирован"
+
+#: admin/main.php:147
+#: admin/main.php:159
+#: admin/main.php:171
+#: admin/main.php:183
+#: admin/main.php:195
+msgid "plugin not installed"
+msgstr "плагин не установлен"
+
+#: admin/main.php:217
+msgid "Docs &amp; Support"
+msgstr "Документация &amp; Поддержка"
+
+#: admin/settings.php:27
+msgid "Main Listings Page"
+msgstr "Главная страница для объявлений"
+
+#: admin/settings.php:29
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: admin/settings.php:29
+msgid "- Select -"
+msgstr "- Выбирите -"
+
+#: admin/settings.php:31
+msgid "Select the Page to be used as the index to your Listings"
+msgstr "Выбирите главную страницу, которая будет использоваться как индекс Ваших объявлений"
+
+#: admin/settings.php:33
+msgid "You will need to make all your Listings Pages subpages of this Page"
+msgstr "Все Ваши страницы-объявления должны быть подстраницами этой страницы"
+
+#: admin/settings.php:38
+msgid "Listings Summary"
+msgstr "Аннотации объявлений"
+
+#: admin/settings.php:42
+msgid "Check to generate a default summary of your listings on your Listings Page (uncheck if you are using a custom template for your index page)"
+msgstr "Выбрать для генерации аннотаций для объявлений (убрать птичку при использовании своих шаблонов для индексной таблицы)"
+
+#: admin/settings.php:47
+msgid "Individual Listings Pages"
+msgstr "Индивидуальные страницы объявлений"
+
+#: admin/settings.php:51
+msgid "Check to generate the default tabbed interface on each Listing Page (uncheck if you are using a custom template for your listings)"
+msgstr "Выбрать для создания стандартного интерфейса с закладками на каждой странице объявлений (убрать птичку при использовании своих шаблонов для страниц объявлений)"
+
+#: admin/settings.php:56
+msgid "Google API Key"
+msgstr "Ключ Google API "
+
+#: admin/settings.php:60
+msgid "Paste your domain's <a title=\"get a Google API key\" href=\"http://code.google.com/apis/maps/signup.html\">Google API key</a> here to enable map displays for your listings"
+msgstr "Вставьте свой ключ  <a title=\"получить ключ Google API \" href=\"http://code.google.com/apis/maps/signup.html\"> Google API</a> сюда для активации отображения карт для Ваших объявлений"
+
+#: admin/settings.php:65
+msgid "Maximum Listings Featured"
+msgstr "Максимальное количество объявлений"
+
+#: admin/settings.php:69
+msgid "The default maximum number of featured listings, if not specified elsewhere"
+msgstr "Максимальное количество \"по умолчанию\" объявлений с дополнительными возможностями, если не указано где-то еще"
+
+#: admin/settings.php:74
+msgid "Add Plugin CSS"
+msgstr "Добавить стили CSS плагина"
+
+#: admin/settings.php:78
+msgid "Check to use the plugin's default styling - uncheck if you have added your own style rules to your theme's <code>style.css</code> file (recommended)"
+msgstr "Выбрать для использования стилей плагина \"по умолчанию\" - убрать птичку, если используются свои стили из <code>style.css</code> (рекомендуется) "
+
+#: admin/settings.php:83
+msgid "Enable \"No Branding\" option"
+msgstr "Включить опцию \"Без брендинга (No Branding)\" "
+
+#: admin/settings.php:87
+msgid "Check to allow <code>/nobrand/something/</code> to be added to a Page URL to remove navigation (Please copy <code>nobrand.css</code> to your theme directory and customize it)"
+msgstr "Выбрать для разрешения добавления кода <code> / nobrand / qualcosa / </ code> к адресу страницы с целью удаления элементов навигации (Пожалуйста, скопируйте <code> nobrand.css </ code> в каталог Вашей темы и настройте)"
+
+#: admin/settings.php:93
+msgid "Listing Feeds (RSS)"
+msgstr "Потоки рассылок (RSS)"
+
+#: admin/settings.php:99
+msgid "Feed Title"
+msgstr "Название рассылки"
+
+#: admin/settings.php:103
+msgid "e.g.: John Smith Listings, John Smith Homes For Sale, etc."
+msgstr "например: Объекты Ивана Филипповича, Дом Пушкина на продажу, и т.д"
+
+#: admin/settings.php:112
+msgid "A snappy summary of what is in the listings feed"
+msgstr "Краткое описание объекта, которое будет отображаться в рассылках"
+
+#: admin/settings.php:117
+msgid "Brokerage Name"
+msgstr "Название курирующей брокерской компании"
+
+#: admin/settings.php:121
+msgid "The name of the real estate brokerage holding the listings"
+msgstr "Название курирующей брокерской компании объекта объявления"
+
+#: admin/settings.php:126
+msgid "Agent Name"
+msgstr "Имя (название) агента"
+
+#: admin/settings.php:130
+msgid "The name of the listing real estate agent"
+msgstr "Имя (название) агента разместившего объявление"
+
+#: admin/settings.php:135
+msgid "Agent Phone"
+msgstr "Телефон агента"
+
+#: admin/settings.php:139
+msgid "The listing real estate agent's phone number"
+msgstr "Телефон агента разместившего объявление"
+
+#: admin/settings.php:144
+msgid "MLS Name"
+msgstr "Название СМР"
+
+#: admin/settings.php:148
+msgid "The name of the Multiple Listing Service"
+msgstr "Название сервиса множественного размещения объявлений"
+
+#: admin/settings.php:158
+msgid "Update Options "
+msgstr "Обновить опции"
+
+#: interfaces/interface-nggallery.php:48
+msgid "property photo"
+msgstr "Фотографии объекта"
+

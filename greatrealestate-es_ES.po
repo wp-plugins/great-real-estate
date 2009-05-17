@@ -1,0 +1,836 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: real\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-27 16:08-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Hernan <altosierra@gmail.com>\n"
+"Language-Team: ita\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: -1,169,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: great-real-estate.php:71
+msgid "Sorry, Great Real Estate works only under WordPress 2.5 or higher"
+msgstr "Disculpe, Great Real Estate funciona solo bajo WordPress 2.5 o superior"
+
+#: privatefunctions.php:51
+#: copytotemplatedir/feed-googlemaps.php:29
+msgid "For Sale"
+msgstr "En venta"
+
+#: privatefunctions.php:52
+#: copytotemplatedir/feed-googlemaps.php:31
+msgid "Sale Pending"
+msgstr "Venta en espera"
+
+#: privatefunctions.php:53
+#: admin/listings.php:25
+#: copytotemplatedir/feed-googlemaps.php:33
+msgid "Sold"
+msgstr "Vendido"
+
+#: privatefunctions.php:54
+#: copytotemplatedir/feed-googlemaps.php:30
+msgid "For Rent"
+msgstr "En Alquiler"
+
+#: privatefunctions.php:55
+#: copytotemplatedir/feed-googlemaps.php:32
+msgid "Lease Pending"
+msgstr "Alquiler pendiente"
+
+#: privatefunctions.php:56
+#: copytotemplatedir/feed-googlemaps.php:34
+msgid "Rented"
+msgstr "Alquilado"
+
+#: privatefunctions.php:63
+msgid "Pool"
+msgstr "Piscina"
+
+#: privatefunctions.php:64
+#: privatefunctions.php:154
+#: privatefunctions.php:321
+msgid "Waterfront"
+msgstr "Frente al mar"
+
+#: privatefunctions.php:65
+msgid "Golf"
+msgstr "Golf"
+
+#: privatefunctions.php:66
+msgid "Condo"
+msgstr "Casa"
+
+#: privatefunctions.php:67
+#: privatefunctions.php:157
+#: privatefunctions.php:324
+msgid "Townhome"
+msgstr "Departamento"
+
+#: privatefunctions.php:117
+msgid "My Active Listings"
+msgstr "Lista de propiedades"
+
+#: privatefunctions.php:127
+#: privatefunctions.php:190
+#: privatefunctions.php:220
+#: templatefunctions.php:622
+msgid "More about "
+msgstr "Saber más"
+
+#: privatefunctions.php:130
+msgid "- Offered at "
+msgstr "Ofrecido en"
+
+#: privatefunctions.php:137
+#: privatefunctions.php:304
+#: admin/editpage.php:119
+msgid "Bedrooms"
+msgstr "Dormitorios"
+
+#: privatefunctions.php:139
+msgid "Full "
+msgstr "Full"
+
+#: privatefunctions.php:141
+msgid "Half "
+msgstr "Medio"
+
+#: privatefunctions.php:142
+msgid " Baths"
+msgstr "Baños"
+
+#: privatefunctions.php:145
+msgid " Garage Spaces"
+msgstr "Cochera"
+
+#: privatefunctions.php:148
+msgid " Sq/Ft Under Air"
+msgstr "Sup. descubierta en mts"
+
+#: privatefunctions.php:150
+msgid " Sq/Ft Total"
+msgstr "Sup. total en mts."
+
+#: privatefunctions.php:152
+msgid " Acres"
+msgstr "Hectareasi"
+
+#: privatefunctions.php:153
+#: privatefunctions.php:320
+msgid "Private Pool"
+msgstr "Piscina privada"
+
+#: privatefunctions.php:155
+#: privatefunctions.php:322
+msgid "On Golf Course"
+msgstr "Country"
+
+#: privatefunctions.php:156
+#: privatefunctions.php:323
+msgid "Condominium"
+msgstr "Casa de campo"
+
+#: privatefunctions.php:181
+msgid "Pending Sale"
+msgstr "Reservado"
+
+#: privatefunctions.php:211
+msgid "I Sold or Leased"
+msgstr "Venta o Alquiler"
+
+#: privatefunctions.php:306
+msgid "Full"
+msgstr "Full"
+
+#: privatefunctions.php:308
+msgid "Half"
+msgstr "Medio"
+
+#: privatefunctions.php:309
+msgid "Baths"
+msgstr "Baños"
+
+#: privatefunctions.php:312
+#: admin/editpage.php:132
+msgid "Garage Spaces"
+msgstr "Estacionamiento"
+
+#: privatefunctions.php:314
+msgid "Sq/Ft Under Air"
+msgstr "Sup. descubierta en mts."
+
+#: privatefunctions.php:316
+msgid "Sq/Ft Total"
+msgstr "Sup. total en mts."
+
+#: privatefunctions.php:319
+#: admin/editpage.php:146
+msgid "Acres"
+msgstr "Hectáreas"
+
+#: privatefunctions.php:337
+msgid " for "
+msgstr "para"
+
+#: privatefunctions.php:339
+msgid " - last offered"
+msgstr " - Ultima oferta"
+
+#: privatefunctions.php:341
+msgid "- Offered"
+msgstr "- Oferta"
+
+#: privatefunctions.php:343
+msgid " at "
+msgstr "a"
+
+#: templatefunctions.php:56
+#: templatefunctions.php:61
+#: templatefunctions.php:68
+#: templatefunctions.php:73
+msgid "$"
+msgstr "$"
+
+#: templatefunctions.php:306
+msgid "Property description"
+msgstr "Descripción de la propiedad"
+
+#: templatefunctions.php:307
+#: admin/settings.php:108
+msgid "Description"
+msgstr "Descripción"
+
+#: templatefunctions.php:376
+#: templatefunctions.php:386
+msgid "Photo Gallery"
+msgstr "Galería de imágenes"
+
+#: templatefunctions.php:377
+msgid "Gallery"
+msgstr "Galería"
+
+#: templatefunctions.php:398
+#: templatefunctions.php:408
+msgid "Video Walkthrough"
+msgstr "Video de la propiedad"
+
+#: templatefunctions.php:399
+msgid "Videos"
+msgstr "Videos"
+
+#: templatefunctions.php:420
+msgid "360&deg; Panoramas"
+msgstr "Panorama a 360°"
+
+#: templatefunctions.php:421
+#: templatefunctions.php:430
+#: admin/editpage.php:200
+msgid "Panoramas"
+msgstr "Panoramica"
+
+#: templatefunctions.php:446
+#: templatefunctions.php:447
+msgid "Downloads"
+msgstr "Descargar"
+
+#: templatefunctions.php:481
+msgid "Location Map"
+msgstr "Ubicación en mapa"
+
+#: templatefunctions.php:482
+msgid "Map"
+msgstr "Mapa"
+
+#: templatefunctions.php:552
+msgid "Community Information"
+msgstr "Información sobre la comunidad"
+
+#: templatefunctions.php:553
+msgid "Community"
+msgstr "Comunidad"
+
+#: templatefunctions.php:636
+msgid "More about"
+msgstr "Saber más"
+
+#: widget-featuredlistings.php:106
+msgid "Title:"
+msgstr "Título:"
+
+#: widget-featuredlistings.php:112
+msgid "Display type: "
+msgstr "Tipo de visualización:"
+
+#: widget-featuredlistings.php:114
+msgid "Thumbnail list"
+msgstr "Diapositivas"
+
+#: widget-featuredlistings.php:115
+msgid "Text links"
+msgstr "Links textuales"
+
+#: widget-featuredlistings.php:116
+msgid "Map (all active)"
+msgstr "Mapa (todo activo)"
+
+#: widget-featuredlistings.php:122
+msgid "Number of homes: "
+msgstr "Cantidad de habitaciones :"
+
+#: widget-featuredlistings.php:128
+msgid "Sort by:"
+msgstr "Ordenar por"
+
+#: widget-featuredlistings.php:130
+msgid "Random order"
+msgstr "Orden aleatorio"
+
+#: widget-featuredlistings.php:131
+msgid "Page title order"
+msgstr "Ordenar por título de página"
+
+#: widget-featuredlistings.php:132
+msgid "Highest price"
+msgstr "Mayor precio"
+
+#: widget-featuredlistings.php:133
+msgid "Lowest price"
+msgstr "Menor precio"
+
+#: widget-featuredlistings.php:134
+msgid "Recently listed"
+msgstr "Agregado recientemente"
+
+#: widget-featuredlistings.php:145
+msgid "Featured real estate listings"
+msgstr "Inmueble destacado"
+
+#: widget-featuredlistings.php:147
+msgid "Featured Listings"
+msgstr "Listado de inmuebles"
+
+#: admin/editpage.php:24
+msgid "Real Estate - Property Information"
+msgstr "Inmueble- información de la propiedad"
+
+#: admin/editpage.php:29
+msgid "Great Real Estate Controls"
+msgstr "Panel de control - Great Real Estate"
+
+#: admin/editpage.php:35
+#: admin/listings.php:20
+#: admin/listings.php:34
+msgid "Featured"
+msgstr "Características"
+
+#: admin/editpage.php:36
+msgid "check to feature this listing"
+msgstr "Comprobar la función de este listado"
+
+#: admin/editpage.php:43
+msgid "Listing Information (Pricing and Sales Information)"
+msgstr "Listado de Información (Información de Precios y Ventas)"
+
+#: admin/editpage.php:50
+msgid "Select a Status"
+msgstr "Seleccionar estado"
+
+#: admin/editpage.php:52
+msgid "Property Status"
+msgstr "Estado de la propiedad"
+
+#: admin/editpage.php:58
+msgid "List Price"
+msgstr "Precio de lista"
+
+#: admin/editpage.php:62
+msgid "List Date"
+msgstr "Fecha de alta"
+
+#: admin/editpage.php:63
+msgid "mm/dd/yyyy E.G.: 04/01/2008"
+msgstr "mm/dd/aaaa Por ejemplo: 04/01/2008"
+
+#: admin/editpage.php:69
+msgid "Sale Price (if sold)"
+msgstr "Precio de venta (en caso de venta)"
+
+#: admin/editpage.php:73
+msgid "Sale Date (if sold)"
+msgstr "Fecha de venta (en caso de venta)"
+
+#: admin/editpage.php:74
+msgid "mm/dd/yyyy E.G.: 10/31/2008"
+msgstr "mm/dd/aaaa Por ejemplo: 10/31/2008"
+
+#: admin/editpage.php:79
+msgid "Brief Blurb"
+msgstr "Breve propaganda"
+
+#: admin/editpage.php:80
+msgid "e.g., \"Nice 4BR home west of Lantana\""
+msgstr "por ejemplo: \"Encantadora casa de campo\""
+
+#: admin/editpage.php:86
+msgid "Street Address"
+msgstr "Dirección"
+
+#: admin/editpage.php:87
+msgid "e.g., \"123 Main St\""
+msgstr "Ejemplo: \"Tacuarí al 900\""
+
+#: admin/editpage.php:93
+msgid "City"
+msgstr "Ciudad"
+
+#: admin/editpage.php:94
+msgid "e.g., \"Anytown\""
+msgstr "Ejemplo: \"Resistencia\""
+
+#: admin/editpage.php:100
+msgid "State"
+msgstr "Provincia"
+
+#: admin/editpage.php:101
+msgid "2 letter abbreviation, e.g. FL for Florida"
+msgstr "Abreviado, Ejemplo: BsAs"
+
+#: admin/editpage.php:106
+msgid "Zip Code"
+msgstr "Código postal"
+
+#: admin/editpage.php:107
+msgid "e.g., \"33462\""
+msgstr "Ejemplo: \"aa1068\""
+
+#: admin/editpage.php:112
+msgid "MLS ID"
+msgstr "Bloque"
+
+#: admin/editpage.php:113
+msgid "The listing's MLS ID, e.g., \"R2916712\""
+msgstr "Si son edificios en block, Ejemplo: \"A4\""
+
+#: admin/editpage.php:124
+msgid "Full Baths"
+msgstr "Baños suite"
+
+#: admin/editpage.php:128
+msgid "Half Baths"
+msgstr "Baño de servicio"
+
+#: admin/editpage.php:138
+msgid "Sqft (Living)"
+msgstr "Sup. de ambientes"
+
+#: admin/editpage.php:142
+msgid "Sqft (Total)"
+msgstr "Sup. de dormitorios"
+
+#: admin/editpage.php:152
+msgid "Select Feature(s)"
+msgstr "Seleccionar características adicionales"
+
+#: admin/editpage.php:155
+msgid "Features"
+msgstr "Características"
+
+#: admin/editpage.php:157
+#: admin/editpage.php:191
+#: admin/editpage.php:205
+msgid "Select one or more"
+msgstr "Puede seleccionar mas de una"
+
+#: admin/editpage.php:164
+msgid "Multimedia Content (Video, Photos, Brochures, etc)"
+msgstr "Agregar contenido multimedia (video, foto, animaciones, planos)"
+
+#: admin/editpage.php:169
+msgid "Select a Gallery"
+msgstr "Seleccione una galería"
+
+#: admin/editpage.php:171
+#: admin/main.php:90
+msgid "NextGen Gallery"
+msgstr "Galleria di NextGen"
+
+#: admin/editpage.php:172
+msgid "Leave page and manage galleries"
+msgstr "Abandonar página y gestionar galería"
+
+#: admin/editpage.php:172
+msgid "Manage Galleries"
+msgstr "Gestionar galería"
+
+#: admin/editpage.php:177
+msgid "Select a Video"
+msgstr "Seleccionar video"
+
+#: admin/editpage.php:179
+msgid "WordTube Video"
+msgstr "Video de WordTube.com"
+
+#: admin/editpage.php:180
+msgid "Leave page and manage videos"
+msgstr "Abandonar página y gestionar videos"
+
+#: admin/editpage.php:180
+msgid "Manage Videos"
+msgstr "Gestionar videos"
+
+#: admin/editpage.php:185
+msgid "Select Download(s)"
+msgstr "Seleccionar descarga"
+
+#: admin/editpage.php:188
+msgid "DownloadManager Items (PDF)"
+msgstr "Archivo descargable (pdf)"
+
+#: admin/editpage.php:189
+msgid "Leave page and manage downloads"
+msgstr "Abandonar página y gestionar descargas"
+
+#: admin/editpage.php:189
+msgid "Manage Downloads"
+msgstr "Gestionar descargas"
+
+#: admin/editpage.php:197
+msgid "Select Panorama(s)"
+msgstr "Seleccionar panorámica"
+
+#: admin/editpage.php:201
+msgid "use the Add media button"
+msgstr "Utilizar el botón ADD MEDIA"
+
+#: admin/editpage.php:203
+msgid "above the page window to upload a QTVR file"
+msgstr "Cargar archivo QtVR"
+
+#: admin/editpage.php:211
+msgid "Latitude (eg: 26.123456)"
+msgstr "Latitud (Ej: 26.123456)"
+
+#: admin/editpage.php:217
+msgid "Longitude (eg: -80.123456)"
+msgstr "Longitud (Ej: -80.123)"
+
+#: admin/editpage.php:224
+msgid "This information about the property listing will be used for custom display and searching. You should provide as much information as possible."
+msgstr "	Esta información acerca del inmueble se utilizará para la visualización y búsqueda personalizada. Usted debe proporcionar la mayor información posible."
+
+#: admin/editpage.php:225
+msgid "If you did not intend for this page to be a property listing, change Page Parent (below) and save, and this section should disappear."
+msgstr "Si usted no tiene la intención de que ésta página sea parte del listado, cambie a Página Padre (abajo) y guarde los cambios, y en ésta sección desaparecerá."
+
+#: admin/listings.php:15
+msgid "Manage Listings"
+msgstr "Gestinar listado"
+
+#: admin/listings.php:16
+msgid "All Listings"
+msgstr "Todos los listados"
+
+#: admin/listings.php:21
+msgid "Thumbnail"
+msgstr "Diapositivas"
+
+#: admin/listings.php:22
+msgid "Title"
+msgstr "Título"
+
+#: admin/listings.php:23
+msgid "Status"
+msgstr "Estado"
+
+#: admin/listings.php:24
+msgid "Listed"
+msgstr "Listado"
+
+#: admin/listings.php:35
+msgid "Published"
+msgstr "Publicado"
+
+#: admin/listings.php:35
+msgid "Unpublished"
+msgstr "Sin publicar"
+
+#: admin/listings.php:37
+msgid "View"
+msgstr "Vista"
+
+#: admin/listings.php:39
+msgid "Edit"
+msgstr "Editar"
+
+#: admin/listings.php:46
+msgid "Create a<br /> Gallery"
+msgstr "Crea un salto<br /> Galería"
+
+#: admin/listings.php:70
+msgid "Add a listing"
+msgstr "Agregar a la lista"
+
+#: admin/main.php:6
+msgid "Great Real Estate"
+msgstr "Great Real Estate"
+
+#: admin/main.php:26
+msgid "Real Estate Summary"
+msgstr "Real Estate resumen"
+
+#: admin/main.php:28
+msgid "Listings main page: "
+msgstr "Página utilizada para el listado"
+
+#: admin/main.php:51
+#, php-format
+msgid "You have %d listings: %d available, %d under contract, and %d sold"
+msgstr "Usted tiene %d Listadas: %d Disponibiles, %d En alquiler %d Vendidas"
+
+#: admin/main.php:70
+msgid "Unknown - please check your settings"
+msgstr "Desconocidoo - Por favor revise su selección"
+
+#: admin/main.php:73
+msgid "WARNING - You must select a main Listings page"
+msgstr "ADEVERTENCIA - Usted debe seleccionar una página para los listados"
+
+#: admin/main.php:82
+msgid "Plugin Status"
+msgstr "Estado del plugin"
+
+#: admin/main.php:85
+msgid "Built In Features"
+msgstr "Características de la construcción"
+
+#: admin/main.php:86
+msgid "Featured Homes Widget"
+msgstr "WIDGET Inmuebles destacados"
+
+#: admin/main.php:87
+msgid "Google Maps"
+msgstr "Google Maps"
+
+#: admin/main.php:89
+msgid "Other Plugins"
+msgstr "Otro plugin"
+
+#: admin/main.php:91
+msgid "wordTube (Videos)"
+msgstr "WordTube (Video)"
+
+#: admin/main.php:92
+msgid "FPP-Pano (Panoramas)"
+msgstr "FPP-Pano (Panorama)"
+
+#: admin/main.php:93
+msgid "WP-Downloadmanager"
+msgstr "WP-Downloadmanager"
+
+#: admin/main.php:94
+msgid "Feed Wrangler"
+msgstr "Feed Wrangler"
+
+#: admin/main.php:95
+msgid "Note: The status icon indicates whether a plugin is activated; please make sure you have also made the appropriate settings"
+msgstr "Nota: El icono de estado indica si un plugin está activado, por favor asegúrese de que también han hecho los ajustes apropiados."
+
+#: admin/main.php:105
+msgid "Ready"
+msgstr "Listo"
+
+#: admin/main.php:107
+msgid "Incomplete configuration"
+msgstr "Configuración incompleta"
+
+#: admin/main.php:109
+msgid "Not activated"
+msgstr "Descativado"
+
+#: admin/main.php:111
+msgid "details unavailable"
+msgstr "Detalles no disponibles"
+
+#: admin/main.php:120
+msgid "widget activated"
+msgstr "Widget activado"
+
+#: admin/main.php:123
+msgid "widget not activated"
+msgstr "Widget descativado"
+
+#: admin/main.php:126
+msgid "file not installed"
+msgstr "archivo no instalado"
+
+#: admin/main.php:132
+msgid "Google API key present"
+msgstr "Google API key presente"
+
+#: admin/main.php:135
+msgid "Google API Key not present"
+msgstr "Google API Key no presente"
+
+#: admin/main.php:141
+#: admin/main.php:153
+#: admin/main.php:165
+#: admin/main.php:177
+#: admin/main.php:189
+msgid "plugin activated"
+msgstr "plugin activado"
+
+#: admin/main.php:144
+#: admin/main.php:156
+#: admin/main.php:168
+#: admin/main.php:180
+#: admin/main.php:192
+msgid "plugin not activated"
+msgstr "plugin desactivado"
+
+#: admin/main.php:147
+#: admin/main.php:159
+#: admin/main.php:171
+#: admin/main.php:183
+#: admin/main.php:195
+msgid "plugin not installed"
+msgstr "plugin no instalado"
+
+#: admin/main.php:217
+msgid "Docs &amp; Support"
+msgstr "Docs &amp; Soportado"
+
+#: admin/settings.php:27
+msgid "Main Listings Page"
+msgstr "Página principal de listado"
+
+#: admin/settings.php:29
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: admin/settings.php:29
+msgid "- Select -"
+msgstr "- Seleccionar -"
+
+#: admin/settings.php:31
+msgid "Select the Page to be used as the index to your Listings"
+msgstr "Seleccione la página que utilizará para listar los inmuebles"
+
+#: admin/settings.php:33
+msgid "You will need to make all your Listings Pages subpages of this Page"
+msgstr "Usted necesitará marcar todas sus páginas de inmuebles como Subpáginas de ésta."
+
+#: admin/settings.php:38
+msgid "Listings Summary"
+msgstr "Resumen de listado"
+
+#: admin/settings.php:42
+msgid "Check to generate a default summary of your listings on your Listings Page (uncheck if you are using a custom template for your index page)"
+msgstr "Marque esta opción para generar un resumen de los anuncios en su Listado de inmuebles (desmarque si está usando una plantilla personalizada)."
+
+#: admin/settings.php:47
+msgid "Individual Listings Pages"
+msgstr "Pagina de listado individual"
+
+#: admin/settings.php:51
+msgid "Check to generate the default tabbed interface on each Listing Page (uncheck if you are using a custom template for your listings)"
+msgstr "Marque para generar el interfaz con pestañas por defecto en cada Página de anunco  (desmaruqe si estás utilizando una plantilla personalizada para tus anuncios)"
+
+#: admin/settings.php:56
+msgid "Google API Key"
+msgstr "Google API Key"
+
+#: admin/settings.php:60
+msgid "Paste your domain's <a title=\"get a Google API key\" href=\"http://code.google.com/apis/maps/signup.html\">Google API key</a> here to enable map displays for your listings"
+msgstr "Indique su dominio <a title=\"get a Google API key\" href=\"http://code.google.com/apis/maps/signup.html\">Google API key</a> para permitirmostrar la ubicación en mapa."
+
+#: admin/settings.php:65
+msgid "Maximum Listings Featured"
+msgstr "Maximizar características"
+
+#: admin/settings.php:69
+msgid "The default maximum number of featured listings, if not specified elsewhere"
+msgstr "El número máximo predeterminado de las listas de características, si no se especifica en otros lugares"
+
+#: admin/settings.php:74
+msgid "Add Plugin CSS"
+msgstr "Adicionar plugin CSS"
+
+#: admin/settings.php:78
+msgid "Check to use the plugin's default styling - uncheck if you have added your own style rules to your theme's <code>style.css</code> file (recommended)"
+msgstr "Marque para utilizar el estilo por defecto del plugin - desmarque si ha añadido sus propias normas de estilo a su tema de <code> style.css </ code> (recomendado)"
+
+#: admin/settings.php:83
+msgid "Enable \"No Branding\" option"
+msgstr "Activado \"Sin marcar\" opción"
+
+#: admin/settings.php:87
+msgid "Check to allow <code>/nobrand/something/</code> to be added to a Page URL to remove navigation (Please copy <code>nobrand.css</code> to your theme directory and customize it)"
+msgstr "Compruebe que permita <code> / sin marcar / algo / </ code> para añadir a una URL de la página para eliminar la navegación (Por favor copie <code> nobrand.css </ code> a su directorio tema y personalizarlo)"
+
+#: admin/settings.php:93
+msgid "Listing Feeds (RSS)"
+msgstr "Lista Feed (RSS)"
+
+#: admin/settings.php:99
+msgid "Feed Title"
+msgstr "Título feed"
+
+#: admin/settings.php:103
+msgid "e.g.: John Smith Listings, John Smith Homes For Sale, etc."
+msgstr "por ejemplo: Listados de Swits, Swits propiedadesi en venta, etc"
+
+#: admin/settings.php:112
+msgid "A snappy summary of what is in the listings feed"
+msgstr "Un resumen de lo que está en los listados de los FEEDS"
+
+#: admin/settings.php:117
+msgid "Brokerage Name"
+msgstr "Nombre de la inmobiliaria"
+
+#: admin/settings.php:121
+msgid "The name of the real estate brokerage holding the listings"
+msgstr "El nombre del gerente"
+
+#: admin/settings.php:126
+msgid "Agent Name"
+msgstr "Nombre del vendedor"
+
+#: admin/settings.php:130
+msgid "The name of the listing real estate agent"
+msgstr "El nombre del agente inmobiliario"
+
+#: admin/settings.php:135
+msgid "Agent Phone"
+msgstr "Teléfono del agente"
+
+#: admin/settings.php:139
+msgid "The listing real estate agent's phone number"
+msgstr "Teléfono de la inmobiliaria"
+
+#: admin/settings.php:144
+msgid "MLS Name"
+msgstr "Nombre MLS"
+
+#: admin/settings.php:148
+msgid "The name of the Multiple Listing Service"
+msgstr "Nombre MLS"
+
+#: admin/settings.php:158
+msgid "Update Options "
+msgstr "Actualizar opciones"
+
+#: interfaces/interface-nggallery.php:48
+msgid "property photo"
+msgstr "Foto de la propiedad"
+
