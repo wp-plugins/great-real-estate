@@ -3,7 +3,7 @@
 Plugin Name: Great Real Estate
 Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Description: The Real Estate plugin for Wordpress
-Version: 1.2.1
+Version: 1.3.0
 Author: Roger Theriault
 Author URI: http://RogerTheriault.com/agents/
 */
@@ -31,17 +31,7 @@ Author URI: http://RogerTheriault.com/agents/
 /*
  * changelog
  *
- * version 1.2.1
- * [2008-12-16] Added compatibility with NextGen Gallery version 1.0+
- * version 1.2
- * [2008-12-14] After WP 2.6, get default WP supplied jQuery ui and tabs
- * [2008-08-02] included widget file; widget now installed automatically and no longer has a separate (confusing) entry in the plugins list
- * Version 1.1
- * [2008-07-27] updated for WP2.6
- * 		added localization (correctly)
- * Version 1.01
- * [2008-06-27] added shortcode handler for featured listings block
- * Version 1.0 (original)
+ * see readme.txt
  *
  */
 
@@ -77,6 +67,7 @@ $wpdb->gre_listings = $wpdb->prefix . "greatrealestate_listings";
 define( 'IS_WP25', version_compare( $wp_version, '2.4', '>=' ) );
 define( 'IS_WP26', version_compare( $wp_version, '2.6', '>=' ) );
 define( 'IS_WP27', version_compare( $wp_version, '2.7', '>=' ) );
+define( 'IS_WP28', version_compare( $wp_version, '2.8', '>=' ) );
 
 
 //This works only in WP2.5 or higher
@@ -143,19 +134,14 @@ function greatrealestate_add_javascript( ) {
 	// (workaround: append to API key in Real Estate / Settings)
 	if ( $googlekey ) {
 		$googlepath = "http://www.google.com/jsapi?key=" . $googlekey;
-		wp_enqueue_script( 'google', $googlepath, FALSE );
-		wp_enqueue_script( 'google-gre', GRE_URLPATH . 'js/google.gre.js', array( 'google' ), '0.1.0' );
-	}
-	if (! IS_WP26) { // pre-2.6 jquery includes
-		wp_enqueue_script( 'jquery-ui', GRE_URLPATH . 'js/ui.core.js', array( 'jquery' ) );
-		wp_enqueue_script( 'jquery-ui-tabs', GRE_URLPATH . 'js/ui.tabs.js', array( 'jquery' ) );
-	} else {
-		wp_enqueue_script( 'jquery-ui-core' );
+		wp_enqueue_script( 'google', $googlepath, FALSE, false, true );
+		wp_enqueue_script( 'google-gre', GRE_URLPATH . 'js/google.gre.js', array( 'google','jquery','jquery-ui-core','jquery-ui-tabs' ), '0.1.0', true );
+	} else {
 		wp_enqueue_script( 'jquery-ui-tabs' );
 	}
 
 }
-add_action( 'wp_print_scripts', 'greatrealestate_add_javascript' );
+add_action( 'wp_enqueue_scripts', 'greatrealestate_add_javascript' );
 
 
 function greatrealestate_add_headerincludes( ) {
@@ -174,11 +160,16 @@ function greatrealestate_add_headerincludes( ) {
 	// NOTE: GMaps requires a "kick" after being unhidden;
 	// the timeout gives the browser a few seconds to start displaying
 	// the map, otherwise GMaps will not receive its "kick"
+}
+add_action( 'wp_head', 'greatrealestate_add_headerincludes', 90 );
+
+function greatrealestate_add_footerjs() {
+	echo "\n<!-- great-real-estate -->\n";
 ?>
 <script type="text/javascript">
 /* <![CDATA[ */
 jQuery(document).ready(function() {
-   jQuery('#listing-container > ul').tabs();
+   jQuery('#listing-container').tabs();
    jQuery('a[href=#map]').bind('click',fixMap);
 
    function fixMap(event) {
@@ -189,9 +180,8 @@ jQuery(document).ready(function() {
 /* ]]> */
 </script>
 <?php
-	echo "\n<!-- end great-real-estate -->\n";
 }
-add_action( 'wp_head', 'greatrealestate_add_headerincludes', 90 );
+add_action( 'wp_footer', 'greatrealestate_add_footerjs', 90 );
 
 /*********************************************************************
  *

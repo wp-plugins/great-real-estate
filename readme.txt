@@ -2,9 +2,9 @@
 Contributors: RogerTheriault
 Donate link: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Tags: real estate,ajax,listings,real,estate,homes
-Requires at least: 2.5
-Tested up to: 2.7
-Stable tag: 1.2.1
+Requires at least: 2.8
+Tested up to: 2.8.2
+Stable tag: 1.3.0
 
 Great Real Estate provides functionality to turn your WordPress installation into a content managed real estate website.
 
@@ -60,7 +60,7 @@ Quick Start - See website for more detailed info
 == Credits ==
 
     Great Real Estate - The Real Estate plugin for WordPress
-    Copyright (C) 2008  Roger Theriault
+    Copyright (C) 2008, 2009  Roger Theriault
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -76,3 +76,29 @@ Quick Start - See website for more detailed info
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+== Changelog ==
+
+= 1.3.0 =
+* [2009-07-27] support for WP 2.8 (requires WordPress 2.8)
+* moved the JS scripts to the page footer
+* changed invocation of tabs to conform to jQuery 1.3.x (target the parent div instead of > ul) 
+* changed checking for NextGen version to be more compatible with PHP 5.0.x
+* additional localizations: German, Spanish, French, Italian, and Russian supported now
+* support WP Download Manager version 1.5 (Files with permission "Everyone" were hidden)
+
+= 1.2.1 =
+ * [2008-12-16] Added compatibility with NextGen Gallery version 1.0+
+ 
+= 1.2 =
+ * [2008-12-14] After WP 2.6, get default WP supplied jQuery ui and tabs
+ * [2008-08-02] included widget file; widget now installed automatically and no longer has a separate (confusing) entry in the plugins list
+ 
+= 1.1 =
+ * [2008-07-27] updated for WP2.6
+ * 		added localization (correctly)
+ 
+= 1.01 =
+ * [2008-06-27] added shortcode handler for featured listings block
+ 
+= 1.0 =
+ * (original)

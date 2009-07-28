@@ -11,7 +11,7 @@
  * [2008-08-05] added function returns if db table not there
  */
 
-if (!(class_exists('nggallery') || class_exists('nggGallery'))) return;
+if (! (class_exists('nggallery') || class_exists('nggGallery')) ) return;
 
 // USE THESE FUNCTIONS
 function get_listing_gallerydropdown($currid = '') {
@@ -58,7 +58,7 @@ function nextgengallery_showfirstpic($galleryid, $class = '') {
 	if ($class) $myclass = ' class="'.$class.'" ';
 	if ($picturelist) { 
 		$pid = $picturelist[0]->pid;
-		if (method_exists('nggGallery','get_thumbnail_url')) {
+		if (is_callable(array('nggGallery','get_thumbnail_url'))) {
 			// new NextGen 1.0+
 			$out = '<img alt="' . __('property photo') . '" src="' . nggGallery::get_thumbnail_url($pid) . '" ' . $myclass . ' />';
 		} else {

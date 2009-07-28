@@ -56,7 +56,7 @@ div.gre-widget-holder {
 }
 #gre-dashboard-main {
 	float: left;
-	width: 700px;
+	min-width: 500px;
 	margin: 0px;
 	padding: 0px;
 	margin-bottom: 20px;

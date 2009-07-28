@@ -1,10 +1,10 @@
 
 
 
-Known Issues (version 1.2)
+Known Issues (version 1.3)
 
-[2007-07-16] the tabbed interface may caouse navigation oddities when combined with paged thumbnails in the gallery. To avoid this, you can disable the paging in the gallery (ie display all thumbnails on one page). A future release will allow disabling of the tabs.
-[2007-07-16] form validation of fractional fields complains about decimals without a leading zero. (eg: .25 acres)
+[2007-07-16] the tabbed interface may cause navigation oddities when combined with paged thumbnails in the gallery. To avoid this, you can disable the paging in the gallery (ie display all thumbnails on one page). A future release will allow disabling of the tabs.
+[2007-07-16] form validation of fractional fields complains about decimals without a leading zero. (eg: .25 acres) - use 0.25 instead
 [2008-06-25] the Inline Google Maps plugin conflicts with this plugin. Symptoms include the map marker not displaying.
 - UPDATE/INSERT code needs to be more robust
 
@@ -12,7 +12,7 @@ TODO List
 - lengthier documentation; tutorials
 - detect user templates and redirect first before using filters
 
-FEATURES COMING SOON
+FEATURES COMING SOME DAY
 - additional choices and options for featured homes widget
 - shortcodes and editor insert button for featured homes
 - custom map markers for each status
@@ -25,6 +25,7 @@ FEATURES COMING SOON
 - filter listings by status and published/unpublished on Listings admin
 - icons to show map, download, gallery, video, panorama on the Listings admin
 - allow user customization of widget code
+- paginate the listings index page
 
 REPORT BUGS and FEATURE REQUESTS at http://rogertheriault.com/forums/
 

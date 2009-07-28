@@ -1,7 +1,7 @@
 <?php
 
 # check for plugin wp-downloadmanager 
-if (!function_exists('showdownload_embedded')) return;
+if (!function_exists('download_shortcode')) return;
 
 // CALL THESE
 function get_listing_downloaddropdown($currid = '', $cat = '') {
@@ -28,7 +28,7 @@ function get_downloadmanager_dropdown($currid = '',$cat = '') {
 	if ($cat) {
 		$cat_sel = " AND file_category = '" . intval($cat) . "' ";
 	}
-	$files = $wpdb->get_results("SELECT * FROM $wpdb->downloads WHERE file_permission != -1 ${cat_sel} ORDER BY 'file_name' ASC ");
+	$files = $wpdb->get_results("SELECT * FROM $wpdb->downloads WHERE file_permission != -2 ${cat_sel} ORDER BY 'file_name' ASC ");
 	if($files) {
 		foreach($files as $file) {
 			echo '<option value="'.$file->file_id.'" ';
@@ -40,12 +40,7 @@ function get_downloadmanager_dropdown($currid = '',$cat = '') {
 
 function downloadmanager_showdownloadlink($id = '0') {
 	if ($id == '0') return;
-	$ids = explode(',', $id);
-	if (is_array($ids)) {
-		return download_embedded($ids, 'both');
-	} else {
-		return download_embedded($id, 'both');
-	}
+	return download_shortcode( array('id' => $id, 'display' => 'both') );
 }
 
 ?>

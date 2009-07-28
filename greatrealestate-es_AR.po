@@ -123,7 +123,7 @@ msgstr "Sup. total en mts."
 
 #: privatefunctions.php:152
 msgid " Acres"
-msgstr "Hectareas"
+msgstr "Hectareasi"
 
 #: privatefunctions.php:153
 #: privatefunctions.php:320
@@ -199,7 +199,7 @@ msgstr "a"
 #: templatefunctions.php:68
 #: templatefunctions.php:73
 msgid "$"
-msgstr "&#8364;"
+msgstr "$"
 
 #: templatefunctions.php:306
 msgid "Property description"
@@ -462,7 +462,7 @@ msgstr "Seleccione una galería"
 #: admin/editpage.php:171
 #: admin/main.php:90
 msgid "NextGen Gallery"
-msgstr "Galleria de NextGen"
+msgstr "Galleria di NextGen"
 
 #: admin/editpage.php:172
 msgid "Leave page and manage galleries"
@@ -522,7 +522,7 @@ msgstr "Latitud (Ej: 26.123456)"
 
 #: admin/editpage.php:217
 msgid "Longitude (eg: -80.123456)"
-msgstr "Longitud (Ej: -80.123456)"
+msgstr "Longitud (Ej: -80.123)"
 
 #: admin/editpage.php:224
 msgid "This information about the property listing will be used for custom display and searching. You should provide as much information as possible."
@@ -534,7 +534,7 @@ msgstr "Si usted no tiene la intención de que ésta página sea parte del lista
 
 #: admin/listings.php:15
 msgid "Manage Listings"
-msgstr "Gestionar listado"
+msgstr "Gestinar listado"
 
 #: admin/listings.php:16
 msgid "All Listings"
@@ -599,7 +599,7 @@ msgstr "Usted tiene %d Listadas: %d Disponibiles, %d En alquiler %d Vendidas"
 
 #: admin/main.php:70
 msgid "Unknown - please check your settings"
-msgstr "Desconocido - Por favor revise su selección"
+msgstr "Desconocidoo - Por favor revise su selección"
 
 #: admin/main.php:73
 msgid "WARNING - You must select a main Listings page"
@@ -667,7 +667,7 @@ msgstr "Widget activado"
 
 #: admin/main.php:123
 msgid "widget not activated"
-msgstr "Widget desactivado"
+msgstr "Widget descativado"
 
 #: admin/main.php:126
 msgid "file not installed"
@@ -788,7 +788,7 @@ msgstr "Título feed"
 
 #: admin/settings.php:103
 msgid "e.g.: John Smith Listings, John Smith Homes For Sale, etc."
-msgstr "por ejemplo: Listados de Swits, Swits propiedades en venta, etc"
+msgstr "por ejemplo: Listados de Swits, Swits propiedadesi en venta, etc"
 
 #: admin/settings.php:112
 msgid "A snappy summary of what is in the listings feed"
