@@ -134,8 +134,8 @@ function greatrealestate_add_javascript( ) {
 	// (workaround: append to API key in Real Estate / Settings)
 	if ( $googlekey ) {
 		$googlepath = "http://www.google.com/jsapi?key=" . $googlekey;
-		wp_enqueue_script( 'google', $googlepath, FALSE, false, true );
-		wp_enqueue_script( 'google-gre', GRE_URLPATH . 'js/google.gre.js', array( 'google','jquery','jquery-ui-core','jquery-ui-tabs' ), '0.1.0', true );
+		wp_enqueue_script( 'google', $googlepath, FALSE, false, false );
+		wp_enqueue_script( 'google-gre', GRE_URLPATH . 'js/google.gre.js', array( 'google','jquery','jquery-ui-core','jquery-ui-tabs' ), '0.1.0', false );
 	} else {
 		wp_enqueue_script( 'jquery-ui-tabs' );
 	}
