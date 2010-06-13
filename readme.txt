@@ -2,9 +2,9 @@
 Contributors: RogerTheriault
 Donate link: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Tags: real estate,ajax,listings,real,estate,homes
-Requires at least: 2.8
-Tested up to: 2.8.2
-Stable tag: 1.3.1
+Requires at least: 3.0
+Tested up to: 3.0
+Stable tag: 1.4
 
 Great Real Estate provides functionality to turn your WordPress installation into a content managed real estate website.
 
@@ -41,10 +41,19 @@ Very detailed documentation is be available at the Plugin home page at http://ww
 
 The plugin author has set up a Forum for support questions and announcements at http://www.rogertheriault.com/forums/
 
+Please don't email the plugin author directly for support, please use the forums - so that other users can also benefit from the questions and answers.
+
 = What are the template tags I can use? =
 
 generally, they are the functions in the PHP file templatefunctions.php. But please visit the plugin homepage for complete details on all the tags, and how you can use them in The WordPress Loop.
 
+= How can I change the currency? =
+
+Simply create a localization file for your language and/or locale. You can use the existing translation files as a staring point.
+
+= Can I change X, Y, or Z? =
+
+Probably. See the website tutorial on customizing templates. Avoid changing the core code.
 
 == Installation ==
 
@@ -60,7 +69,7 @@ Quick Start - See website for more detailed info
 == Credits ==
 
     Great Real Estate - The Real Estate plugin for WordPress
-    Copyright (C) 2008, 2009  Roger Theriault
+    Copyright (C) 2008-2010  Roger Theriault
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -77,6 +86,11 @@ Quick Start - See website for more detailed info
 
 
 == Changelog ==
+
+= 1.4 ==
+* [2010-06-12] support for WP 3.0 (requires WordPress 3.0)
+* updated links to edit and add listings in Admin area
+* updated the jquery Validation plugin to 1.7
 
 = 1.3.1 =
 * moved JS scripts back to head because of google maps

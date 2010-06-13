@@ -1,5 +1,11 @@
 Changelog for Great-Real-Estate
 
+v1.4
+[2010-06-12] Maintenance release to support WP 3.0. Do not install on 2.9 or earlier!
+[symptoms: bad Add/Edit Listing links, updated the jquery validation plugin, removed deprecated plugins]
+
+----------------------------------------------------------------------
+
 v1.2.1
 [2008-12-16] Maintenance release to support NextGen Gallery version 1.0+
 (symptom: missing thumbnails, dashboard not recognizing installed plugin)
