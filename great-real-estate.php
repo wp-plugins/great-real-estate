@@ -3,7 +3,7 @@
 Plugin Name: Great Real Estate
 Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Description: The Real Estate plugin for Wordpress
-Version: 1.3.1
+Version: 1.4
 Author: Roger Theriault
 Author URI: http://RogerTheriault.com/agents/
 */
