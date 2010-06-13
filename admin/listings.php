@@ -36,7 +36,7 @@ function greatrealestate_admin_listings() {
 		echo "<br />";
 		echo '<a href="' . get_permalink($post) . '">' . __('View','greatrealestate') . '</a>';
 		echo "<br />";
-		echo '<a href="' . get_option('wpurl') . "page.php?action=edit&amp;post=" . $post->ID . '">' . __('Edit','greatrealestate') . '</a>';
+		echo '<a href="' . get_option('wpurl') . "post.php?action=edit&amp;post=" . $post->ID . '">' . __('Edit','greatrealestate') . '</a>';
 	      	echo "</td>";
 		echo "<td>";
 		if ($post->galleryid) {
@@ -67,7 +67,7 @@ function greatrealestate_admin_listings() {
 	</table>
 
 	<ul class="subsubsub">
-	<li><a href="<?php get_option('wpurl'); ?>page-new.php"><?php _e('Add a listing','greatrealestate'); ?></a></li>
+	<li><a href="<?php get_option('wpurl'); ?>post-new.php?post_type=page"><?php _e('Add a listing','greatrealestate'); ?></a></li>
 	</ul>
 	</div>
 <?php
