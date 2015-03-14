@@ -1,6 +1,5 @@
 === Great Real Estate ===
-Contributors: RogerTheriault
-Donate link: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
+Contributors: daverod,RogerTheriault
 Tags: real estate,ajax,listings,real,estate,homes
 Requires at least: 3.0
 Tested up to: 3.0
