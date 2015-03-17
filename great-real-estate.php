@@ -4,7 +4,7 @@ Plugin Name: Great Real Estate
 Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
 Description: The Real Estate plugin for Wordpress
 Version: 1.4
-Author: Roger Theriault
+Author: Dave Rodenbaugh
 Author URI: http://RogerTheriault.com/agents/
 */
 
@@ -136,7 +136,8 @@ function greatrealestate_add_javascript( ) {
 		$googlepath = "http://www.google.com/jsapi?key=" . $googlekey;
 		wp_enqueue_script( 'google', $googlepath, FALSE, false, false );
 		wp_enqueue_script( 'google-gre', GRE_URLPATH . 'js/google.gre.js', array( 'google','jquery','jquery-ui-core','jquery-ui-tabs' ), '0.1.0', false );
-	} else {
+	}
+ else {
 		wp_enqueue_script( 'jquery-ui-tabs' );
 	}
 
