@@ -1,5 +1,5 @@
 === Great Real Estate ===
-Contributors: daverod, RogerTheriault
+Contributors: daverod
 Tags: real estate,ajax,listings,real,estate,homes
 Requires at least: 3.0
 Tested up to: 3.0
@@ -68,7 +68,8 @@ Quick Start - See website for more detailed info
 == Credits ==
 
     Great Real Estate - The Real Estate plugin for WordPress
-    Copyright (C) 2008-2010  Roger Theriault
+    Copyright (C) 2008-2015 D. Rodenbaugh  
+    Originally created by Roger Theriault.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
