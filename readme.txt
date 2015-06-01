@@ -12,13 +12,15 @@ Great Real Estate provides functionality to turn your WordPress installation int
 
 == Description ==
 
+[Main Site](http://greatrealestateplugin.com/) | [Support Forum](http://greatrealestateplugin.com/forums/) | [Documentation](http://greatrealestateplugin.com/docs/) | [Showcase](http://greatrealestateplugin.com/showcase/) | [Premium Modules](http://greatrealestateplugin.com/premium-modules/)
+
 Great Real Estate was developed to enable real estate agents, brokers, and realtors to display and manage information about their listings in WordPress pages.
 
 The property information and listing templates allow for consistent display of the property listings across the site. Authors do not need to format the content, they simply enter it into a form.
 
 Widgets and custom page templates permit display of only available homes, only sold homes, a random "featured" home, and a detailed property page for a listing.
 
-This plugin works best if you also use the following plugins:
+= Works best if the following plugins are also installed =
 * NextGen Gallery - to upload, manage, and display property listing photos
 * PanoPress - to display panorama photos in a Flash 360 degree interface ("virtual tours")
 
@@ -29,8 +31,11 @@ You'll need a Trulia, Google Base, and Zillow account to enable feeds.  Google M
 To use the panorama plugin, you'll need to obtain the Flash Panorama Player, appropriately licensed for your domain.  We recommend CuTY.
 
 Please read the documentation carefully... to get the most out of this plugin, you may need to edit some of your theme files, and/or copy files from this folder to your theme folder
+[Documentation Link] (http://greatrealestateplugin.com/docs/
 
-Very detailed documentation is be available: [Documentation Link] (http://greatrealestateplugin.com/docs/)
+For a complete and detailed list of features, please visit:  http://greatrealestateplugin.com/features/
+ 
+Please report any bugs you find via http://greatrealestateplugin.com/forums/  
 
 == Screenshots ==
 
