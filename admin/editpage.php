@@ -28,18 +28,14 @@
 <div class="inside">
 
 <fieldset id="listings1-set">
-<legend><?php _e('Great Real Estate Controls','greatrealestate'); ?></legend>
+    <legend><?php _e('Great Real Estate Controls','greatrealestate'); ?></legend>
 
-<div>
-<p>
-<input tabindex="101"
- type="checkbox" name="listings_featured" id="listings_featured"
-value="featured" <?php echo ( isset( $listing->featured ) && $listing->featured == 'featured') ? 'checked="checked"' : ""; ?> />
-<label for="listings_featured"><?php _e('Featured','greatrealestate'); ?></label>
-<em><?php _e('check to feature this listing','greatrealestate'); ?></em>
-</p>
-
-</div>
+    <div>
+        <input tabindex="101" type="checkbox" name="listings_featured" id="listings_featured" value="featured" <?php echo ( isset( $listing->featured ) && $listing->featured == 'featured') ? 'checked="checked"' : ""; ?> />
+        <label for="listings_featured"><?php echo __( 'Featured', 'greatrealestate' ); ?></label>
+        <br>
+        <em><?php echo __( 'Check this option to have the listing show up in the Featured Widget and above other listings in searches.', 'greatrealestate' ); ?></em>
+    </div>
 </fieldset>
 
 <fieldset id="listings2-set">
@@ -201,31 +197,34 @@ id="listings_featureid" style="height: 10em;" size="5">
 <?php endif; ?>
 </div>
 
-<div>
+<div class="gre-edit-listing-location-fields gre-listing-section">
     <h4><?php _e( 'Location Map', 'greatrealestate' ); ?></h4>
-<p>
-<input tabindex="125" id="listings_latitude" type="text" name="listings_latitude" class="geo-input"
-size="15" value="<?php echo isset( $listing->latitude ) ? $listing->latitude : ''; ?>" />
-<label for="listings_latitude"><?php _e('Latitude (eg: 26.123456)','greatrealestate'); ?></label>
-</p>
 
-<p>
-<input tabindex="126" id="listings_longitude" type="text" name="listings_longitude" class="geo-input" 
-size="15" value="<?php echo isset( $listing->longitude ) ? $listing->longitude : ''; ?>" />
-<label for="listings_longitude" class="selectit"><?php _e('Longitude (eg: -80.123456)','greatrealestate'); ?></label>
-</p>
+    <p>
+        <label for="listings_latitude"><?php _e('Latitude: ','greatrealestate'); ?></label>
+        <input tabindex="125" id="listings_latitude" type="text" name="listings_latitude" class="geo-input" size="15" value="<?php echo isset( $listing->latitude ) ? $listing->latitude : ''; ?>" placeholder="26.123456" />
+        <br>
+        <label for="listings_longitude" class="selectit"><?php _e('Longitude:','greatrealestate'); ?></label>
+        <input tabindex="126" id="listings_longitude" type="text" name="listings_longitude" class="geo-input" size="15" value="<?php echo isset( $listing->longitude ) ? $listing->longitude : ''; ?>" placeholder="-80.123456" />
+    </p>
+    <p>
+        <?php echo __( 'The Lat/Long location of the marker that identifies this property on a Google Map.', 'greatrealestate' ); ?>
+    </p>
 </div>
 
 </div>
-</fieldset>
 
 <?php
 echo gre_render( GRE_FOLDER . 'admin/templates/downloads.tpl.php', array( 'listing_id' => get_the_ID(),
                                                                           'downloads' => gre_get_listing_downloads() ) );
 ?>
+</fieldset>
 
 <p><?php _e('This information about the property listing will be used for custom display and searching. You should provide as much information as possible.','greatrealestate'); ?><br />
 <em><?php _e('If you did not intend for this page to be a property listing, change Page Parent (below) and save, and this section should disappear.','greatrealestate'); ?></em></p>
+
+    <?php echo gre_edit_listing_submit_button(); ?>
+
 </div>
 </div>
 

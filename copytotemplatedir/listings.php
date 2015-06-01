@@ -69,7 +69,7 @@ if (function_exists(get_pages_with_active_listings)) {
 	<?php if (get_listing_garage()) 
 		$line1 .= "<div>" . get_listing_garage() . " Garage Spaces</div>"; ?>
 	<?php if (get_listing_acsf()) 
-		$line2 .= "<div>" . get_listing_acsf() ." Sq/Ft Under Air</div>"; ?>
+		$line2 .= "<div>" . get_listing_acsf() ." Sq/Ft Living</div>"; ?>
 	<?php if (get_listing_totsf()) $line2 .= "<div>" .get_listing_totsf(). " Sq/Ft Total</div>"; ?>
 	<?php if (get_listing_acres()) $line2 .= "<div>" .get_listing_acres()." Acres</div>"; ?>
 	<?php if (get_listing_haspool()) $line3 .= "<div>Private Pool</div>"; ?>

@@ -1,9 +1,9 @@
 <div id="gre-listing-downloads" class="gre-listing-section" data-listing-id="<?php echo $listing_id; ?>">
 
-<h4><?php _ex( 'Downloads', 'admin/listings', 'greatrealestate' ); ?></h4>
+<h4><?php _ex( 'Attachments for the listing', 'admin/listings', 'greatrealestate' ); ?></h4>
 
 <p class="no-downloads-msg" style="<?php echo ( ! empty( $downloads ) ? 'display: none;' : '' ); ?>">
-<?php _ex( 'No downloads.', 'admin/listings', 'greatrealestate' ); ?>
+<?php _ex( 'No attachments.', 'admin/listings', 'greatrealestate' ); ?>
 </p>
 
 <ul class="downloads">
@@ -13,6 +13,9 @@
 </ul>
 
 <a href="#TB_inline?width=200&height=200&inlineId=gre-listing-downloads-add" class="add-file button thickbox"><?php _ex( '↑ Upload File', 'admin/listings', 'greatrealestate' ); ?></a>
+
+<p><?php echo __( 'You can put additional information on the listing, such as a PDF flyer to download or more images, or a business card for your agency.', 'greatrealestate' ); ?></p>
+
 <div id="gre-listing-downloads-add" style="display: none;">
     <div class="gre-listing-downloads-add">
         <h3><?php _ex( 'Upload File', 'admin/listings', 'greatrealestate' ); ?></h3>

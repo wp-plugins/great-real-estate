@@ -29,7 +29,7 @@ Template Name: Listing Page
 	<?php if ($garage = get_listing_garage()) 
 		$line1 .= "<div>$garage Garage Spaces</div>"; ?>
 	<?php if ($acsf = get_listing_acsf()) 
-		$line2 .= "<div>$acsf Sq/Ft Under Air</div>"; ?>
+		$line2 .= "<div>$acsf Sq/Ft Living</div>"; ?>
 	<?php if ($totsf = get_listing_totsf()) 
 		$line2 .= "<div>$totsf Sq/Ft Total</div>"; ?>
 	<?php $acres = get_listing_acres(); ?>

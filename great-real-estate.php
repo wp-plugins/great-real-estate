@@ -1,9 +1,15 @@
 <?php
 /*
  * Plugin Name: Great Real Estate
+<<<<<<< HEAD
  * Plugin URI: http://greatrealestateplugin.com
  * Description: Adds the ability to create and manage real estate listings in your WordPress site
  * Version: 1.5
+=======
+ * Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
+ * Description: The Real Estate plugin for Wordpress
+ * Version: 1.5-dev-4
+>>>>>>> 2aef6f9ed4448a6141d4afef7024a1252cf62c91
  * Author: Dave Rodenbaugh
  * Author URI: http://greatrealestateplugin.com
  * License: GPLv2 or any later version
@@ -90,6 +96,7 @@ require_once( GRE_FOLDER . 'core/class-settings.php' );
 require_once( GRE_FOLDER . 'core/compat.php' );
 
 require_once( GRE_FOLDER . 'admin/class-listings-table.php' );
+require_once( GRE_FOLDER . 'admin/utils.php' );
 
 require_once( GRE_FOLDER . 'debugging.php' );
 require_once( GRE_FOLDER . 'feeds.php' );

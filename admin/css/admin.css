@@ -1,12 +1,3 @@
-.gre-listing-section {
-    padding: 0 20px 0 5px;
-}
-
-.gre-listing-section h4 {
-    margin-left: -5px;
-}
-
-
 #gre-listing-downloads ul.downloads li {
     padding: 4px 0;
     border-bottom: solid 1px #efefef;
@@ -35,4 +26,22 @@
 
 .gre-listings-table .column-thumbnail img {
     width: 100%;
+}
+
+
+/* Edit Listing
+ --------------------------------------------------------------------------- */
+
+.gre-listing-section {
+    margin-top: 30px;
+}
+.gre-listing-section h4 {
+}
+
+.gre-edit-listing-location-fields label {
+    display: inline-block;
+    width: 70px;
+}
+.gre-edit-listing-location-fields input {
+    width: 150px;
 }

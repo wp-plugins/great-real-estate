@@ -18,10 +18,21 @@ function get_listing_gallerydropdown($currid = '') {
 	// generates option list for edit dialogs
 	get_nextgengallery_dropdown($currid);
 }
+
+
+/**
+ * Inserts IMG tag for thumbnail.
+ */
 function listings_showfirstpic($galleryid,$class = '') {
-	// inserts IMG tag for thumbnail
-	return nextgengallery_showfirstpic($galleryid,$class);
+	$image = nextgengallery_showfirstpic( $galleryid, $class );
+
+	if ( empty( $image ) && gre_get_option( 'show-no-photo-available-message', true ) ) {
+		return '<span class="gre-no-photo-available">' . __( 'No photo available', 'greatrealestate' ) . '</span>';
+	} else {
+		return $image;
+	}
 }
+
 function listings_nggshowgallery($galleryid) {
 	if ( ! $galleryid ) {
 		return;

@@ -95,7 +95,7 @@ function get_listing_hasfeature($featureid) {
  * @since 1.5
  */
 function gre_render_default_listings_page() {
-    include( GRE_FOLDER . 'copytotemplatedir/great-real-estate/listings-page-content.php' );
+    include( GRE_FOLDER . 'theme/great-real-estate/listings-page-content.php' );
 }
 
 
@@ -103,7 +103,7 @@ function gre_render_default_listings_page() {
  * @since 1.5
  */
 function gre_render_default_listing_page() {
-    include( GRE_FOLDER . 'copytotemplatedir/great-real-estate/listing-page-content.php' );
+    include( GRE_FOLDER . 'theme/great-real-estate/listing-page-content.php' );
 }
 
 #####################################################################
@@ -162,7 +162,7 @@ function greatrealestate_defaultlistingindex() {
 		$line1 .= "<div>" . get_listing_garage() . __(' Garage Spaces','greatrealestate') . "</div>"; ?>
 	<?php if (get_listing_acsf()) 
 		$line2 .= "<div>" . get_listing_acsf() . 
-			__(' Sq/Ft Under Air','greatrealestate') . "</div>"; ?>
+			__(' Sq/Ft Living','greatrealestate') . "</div>"; ?>
 	<?php if (get_listing_totsf()) $line2 .= "<div>" .get_listing_totsf(). 
 		__(' Sq/Ft Total','greatrealestate') . "</div>"; ?>
 	<?php if (get_listing_acres()) $line2 .= "<div>" .get_listing_acres().
@@ -345,7 +345,7 @@ function greatrealestate_listingdatabox() {
 	if ($garage = get_listing_garage()) 
 		$line1 .= "<div>$garage " . __('Garage Spaces','greatrealestate') . "</div>"; 
 	if ($acsf = get_listing_acsf()) 
-		$line2 .= "<div>$acsf " . __('Sq/Ft Under Air','greatrealestate') . "</div>"; 
+		$line2 .= "<div>$acsf " . __('Sq/Ft Living','greatrealestate') . "</div>"; 
 	if ($totsf = get_listing_totsf()) 
 		$line2 .= "<div>$totsf " . __('Sq/Ft Total','greatrealestate') . "</div>"; 
 	$acres = get_listing_acres();
