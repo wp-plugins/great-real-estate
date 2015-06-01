@@ -1,22 +1,19 @@
 <?php
 /*
  * Plugin Name: Great Real Estate
- * Plugin URI: http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
- * Description: The Real Estate plugin for Wordpress
- * Version: 1.5-dev-3
+ * Plugin URI: http://greatrealestateplugin.com
+ * Description: Adds the ability to create and manage real estate listings in your WordPress site
+ * Version: 1.5
  * Author: Dave Rodenbaugh
- * Author URI: http://RogerTheriault.com/agents/
+ * Author URI: http://greatrealestateplugin.com
+ * License: GPLv2 or any later version
  */
 
-/*  Copyright 2008  Roger Theriault  (email : roger@rogertheriault.com)
+/*  Copyright 2008-2015, Skyline Consulting and D. Rodenbaugh
 
-    Great Real Estate - The Real Estate plugin for WordPress
-    Copyright (C) 2008  Roger Theriault
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2 or later, as
+    published by the Free Software Foundation.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -24,18 +21,10 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    reCAPTCHA used with permission of Mike Crawford & Ben Maurer, http://recaptcha.net
 */
-
-/*
- * changelog
- *
- * see readme.txt
- *
- */
-
-
 // STOP DIRECT CALLS
 if( preg_match( '#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'] ) ) { die( 'You are not allowed to call this page directly.' ); }
 
@@ -55,7 +44,7 @@ if ( !defined('WP_CONTENT_DIR') ) {
 	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 }
 
-define( 'GRE_VERSION', '1.5-dev-3' );
+define( 'GRE_VERSION', '1.5' );
 define( 'GRE_FOLDER', plugin_dir_path( __FILE__ ) );
 define( 'GRE_URL', plugin_dir_url( __FILE__ ) );
 
