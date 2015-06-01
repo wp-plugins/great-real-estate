@@ -13,10 +13,9 @@ To get started,
  - when you view the index page (the page slugged "listings") you'll see all your current and former listings
 
 To enhance your listings:
- - install the recommended plugins: NextGen Gallery, WordTube, WP_Downloadmanager
+ - install the recommended plugins: NextGen Gallery.
  - get a Google API key (for the maps - http://code.google.com/apis/maps/signup.html)
  - create a NextGen gallery full of your listing photos, then select the gallery in the "Edit Page" interface for your listing
- - create a WordTube video, then select the video by editing your listing
  - set up some downloadables (PDFs of your property brochure would be nice) and then select these by editing your listing
  - get the lat and long for your property address and add it to the listing (next version will have an easier way to geocode your property)
 

@@ -3,6 +3,11 @@
  *
  */
 
+#gre-main-page-warning a.button-primary {
+    margin-left: 20px;
+}
+
+
 #gre-dashboard-widgets-wrap h5 {
 	font-size: 12px;
 	line-height: 16px;
@@ -118,5 +123,15 @@ h3.gre-dashboard-widget-title, h3.gre-dashboard-widget-title span, h3.gre-dashbo
 	vertical-align: top;
 }
 
+#pagepost-realestate fieldset {
+    margin: 0 0 30px 10px;
+}
 
+#pagepost-realestate fieldset legend {
+    font-weight: bold;
+    margin: 0 0 10px -10px;
+}
 
+#pagepost-realestate .error {
+    color: red;
+}

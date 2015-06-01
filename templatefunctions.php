@@ -79,7 +79,11 @@ function the_listing_saleprice() {
 function get_listing_listdate() {
 	// returns in mm/dd/yyyy format for use with input forms
 	global $listing;
-	return mdy_dateformat($listing->listdate);
+    
+    if ( isset( $listing->listdate ) )
+    	return mdy_dateformat($listing->listdate);
+
+    return '';
 }
 function the_listing_listdate() {
 	// returns in preferred format for end-user displays
@@ -89,7 +93,11 @@ function the_listing_listdate() {
 function get_listing_saledate() {
 	// returns in mm/dd/yyyy format for use with input forms
 	global $listing;
-	return mdy_dateformat($listing->saledate);
+
+    if ( isset( $listing->saledate ) )
+    	return mdy_dateformat($listing->saledate);
+
+    return '';
 }
 function the_listing_saledate() {
 	// returns in preferred format for end-user displays
@@ -152,17 +160,29 @@ function get_listing_galleryid() {
 	return $listing->galleryid;
 }
 
-# Video - uses wordtube
-function get_listing_videoid() {
-	global $listing;
-	return $listing->videoid;
-}
-
 # Downloads - uses WP Download Manager
 # returns a comma separated list
+/**
+ * @deprecated since 1.5. No alternative for now. This is a compatibility function.
+ */
 function get_listing_downloadid() {
-	global $listing;
-	return $listing->downloadid;
+    global $listing;
+
+    $listing_page_id = $listing->pageid;
+
+    if ( ! $listing_page_id )
+        return '';
+
+    $res = '';
+
+    foreach ( gre_get_listing_downloads( $listing_page_id ) as $d ) {
+        $res .= $listing_page_id . '|' . $d->index . ',';
+    }
+
+    if ( $res )
+        $res = substr( $res, 0, -1 );
+
+    return $res;
 }
 
 # Panoramas - Uses Media attachments from current post
@@ -207,7 +227,7 @@ function the_listing_garage() {
 }
 function get_listing_acsf() {
 	global $listing;
-	return number_format($listing->acsf);
+    return $listing->acsf ? number_format( doubleval( $listing->acsf ) ) : '';
 }
 function get_listing_acsf_noformat() {
 	global $listing;
@@ -215,11 +235,11 @@ function get_listing_acsf_noformat() {
 }
 function the_listing_acsf() {
 	global $listing;
-	echo number_format($listing->acsf);
+	echo empty( $listing->acsf ) ? '' : number_format( $listing->acsf );
 }
 function get_listing_totsf() {
 	global $listing;
-	return number_format($listing->totsf);
+	return $listing->totsf ? number_format( doubleval( $listing->totsf ) ) : '';
 }
 function get_listing_totsf_noformat() {
 	global $listing;
@@ -231,7 +251,7 @@ function the_listing_totsf() {
 }
 function get_listing_acres() {
 	global $listing;
-	return number_format($listing->acres,2);
+	return $listing->acres ? number_format( doubleval( $listing->acres ), 2 ) : '';
 }
 function get_listing_acres_noformat() {
 	global $listing;
@@ -239,7 +259,7 @@ function get_listing_acres_noformat() {
 }
 function the_listing_acres() {
 	global $listing;
-	echo number_format($listing->acres,2);
+	echo empty( $listing->acres ) ? '' : number_format( $listing->acres, 2 );
 }
 function get_listing_featureid() {
 	global $listing;
@@ -401,34 +421,29 @@ function the_listing_gallery_content() {
 <h2><?php _e("Photo Gallery"); ?></h2>
    <div><?php listings_nggshowgallery($galleryid); ?></div>
 </div>
+<script type="text/javascript">
+jQuery(function($) {
+    var $link = $( '#listing-container #photogallery .slideshowlink a' );
+    $link.attr( 'href', $link.attr( 'href' ) + '#photogallery' );
+});
+</script>
 <?php
 }
 
 // VIDEOS
 function the_listing_video_tab($before='<li>',$after='</li>') {
-	if (!function_exists('the_listing_wtvideo')) return;
-	if (!get_listing_videoid()) return;
-
-	echo $before;
-	echo '<a href="#videos" title="'.__("Video Walkthrough","greatrealestate") . '" ><span>';
-	_e("Videos","greatrealestate");
-	echo '</span></a>';
-	echo $after;
+	return '';
 }
 function the_listing_video_content() {
-	if (!function_exists('the_listing_wtvideo')) return;
-	if (!($videoid = get_listing_videoid())) return;
-?>
-<div id="videos">
-<h2><?php _e("Video Walkthrough"); ?></h2>
-   <div><?php the_listing_wtvideo($videoid); ?></div>
-</div>
-<?php
+	return '';
 }
 
 // PANORAMAS
 function the_listing_panorama_tab($before='<li>',$after='</li>') {
-	if (!function_exists('show_fpp_panos')) return;
+	if ( ! defined( 'PP_APP_NAME' ) ) {
+		return;
+	}
+
 	if (!get_listing_panoid()) return;
 
 	echo $before;
@@ -438,19 +453,31 @@ function the_listing_panorama_tab($before='<li>',$after='</li>') {
 	echo $after;
 }
 function the_listing_panorama_content() {
-	if (!function_exists('show_fpp_panos')) return;
+	if ( ! defined( 'PP_APP_NAME' ) ) {
+		return;
+	}
+
 	if (!($panoids = get_listing_panoid())) return;
-?>
-<div id="panoramas">
-<h2><?php _e("Panoramas",'greatrealestate'); ?><span id="vr_label"></span></h2>
-<?php
-	show_fpp_panos($panoids); // this is the documented template function
-				// for the fpp-pano plugin
-?>
-</div>
-<?php
+
+	$panorma_attachments_ids = explode( ',', $panoids );
+
+	$output = '<div id="panoramas"><h2><title><span id="vr_label"></span></h2><panoramas></div>';
+	$output = str_replace( '<title>', __( 'Panoramas', 'greatrealestate' ), $output );
+	$output = str_replace( '<panoramas>', gre_render_qtvr_panoramas( $panorma_attachments_ids ), $output );
+
+	echo $output;
 }
 
+function gre_render_qtvr_panoramas( $attachments_ids ) {
+	$shortcodes = array();
+
+	foreach ( $attachments_ids as $attachment_id ) {
+		$attachment_url = wp_get_attachment_url( $attachment_id );
+		$shortcodes[] = sprintf( '[pano file="%s"]', $attachment_url );
+	}
+
+	return do_shortcode( implode( '', $shortcodes ) );
+}
 
 // DOWNLOADS
 function the_listing_downloads_tab($before='<li>',$after='</li>') {
@@ -474,8 +501,6 @@ function the_listing_downloads_content() {
 <?php echo downloadmanager_showdownloadlink($downloadids); ?>
 </div>
 
-<div class="adobe-reader"><a href="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank" title="Download Adobe Reader software" ><img src="<?php echo GRE_URLPATH; ?>/images/get_adobe_reader.gif" alt="Download Adobe Reader" /></a></div>
-
 	<div class="cfloat">&nbsp;</div>
     </div>
 </div>
@@ -488,7 +513,6 @@ function the_listing_downloads_content() {
 // Otherwise, gMaps may not properly initialize and the map
 // will be messed up
 function the_listing_map_tab($before='<li>',$after='</li>') {
-	if (!get_option('greatrealestate_googleAPIkey')) return;
 	if (!get_listing_longitude()) return;
 	if (!get_listing_latitude()) return;
 
@@ -499,35 +523,46 @@ function the_listing_map_tab($before='<li>',$after='</li>') {
 	echo $after;
 }
 function the_listing_map_content() {
-	if (!get_option('greatrealestate_googleAPIkey')) return;
-	if (!get_listing_longitude()) return;
-	if (!get_listing_latitude()) return;
+	if ( ! get_listing_longitude() || ! get_listing_latitude() ) {
+		return;
+	}
+
 	// See the jQuery code in the main great-real-estate.php file
 	// for how to make GMaps work nice with tabbed panels
 	//
 	// TODO - only one function call and a var definition, put the
 	//        rest in the header for cleaner page
-?>
-<div id="map">
-   <h2>Location Map</h2>
-   <div><div id="gre_map_canvas"></div></div>
-<script type="text/javascript">
-/* <![CDATA[ */
-	function gre_setupmap() {
-		var prop_point = new google.maps.LatLng(<?php echo get_listing_latitude(); ?>,<?php echo get_listing_longitude(); ?>);
-		gre_map.setCenter(prop_point, 13);
-		var prop_marker = gre_createMarker(prop_point, '<?php the_listing_js_mapinfo(); ?>');
-		gre_map.addOverlay(prop_marker);
-	}
-	google.load("maps", "2");
-	google.setOnLoadCallback(gre_mapinitialize);
-	
+	wp_localize_script( 'gre-maps', 'gre_listing_map_info', array(
+		'latitude' => floatval( get_listing_latitude() ),
+		'longitude' => floatval( get_listing_longitude() ),
+		'info_window_content' => gre_render_listing_map_popup(),
+	) );
 
-/* ]]> */
-</script>
-</div>
-<?php
+	$output = '<div id="map"><h2><tab-title></h2><div><div id="gre_map_canvas" class="gre-google-map"></div></div></div>';
+	$output = str_replace( '<tab-title>', __( 'Location Map', 'greatrealestate' ), $output );
+
+	echo $output;
 }
+
+/**
+ * @since 1.5
+ */
+function gre_render_listing_map_popup() {
+    if ( get_listing_hasclosed() ) {
+        $listing_price = get_listing_saleprice();
+    } else {
+        $listing_price = get_listing_listprice();
+    }
+
+    $params = array(
+        'listing_price' => $listing_price,
+    );
+
+    $template = GRE_FOLDER . 'core/templates/listing-map-popup.tpl.php';
+
+    return gre_render_template( $template, $params );
+}
+
 // The HTML popup for our listing on gMaps
 function the_listing_js_mapinfo() {
 	// stick in JS, do not add linefeeds, no single quotes!
@@ -595,19 +630,12 @@ function get_listings_featured($maxlistings = '',$sort = 'random',$type = 'basic
 	global $wpdb;
 
 	// handle map type - does not use db call, uses XML feed
-	if (( 'map' == $type ) && 
-	    ( get_option('greatrealestate_googleAPIkey') ) ) {
+	if ( 'map' == $type ) {
 		    $output = <<<ENDOFHTMLBLOCK
 <div id="featuredlistings-map" class="featuredlistings-map">
 <h2>$heading</h2>
-<div id="gre_map_multi"></div>
+<div id="gre_map_multi" class="gre-google-map"></div>
 </div>
-<script type="text/javascript">
-/* <![CDATA[ */
-	google.load("maps", "2");
-	google.setOnLoadCallback(gre_initmultimap);
-/* ]]> */
-</script>
 ENDOFHTMLBLOCK;
 		return $output;
 	}
@@ -705,46 +733,10 @@ function get_pages_with_listings($limit,$sort,$filter) {
 	// limit = none (default), or numeric number of listings eg: 1, 4, etc
 	// sort = title (default), saledate (most recent first), highprice, lowprice, random, listdate (most recent first)
 	// filter = none (default), active, pending, sold, featured
-	
 
 	// determine how to filter
 	// cant specify a table - TODO fix
-	switch ($filter) {
-	case 'allrentals' :
-		$filterclause = 
-    			"AND (status = " . RE_FORRENT . 
-       			" OR status = " . RE_PENDINGLEASE .
-       			" OR status = " . RE_RENTED . " ) ";
-		break;
-	case 'allsales' :
-		$filterclause = 
-    			"AND (status = " . RE_FORSALE . 
-       			" OR status = " . RE_PENDINGSALE .
-       			" OR status = " . RE_SOLD . " ) ";
-		break;
-	case 'active' :
-		$filterclause = 
-    			"AND (status = " . RE_FORSALE . 
-       			" OR status = " . RE_FORRENT . " ) ";
-		break;
-	case 'pending' :
-		$filterclause = 
-    			"AND (status = " . RE_PENDINGSALE . 
-       			" OR status = " . RE_PENDINGLEASE . " ) ";
-		break;
-	case 'sold' :
-		$filterclause = 
-    			"AND (status = " . RE_SOLD . 
-       			" OR status = " . RE_RENTED . " ) ";
-		break;
-	case 'featured' :
-		$filterclause = "AND featured = 'featured'";
-		break;
-	case 'none' :
-	default:
-		$filterclause = "";
-		break;
-	}
+	$filterclause = gre_build_listings_query_conditions( $filter );
 
 	$do_rand_query = false;
 	// determine how to sort
@@ -786,7 +778,7 @@ function get_pages_with_listings($limit,$sort,$filter) {
 	// special handling for a random query - main reason for scaling
 	// inspired from http://www.paperplanes.de/archives/2008/4/24/mysql_nonos_order_by_rand/
 	$randquerystr = "
-		SELECT wposts.*, listings.* 
+		SELECT wposts.*, listings.*, wposts.post_content AS content
 		FROM (
 			SELECT ml.pageid pid
 			FROM $wpdb->posts wp, $wpdb->gre_listings ml 
@@ -805,7 +797,7 @@ function get_pages_with_listings($limit,$sort,$filter) {
 	//$do_rand_query = false; // all the time
 
 	$querystr = "
-    SELECT wposts.*, listings.*
+    SELECT wposts.*, listings.*, wposts.post_content AS content
     FROM $wpdb->posts wposts, $wpdb->gre_listings listings
     WHERE wposts.ID = listings.pageid 
     $filterclause
@@ -819,9 +811,194 @@ function get_pages_with_listings($limit,$sort,$filter) {
 	} else {
 		$pageposts = $wpdb->get_results($querystr, OBJECT);
 	}
+
 	return $pageposts;
 }
 
+/**
+ * @since 1.5
+ */
+function gre_get_random_listings( $count, $filter, $orderby ) {
+    global $wpdb;
+
+    $conditions = gre_build_listings_query_conditions( $filter );
+    $orderby = gre_build_listings_query_order_clause( $orderby );
+
+    $sql = "SELECT posts.*, listings.*, posts.post_content AS content
+            FROM (
+                SELECT l.*
+                FROM {$wpdb->posts} AS p
+                INNER JOIN {$wpdb->gre_listings} AS l
+                ON ( p.ID = l.pageid )
+                WHERE p.post_status = 'publish' AND p.post_type = 'page'
+                $conditions
+                ORDER BY RAND() LIMIT $count
+            ) AS listings
+            INNER JOIN {$wpdb->posts} AS posts
+            ON ( listings.pageid = posts.ID )
+            $orderby";
+
+    return $wpdb->get_results( $sql );
+}
+
+/**
+ * @since 1.5
+ * @access private
+ */
+function gre_build_listings_query_conditions( $filter ) {
+    switch ( $filter ) {
+        case 'allrentals' :
+            $clause =
+                    "AND (status = " . RE_FORRENT .
+                    " OR status = " . RE_PENDINGLEASE .
+                    " OR status = " . RE_RENTED . " ) ";
+            break;
+        case 'allsales' :
+            $clause =
+                    "AND (status = " . RE_FORSALE .
+                    " OR status = " . RE_PENDINGSALE .
+                    " OR status = " . RE_SOLD . " ) ";
+            break;
+        case 'active' :
+            $clause =
+                    "AND (status = " . RE_FORSALE .
+                    " OR status = " . RE_FORRENT . " ) ";
+            break;
+        case 'pending' :
+            $clause =
+                    "AND (status = " . RE_PENDINGSALE .
+                    " OR status = " . RE_PENDINGLEASE . " ) ";
+            break;
+        case 'sold' :
+            $clause =
+                    "AND (status = " . RE_SOLD .
+                    " OR status = " . RE_RENTED . " ) ";
+            break;
+        case 'featured' :
+            $clause = "AND featured = 'featured'";
+            break;
+        case 'none' :
+        default:
+            $clause = "";
+            break;
+    }
+
+    return $clause;
+}
+
+/**
+ * @since 1.5
+ * @access private
+ */
+function gre_build_listings_query_order_clause( $orderby ) {
+    switch ( $orderby ) {
+        case 'listdate':
+            // most recent (newest) listing first
+            $clause = "ORDER BY listdate DESC";
+            break;
+        case 'saledate':
+            // most recent sale first
+            $clause = "ORDER BY saledate DESC";
+            break;
+        case 'highprice':
+            // most expensive first
+            $clause = "ORDER BY listprice DESC";
+            break;
+        case 'lowprice':
+            $clause = "ORDER BY listprice ASC";
+            break;
+        case 'random':
+            $clause = "ORDER BY RAND()";
+            break;
+        case 'title':
+        default:
+            $clause = "ORDER BY post_title ASC";
+            break;
+    }
+
+    return $clause;
+}
+
+/**
+ * @since 1.5
+ * @access public
+ */
+function gre_count_listings( $params ) {
+    global $wpdb;
+
+    $params = gre_parse_listings_query_params( $params );
+    $conditions = gre_build_listings_query_conditions( $params['filter'] );
+    $post_status = gre_build_listings_query_post_status_condition( $params['post_status'] );
+
+    $sql = "SELECT COUNT( DISTINCT posts.ID )
+            FROM {$wpdb->posts} AS posts
+            INNER JOIN {$wpdb->gre_listings} AS listings
+            ON ( listings.pageid = posts.ID )
+            WHERE $post_status AND posts.post_type = 'page'
+            $conditions";
+
+    return intval( $wpdb->get_var( $sql ) );
+}
+
+/**
+ * @since 1.5
+ * @access private
+ */
+function gre_parse_listings_query_params( $params ) {
+    return wp_parse_args( $params, array(
+        'post_status' => array( 'publish' ),
+        'filter' => null,
+        'orderby' => null,
+        'limit' => null,
+        'offset' => null,
+    ) );
+}
+
+/**
+ * @since 1.5
+ * @access private
+ */
+function gre_build_listings_query_post_status_condition( $post_status ) {
+    if ( empty( $post_status ) ) {
+        $condition = '1 = 1';
+    } else {
+        $condition = "posts.post_status IN ('" . implode( "','", $post_status ) . "')";
+    }
+
+    return $condition;
+}
+
+/**
+ * @since 1.5
+ * @access public
+ */
+function gre_get_listings( $params ) {
+    global $wpdb;
+
+    $params = gre_parse_listings_query_params( $params );
+    $conditions = gre_build_listings_query_conditions( $params['filter'] );
+    $orderby = gre_build_listings_query_order_clause( $params['orderby'] );
+    $post_status = gre_build_listings_query_post_status_condition( $params['post_status'] );
+
+    if ( ! empty( $params['limit'] ) && ! empty( $params['offset'] ) ) {
+        $limit = "LIMIT {$params['offset']}, {$params['limit']}";
+    } else if ( ! empty( $params['limit'] ) ) {
+        $limit = "LIMIT {$params['limit']}";
+    } else {
+        $limit = '';
+    }
+
+    $sql = "SELECT posts.*, listings.*
+            FROM {$wpdb->posts} AS posts
+            INNER JOIN {$wpdb->gre_listings} AS listings
+            ON ( listings.pageid = posts.ID )
+            WHERE $post_status AND posts.post_type = 'page'
+            $conditions
+            $orderby
+            $limit";
+
+    return $wpdb->get_results( $sql );
+}
 
 // call this inside the loop to setup $listings with associated data
 function getandsetup_listingdata() {
@@ -854,6 +1031,10 @@ function setup_listingdata($row) {
 
 	global $listing;
 	global $listing_cols;
+
+    if ( ! is_object( $listing ) )
+        $listing = new StdClass();
+
 	// take a query row and save it as a global array we can reference
 	foreach ($row as $key => $value) {
 		// only use valid row names

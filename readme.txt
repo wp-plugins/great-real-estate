@@ -1,15 +1,18 @@
 === Great Real Estate ===
 Contributors: daverod
-Tags: real estate,ajax,listings,real,estate,homes
-Requires at least: 3.0
-Tested up to: 3.0
-Stable tag: 1.4
+Donate link: http://greatrealestateplugin.com/premium-modules/
+Tags: real estate,listings,homes,altos, listing, mortgage calculator, neighborhood, real estate market, realty, schools, trulia, yelp, zillow,MLS, Multiple Listing Service, properties, property, property listing, property management, realtor, RETS, IDX
+Requires at least: 4.0
+Tested up to: 4.2.2
+Last Updated: 2015-Jun-1
+Stable tag: tags/1.5
+License: GPLv2 or later
 
 Great Real Estate provides functionality to turn your WordPress installation into a content managed real estate website.
 
 == Description ==
 
-Great Real Estate was developed to enable real estate agents, brokers, and REALTORS to display and manage information about their listings in WordPress pages.
+Great Real Estate was developed to enable real estate agents, brokers, and realtors to display and manage information about their listings in WordPress pages.
 
 The property information and listing templates allow for consistent display of the property listings across the site. Authors do not need to format the content, they simply enter it into a form.
 
@@ -17,53 +20,53 @@ Widgets and custom page templates permit display of only available homes, only s
 
 This plugin works best if you also use the following plugins:
 * NextGen Gallery - to upload, manage, and display property listing photos
-* WordTube - to upload, manage, and display videos
-* FPP Pano - to display panorama photos in a Flash 360 degree interface ("virtual tours")
-* Feed Wrangler - to enable you to send a listings feed to various websites, such as Googe Base, Trulia, and Zillow
-* WP-DownloadManager - to display and track links to downloadable brochures
+* PanoPress - to display panorama photos in a Flash 360 degree interface ("virtual tours")
 
-You'll also need to get a Google API key to enable the maps display, and a Truilia, Google Base, and Zillow account to enable feeds.
+Feeds for Trulia, Zillow and Yahoo media are integrated into the plugin now!
 
-To use the panorama plugin, you'll need to obtain the Flash Panorama Player, appropriately licensed for your domain.
+You'll need a Trulia, Google Base, and Zillow account to enable feeds.  Google Maps is now supported natively in the plugin but you can use an API key for tracking purposes or a large number of listings (Google has a daily geocoding limit around 100 calls)
+
+To use the panorama plugin, you'll need to obtain the Flash Panorama Player, appropriately licensed for your domain.  We recommend CuTY.
 
 Please read the documentation carefully... to get the most out of this plugin, you may need to edit some of your theme files, and/or copy files from this folder to your theme folder
 
-Very detailed documentation is be available at the Plugin home page at http://www.rogertheriault.com/agents/plugins/great-real-estate-plugin/
+Very detailed documentation is be available: [Documentation Link] (http://greatrealestateplugin.com/docs/)
 
 == Screenshots ==
 
-1. Sample listing page with tabbed navigation
+See our features page for more details and up-to-date screenshots on the application:  [Features Page](http://greatrealestateplugin.com/features/)
 
 == Frequently Asked Questions ==
 
 = How do I get support? =
 
-The plugin author has set up a Forum for support questions and announcements at http://www.rogertheriault.com/forums/
+The plugin author has set up a Forum for support questions and announcements at [the support forum](http://greatrealestateplugin.com/forums/)
 
-Please don't email the plugin author directly for support, please use the forums - so that other users can also benefit from the questions and answers.
+The forums are the quickest place to receive support and other users can also benefit from the questions and answers as well.
 
 = What are the template tags I can use? =
 
-generally, they are the functions in the PHP file templatefunctions.php. But please visit the plugin homepage for complete details on all the tags, and how you can use them in The WordPress Loop.
+Generally, they are the functions in the PHP file templatefunctions.php. But please visit the plugin homepage for complete details on all the tags, and how you can use them in The WordPress Loop.
 
 = How can I change the currency? =
 
 Simply create a localization file for your language and/or locale. You can use the existing translation files as a staring point.
 
-= Can I change X, Y, or Z? =
+= What can I change in the plugin's output? =
 
-Probably. See the website tutorial on customizing templates. Avoid changing the core code.
+There's quite a bit that you can do if you are comfortable with HTML, PHP and the WordPress API.  See our website tutorial on customizing templates here:  [Template Customization](http://greatrealestateplugin.com/documentation/customizing-templates/).  We strongly recommend avoiding changes to the core code, as these will be lost on upgrade of the plugin and you'll need to manually move the changes each upgrade.
 
 == Installation ==
 
-Quick Start - See website for more detailed info
+[Quick Start Guide] (http://greatrealestateplugin.com/quick-start-guide/)
+
 1. Unzip into your `/wp-content/plugins/` directory. 
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Make your settings in the Admin panel "Real Estate"
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Make your settings in the Admin panel "Real Estate"
 - be sure to choose a main Listings page
 - for a quick preview, check the options to automatically generate the page info
-1. Create sub-pages under the main listings index page; they should automatically display additional input form fields to capture listing information
-1. See the plugin website for detailed template function documentation
+4. Create sub-pages under the main listings index page; they should automatically display additional input form fields to capture listing information
+5. See the plugin website for detailed template function documentation  [Documentation Link] (http://greatrealestateplugin.com/docs/)
 
 == Credits ==
 
@@ -86,8 +89,14 @@ Quick Start - See website for more detailed info
 
 
 == Changelog ==
+= 1.5 =
+* Revamped internals of plugin to function on WordPress 4.x
+* Migrated add-on plugins to modern versions (PanoPress, NextGen Gallery) as appropriate, removed others (Feeds, Downloads) as support for these was no longer available
+* Added widgets for plugin (featured, random, regular)
+* Updates to UI to fix weird layout issues
+* Improved admin interface for better workflow
 
-= 1.4 ==
+= 1.4 =
 * [2010-06-12] support for WP 3.0 (requires WordPress 3.0)
 * updated links to edit and add listings in Admin area
 * updated the jquery Validation plugin to 1.7

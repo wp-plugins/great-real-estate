@@ -11,10 +11,10 @@
  * [2008-08-05] added function returns if db table not there
  */
 
-if (! (class_exists('nggallery') || class_exists('nggGallery')) ) return;
-
 // USE THESE FUNCTIONS
 function get_listing_gallerydropdown($currid = '') {
+    if (! (class_exists('nggallery') || class_exists('nggGallery')) ) return;
+
 	// generates option list for edit dialogs
 	get_nextgengallery_dropdown($currid);
 }
@@ -23,15 +23,23 @@ function listings_showfirstpic($galleryid,$class = '') {
 	return nextgengallery_showfirstpic($galleryid,$class);
 }
 function listings_nggshowgallery($galleryid) {
-	if (!$galleryid) return;
+	if ( ! $galleryid ) {
+		return;
+	}
 
-	echo nggShowGallery($galleryid);
+	$default_display_type = gre_get_option( 'default-images-display-type' );
+
+	if ( $default_display_type == 'slideshow' ) {
+		echo nggShowSlideshow( $galleryid, null, null );
+	} else { // if ( $default_display_type == 'gallery' )
+		echo nggShowGallery( $galleryid );
+	}
 }
 
 // DONT CALL THESE PLEASE
 function get_nextgengallery_dropdown($currid = '') {
 	global $wpdb;
-	if (!$wpdb->nggallery) return;
+	if (! isset( $wpdb->nggallery ) || ! $wpdb->nggallery ) return;
 
 	$tables = $wpdb->get_results("SELECT * FROM $wpdb->nggallery ORDER BY 'name' ASC ");
 	if($tables) {
@@ -48,23 +56,32 @@ function nextgengallery_showfirstpic($galleryid, $class = '') {
 	global $ngg_options;
 	if (!$galleryid) return;
 
-	if (!$wpdb->nggallery) return;
+	if (! isset( $wpdb->nggallery ) || ! $wpdb->nggallery ) return;
 
 	if (! $ngg_options) {
 		$ngg_options = get_option('ngg_options');
 	}
 
 	$picturelist = $wpdb->get_results("SELECT t.*, tt.* FROM $wpdb->nggallery AS t INNER JOIN $wpdb->nggpictures AS tt ON t.gid = tt.galleryid WHERE t.gid = '$galleryid' AND tt.exclude != 1 ORDER BY tt.$ngg_options[galSort] $ngg_options[galSortDir] LIMIT 1");
-	if ($class) $myclass = ' class="'.$class.'" ';
+
+    if ( $class ) {
+        $myclass = ' class="'.$class.'" ';
+    } else {
+        $myclass = '';
+    }
+
 	if ($picturelist) { 
 		$pid = $picturelist[0]->pid;
 		if (is_callable(array('nggGallery','get_thumbnail_url'))) {
 			// new NextGen 1.0+
 			$out = '<img alt="' . __('property photo') . '" src="' . nggGallery::get_thumbnail_url($pid) . '" ' . $myclass . ' />';
-		} else {
+		} elseif ( is_callable ( array( 'nggallery', 'get_thumbnail_url' ) ) ) {
 			// backwards compatibility - NextGen below 1.0
 			$out = '<img alt="' . __('property photo') . '" src="' . nggallery::get_thumbnail_url($pid) . '" ' . $myclass . ' />';
-		}
+		} elseif ( is_callable( 'nggdb::find_image' ) ) {
+            $img = nggdb::find_image( $pid );
+			$out = '<img alt="' . __('property photo') . '" src="' . $img->thumbURL . '" ' . $myclass . ' />';
+        }
 		return $out;
 	}
 }
@@ -75,9 +92,15 @@ function nextgengallery_picturelist($galleryid) {
 
 	global $wpdb;
 	global $ngg_options;
-	if (!$wpdb->nggallery) return;
 
-	$picturelist = $wpdb->get_results("SELECT t.*, tt.* FROM $wpdb->nggallery AS t INNER JOIN $wpdb->nggpictures AS tt ON t.gid = tt.galleryid WHERE t.gid = '$galleryid' AND tt.exclude != 1 ORDER BY tt.$ngg_options[galSort] $ngg_options[galSortDir] ");
+	if (! isset( $wpdb->nggallery ) || ! $wpdb->nggallery ) return;
+
+    if ( empty( $ngg_options )  )
+		$ngg_options = get_option('ngg_options');
+
+    $query = "SELECT t.*, tt.* FROM $wpdb->nggallery AS t INNER JOIN $wpdb->nggpictures AS tt ON t.gid = tt.galleryid WHERE t.gid = '$galleryid' AND tt.exclude != 1 ORDER BY tt.$ngg_options[galSort] $ngg_options[galSortDir] ";
+	$picturelist = $wpdb->get_results( $query );
+
 	if ($picturelist) { 
 		return $picturelist;
 	}

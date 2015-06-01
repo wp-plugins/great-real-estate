@@ -68,7 +68,7 @@ $querystr = "
 <title><![CDATA[<?php echo get_listing_status() . " " . get_listing_listprice() . " - " . $address . ", " . $city . ", " . $state . ", " . $zip; ?>]]></title>
 <link><?php the_permalink(); ?></link>
 <description><![CDATA[<?php echo get_listing_thumbnail() . '<br />' . get_listing_description_beforemore(); ?>]]></description>
-<?php if (function_exists(nextgengallery_picturelist)) { 
+<?php if ( function_exists( 'nextgengallery_picturelist' ) ) {
 	$piclist = nextgengallery_picturelist(get_listing_galleryid()); 
 	if (!empty($piclist)) { 
 		$picnum = 1; 

@@ -77,7 +77,7 @@ xmlns:g="http://base.google.com/ns/1.0">
 <g:bathrooms><?php echo get_listing_bathrooms() . "." . get_listing_halfbaths(); ?></g:bathrooms>
 <g:area><?php echo get_listing_acsf() . " square ft."; ?></g:area>
 <g:lot_size><?php echo get_listing_acres() . " acres"; ?></g:lot_size>
-<?php if (function_exists(nextgengallery_picturelist)) { 
+<?php if ( function_exists( 'nextgengallery_picturelist' ) ) {
 	$piclist = nextgengallery_picturelist(get_listing_galleryid()); 
 	if (!empty($piclist)) { 
 		$picnum = 1; 

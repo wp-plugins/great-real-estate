@@ -20,7 +20,7 @@ function zstatus($mystatus) {
 $siteurl = get_option('siteurl');
 $max_pics = 20; /* Zillow max is 50 */
 
-if (!function_exists(get_listing_listprice)) {
+if ( ! function_exists( 'get_listing_listprice' ) ) {
 	return;
 }
 ?>
@@ -103,7 +103,7 @@ if (!function_exists(get_listing_listprice)) {
 			<LivingArea><?php echo $numacsf; ?></LivingArea>
 			<LotSize><?php echo $numacres; ?></LotSize>
 		</BasicDetails>
-<?php if (function_exists(nextgengallery_picturelist)) { ?>
+<?php if ( function_exists( 'nextgengallery_picturelist' ) ) { ?>
 	<?php $piclist = nextgengallery_picturelist(get_listing_galleryid()); ?>
 
 	<?php if (!empty($piclist)) { ?>
@@ -122,9 +122,9 @@ if (!function_exists(get_listing_listprice)) {
 	<?php } ?>
 <?php } ?>
 		<Agent>
-<?php $agent = split(' ',get_option('greatrealestate_agent')); ?>
-			<FirstName><?php echo $agent[0]; ?></FirstName>
-			<LastName><?php echo $agent[1]; ?></LastName>
+<?php $agent = explode( ' ', gre_get_option( 'agent' ) ); ?>
+			<FirstName><?php echo isset( $agent[0] ) ? $agent[0] : ''; ?></FirstName>
+			<LastName><?php echo isset( $agent[1] ) ? $agent[1] : ''; ?></LastName>
 			<EmailAddress><?php echo $email; ?></EmailAddress>
 			<PictureUrl><?php 
 		$out = 'http://www.gravatar.com/avatar/';

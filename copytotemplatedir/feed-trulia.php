@@ -11,7 +11,7 @@ header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
 $siteurl = get_option('siteurl');
 $max_pics = 2; /* Trulia only uses first */
 
-if (!function_exists(get_listing_listprice)) {
+if ( ! function_exists( 'get_listing_listprice' ) ) {
 	return;
 }
 ?>

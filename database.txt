@@ -48,9 +48,6 @@ greatrealestate_listings:
 - galleryid VARCHAR(30)
 	List of NextGen gallery ids, separated by commas
 	Currently only one is supported
-- videoid VARCHAR(30)
-	List of WordTube video ids, separated by commas
-	Currently only one is supported. WordTube playlist currently not supported
 - downloadid VARCHAR(30)
 	List of WP-Downloadmanager ids, separated by commas
 	Each of these should correspond to a PDF

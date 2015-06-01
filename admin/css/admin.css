@@ -1,0 +1,38 @@
+.gre-listing-section {
+    padding: 0 20px 0 5px;
+}
+
+.gre-listing-section h4 {
+    margin-left: -5px;
+}
+
+
+#gre-listing-downloads ul.downloads li {
+    padding: 4px 0;
+    border-bottom: solid 1px #efefef;
+}
+
+#gre-listing-downloads ul.downloads li .filename {
+    font-weight: bold;
+}
+
+#gre-listing-downloads ul.downloads li .description {}
+
+#gre-listing-downloads ul.downloads li .item-actions {
+    display: inline;
+    margin-left: 50px;
+    visibility: hidden;
+    font-size: 90%;
+}
+
+#gre-listing-downloads ul.downloads li .item-actions a.delete {
+    color: red;
+}
+
+#gre-listing-downloads ul.downloads li:hover .item-actions {
+    visibility: visible;
+}
+
+.gre-listings-table .column-thumbnail img {
+    width: 100%;
+}

@@ -91,6 +91,20 @@ function get_listing_hasfeature($featureid) {
 	return in_array($featureid,$allfeatures,false);
 }
 
+/**
+ * @since 1.5
+ */
+function gre_render_default_listings_page() {
+    include( GRE_FOLDER . 'copytotemplatedir/great-real-estate/listings-page-content.php' );
+}
+
+
+/**
+ * @since 1.5
+ */
+function gre_render_default_listing_page() {
+    include( GRE_FOLDER . 'copytotemplatedir/great-real-estate/listing-page-content.php' );
+}
 
 #####################################################################
 #  DEFAULT TEMPLATES
@@ -104,6 +118,9 @@ function get_listing_hasfeature($featureid) {
 function greatrealestate_defaultlistingindex() {
 	global $post;
 	global $listing;
+
+    if ( ! is_object( $listing ) )
+        $listing = new StdClass();
 
 	$listing->endloop = true;
 ?>
@@ -164,6 +181,7 @@ function greatrealestate_defaultlistingindex() {
 	<?php } ?>
   
     	</div>
+  <?php wp_reset_postdata(); ?>
   <?php endforeach; ?>
   
   </div>
@@ -194,6 +212,7 @@ function greatrealestate_defaultlistingindex() {
 		<?php } ?>
 	</p>
     </div> 
+  <?php wp_reset_postdata(); ?>
   <?php endforeach; ?>
   </div> 
  <?php endif; ?>
@@ -225,6 +244,7 @@ function greatrealestate_defaultlistingindex() {
 		<?php } ?>
 	</p>
     </div>
+  <?php wp_reset_postdata(); ?>
   <?php endforeach; ?>
   </div>
 
@@ -249,13 +269,27 @@ function greatrealestate_defaultlistingcontent($content) {
 
 	// if do not filter flag set, just pass it on
 	// IMPORTANT otherwise it loops foreeeeeeevvvvvveeeeeerrrrrrr
-	if ( ! (strpos($content, "grenofilters") === FALSE) ) 
+	if ( ! (strpos($content, "grenofilters") === FALSE) )
 		return $content;
 
 	// this is the "top of page" case
 	// combine the box of data and the filtered "beforemore"
-	$content = greatrealestate_listingdatabox() . 
+    $content = greatrealestate_listingdatabox() . 
 			get_listing_description_beforemore(); 
+
+    if ( gre_get_option( 'genlistpage' ) ) {
+        ob_start();
+        greatrealestate_defaultlistingdetails();
+        $details = ob_get_clean();
+
+        $content .= $details;
+    }
+
+    if ( $listings_page = get_option('greatrealestate_pageforlistings') ) {
+        $content .= sprintf( '<a href="%s" class="return-to-listings">%s</a>',
+                             get_permalink( $listings_page ),
+                             __( '← Return to Listings', 'greatrealestate' ) );
+    }
 
 	return $content;
 
@@ -268,7 +302,7 @@ function greatrealestate_defaultlistingdetails() {
 	getandsetup_listingdata(); 
 	// this all echos
 ?>
-<div id="listing-container">
+    <div id="listing-container">
 	<ul id="tabnav">
 	<?php the_listing_map_tab(); // recommend this be first ?>
 	<?php the_listing_description_tab(); ?>
@@ -324,7 +358,7 @@ function greatrealestate_listingdatabox() {
 	if (get_listing_hastownhome()) $line3 .= "<div>" . __('Townhome','greatrealestate') . "</div>"; 
 
 	# sanity check time
- 	if ( ! $line1 && ! $line2 && ! $line3 && ! $propstatus) return "";
+	if ( ! $line1 && ! $line2 && ! $line3 ) return "";
 
       	$output .= "<div class='propdata'>";
 	if ($line1) $output .= "<div class='propdata-line'>$line1</div>";
