@@ -139,33 +139,32 @@ jQuery(document).ready(function() {
 add_action('admin_print_scripts', 'greatrealestate_add_edit_js', 90);
 
 function greatrealestate_add_savepage($postID) {
-	# handle input from page being saved (Write Page)
-	# Data associated with a particular listing
-	#
-	global $wpdb;
+    global $wpdb;
 
-	# quit if this is not a "listing" as we define it
-	// need valid post
-	if (! $postID) return;
-	// need our main listing page defined
-	if (! $listparent = get_option('greatrealestate_pageforlistings')) return;
-	// need this page to be a child of that page
-	$postparent = $wpdb->get_var("SELECT post_parent from $wpdb->posts WHERE ID = '$postID'  LIMIT 1");
-	if (! ($listparent == $postparent )) return;
+    if ( empty( $postID ) ) {
+        return;
+    }
 
-	# first, do we already have a listing record associated with
-	# this particular post?
-	# if so, get the id
-	# NOTE: we are being passed an id $postID in the function call
-	if ($postID > 0) {
-		$listdata_id = $wpdb->get_var("SELECT id from $wpdb->gre_listings WHERE pageid = '$postID'  LIMIT 1");
-	}
-	
-	# filter input, store it (new or update)
-	
-	# not much checking, yet... some JS validation on edit form
-	# to clear out an entry we update even if blank
-	#
+    if ( wp_is_post_revision( $postID ) ) {
+        return;
+    }
+
+    $listings_parent_page_id = get_option( 'greatrealestate_pageforlistings' );
+
+    if ( empty( $listings_parent_page_id ) ) {
+        return;
+    }
+
+    $listing_parent = $wpdb->get_var( $wpdb->prepare( "SELECT post_parent from $wpdb->posts WHERE ID = %d LIMIT 1", $postID ) );
+
+    if ( $listings_parent_page_id != $listing_parent ) {
+        return;
+    }
+
+    $listing_data_id = $wpdb->get_var( $wpdb->prepare( "SELECT id from $wpdb->gre_listings WHERE pageid = %d  LIMIT 1", $postID ) );
+
+    $listing = new stdClass();
+
 	$listing->pageid = $postID;
 
 	$listing->mlsid = $_POST['listings_mlsid'];
@@ -206,7 +205,11 @@ function greatrealestate_add_savepage($postID) {
 		}
 	}
 
-	if ($listdata_id) {
+    if ( isset( $_POST['listing_property_type'] ) ) {
+        update_post_meta( $postID, '_gre[property-type]', sanitize_text_field( $_POST['listing_property_type'] ) );
+    }
+
+	if ($listing_data_id) {
 		# update existing record
 		# safer to reference the index on update
 		$sql = "UPDATE $wpdb->gre_listings SET ";
@@ -214,7 +217,7 @@ function greatrealestate_add_savepage($postID) {
 			$sql .= "$lkey = '$lvalue', ";
 		}
 		$sql = substr($sql,0,-2); // remove last comma
-		$sql .= " WHERE id = '$listdata_id'";
+		$sql .= " WHERE id = '$listing_data_id'";
 		$wpdb->query($sql);
 	} else {
 		# new association - link to current post id

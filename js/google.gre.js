@@ -27,7 +27,7 @@ if ( typeof jQuery !== 'undefined' ) {
 
                 center = new google.maps.LatLng( gre_listing_map_info.latitude, gre_listing_map_info.longitude );
                 options = {
-                    zoom: 8,
+                    zoom: 14,
                     center: center,
                     mapTypeControl: true,
                     panControl: true,

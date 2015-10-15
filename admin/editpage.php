@@ -39,7 +39,7 @@
 </fieldset>
 
 <fieldset id="listings2-set">
-<legend><?php _e('Listing Information (Pricing and Sales Information)','greatrealestate'); ?></legend>
+    <legend><?php _e('Listing Information (Pricing and Sales Information)','greatrealestate'); ?></legend>
 
 <div>
 
@@ -145,6 +145,34 @@ id="listings_acres" size="5" value="<?php echo isset( $listing->acres ) ? $listi
 <label for="listings_acres"><?php _e('Acres','greatrealestate'); ?></label>
 </p>
 
+        <p>
+            <?php
+                $property_type = gre_get_listing_field( $post->ID, 'property-type', 'apartment' );
+
+                echo gre_html_label( array(
+                    'attributes' => array(
+                        'for' => 'gre-listing-property-type',
+                    ),
+                    'text' => esc_html( __( 'Property Type', 'greatrealestate' ) ) . ':',
+                ) );
+
+                echo gre_html_select( array(
+                    'attributes' => array(
+                        'id' => 'gre-listing-property-type',
+                        'name' => 'listing_property_type',
+                        'tabindex' => 120,
+                    ),
+                    'options' => array(
+                        'apartment' => esc_html( __( 'Apartment', 'greatrealestate' ) ),
+                        'home' => esc_html( __( 'Home', 'greatrealestate' ) ),
+                        'office' => esc_html( __( 'Office', 'greatrealestate' ) ),
+                        'villa' => esc_html( __( 'Villa', 'greatrealestate' ) ),
+                    ),
+                    'selected' => $property_type,
+                ) );
+            ?>
+        </p>
+
 <p>
 <select tabindex="120" name="listings_featureid[]" multiple="multiple" 
 id="listings_featureid" style="height: 10em;" size="5">
@@ -208,7 +236,7 @@ id="listings_featureid" style="height: 10em;" size="5">
         <input tabindex="126" id="listings_longitude" type="text" name="listings_longitude" class="geo-input" size="15" value="<?php echo isset( $listing->longitude ) ? $listing->longitude : ''; ?>" placeholder="-80.123456" />
     </p>
     <p>
-        <?php echo __( 'The Lat/Long location of the marker that identifies this property on a Google Map.', 'greatrealestate' ); ?>
+        <?php echo __( 'The Lat/Long location of the marker that identifies this property on a Google Map. Use this Lat/Long location if the address isn’t accurately located on a Google Map automatically. Otherwise, leave it blank.', 'greatrealestate' ); ?>
     </p>
 </div>
 

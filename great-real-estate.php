@@ -1,9 +1,9 @@
 <?php
-/*
+/**
  * Plugin Name: Great Real Estate
  * Plugin URI: http://greatrealestateplugin.com
  * Description: Adds the ability to create and manage real estate listings in your WordPress site
- * Version: 1.5
+ * Version: 1.5.1-dev-3
  * Author: Dave Rodenbaugh
  * Author URI: http://greatrealestateplugin.com
  * License: GPLv2 or any later version
@@ -74,14 +74,31 @@ if ( IS_WP25 == FALSE ){
 }
 
 require_once( GRE_FOLDER . 'core/install.php' );
-require_once( GRE_FOLDER . 'core/utils.php' );
 require_once( GRE_FOLDER . 'core/listings.php' );
+require_once( GRE_FOLDER . 'core/routes.php' );
+require_once( GRE_FOLDER . 'core/utils.php' );
+
+require_once( GRE_FOLDER . 'core/functions/array.php' );
+require_once( GRE_FOLDER . 'core/functions/html.php' );
+
+require_once( GRE_FOLDER . 'core/class-query.php' );
+require_once( GRE_FOLDER . 'core/class-sql-query-builder.php' );
+require_once( GRE_FOLDER . 'core/class-listings-finder.php' );
+require_once( GRE_FOLDER . 'core/class-listings-for-rent-shortcode-handler.php' );
+require_once( GRE_FOLDER . 'core/class-listings-for-sale-shortcode-handler.php' );
+require_once( GRE_FOLDER . 'core/class-listings-shortcode.php' );
+require_once( GRE_FOLDER . 'core/class-listings-sql-query-builder.php' );
 require_once( GRE_FOLDER . 'core/class-listings-widget.php' );
+require_once( GRE_FOLDER . 'core/class-listing-geolocation-service.php' );
 require_once( GRE_FOLDER . 'core/class-featured-listings-widget.php' );
 require_once( GRE_FOLDER . 'core/class-regular-listings-widget.php' );
 require_once( GRE_FOLDER . 'core/class-random-listings-widget.php' );
 require_once( GRE_FOLDER . 'core/class-plugin-settings.php' );
+require_once( GRE_FOLDER . 'core/class-search-listings-form.php' );
+require_once( GRE_FOLDER . 'core/class-search-listings-shortcode-handler.php' );
+require_once( GRE_FOLDER . 'core/class-search-listings-widget.php' );
 require_once( GRE_FOLDER . 'core/class-settings.php' );
+require_once( GRE_FOLDER . 'core/class-shortcodes-manager.php' );
 /* HACKS (or Interfaces if you will...)
  * here go the interfaces to other plugins we access - which are likely to
  * break if those plugins change. Nice if plugin authors had more exposed
@@ -130,13 +147,34 @@ class Great_Real_Estate_Plugin {
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_resources' ) );
         // add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_resources' ) );
 
-        if ( is_admin() ) {
+        add_action( 'save_post', array( $this, 'maybe_save_listing' ) );
+
+        $listing_geolocation_service = gre_listing_geolocation_service();
+        add_action( 'gre_save_listing', array( $listing_geolocation_service, 'update_listing_geolocation' ) );
+
+        if ( defined( 'DOING_CRON' ) && DOING_CRON ) {
+        } else if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+        } else if ( is_admin() ) {
             $this->admin_setup();
+        } else {
+            $this->frontend_setup();
         }
     }
 
     private function admin_setup() {
         add_action( 'admin_init', array( $this->settings, 'register_in_admin' ) );
+    }
+
+    private function frontend_setup() {
+        $this->register_shortcodes();
+    }
+
+    private function register_shortcodes() {
+        $shortcodes_manager = gre_shortcodes_manager();
+
+        $shortcodes_manager->add_shortcode( 'gre-search-listings', 'gre_search_listings_shortcode_handler' );
+        $shortcodes_manager->add_shortcode( 'gre-listings-for-sale', 'gre_listings_for_sale_shortcode_handler' );
+        $shortcodes_manager->add_shortcode( 'gre-listings-for-rent', 'gre_listings_for_rent_shortcode_handler' );
     }
 
     public function late_init() {
@@ -198,6 +236,35 @@ class Great_Real_Estate_Plugin {
         register_widget( 'GRE_Regular_Listings_Widget' );
         register_widget( 'GRE_Featured_Listings_Widget' );
         register_widget( 'GRE_Random_Listings_Widget' );
+
+        register_widget( 'GRE_Search_Listings_Widget' );
+    }
+
+    public function maybe_save_listing( $listing_id ) {
+        global $wpdb;
+
+        if ( ! $listing_id || wp_is_post_revision( $listing_id ) ) {
+            return;
+        }
+
+        if ( get_post_type( $listing_id ) != 'page' ) {
+            return;
+        }
+
+        $listings_page_id = gre_get_option( 'pageforlistings' );
+
+        if ( ! $listings_page_id ) {
+            return;
+        }
+
+        $sql = "SELECT post_parent FROM {$wpdb->posts} WHERE ID = %d LIMIT 1";
+        $listing_parent_id = $wpdb->get_var( $wpdb->prepare( $sql, $listing_id ) );
+
+        if ( $listing_parent_id != $listings_page_id ) {
+            return;
+        }
+
+        do_action( 'gre_save_listing', $listing_id );
     }
 }
 

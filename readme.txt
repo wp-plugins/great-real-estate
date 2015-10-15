@@ -1,14 +1,14 @@
-=== Great Real Estate ===
+=== Great Real Estate: WordPress Real Estate and Property Management Plugin ===
 Contributors: daverod
 Donate link: http://greatrealestateplugin.com/premium-modules/
-Tags: real estate,listings,homes,altos, listing, mortgage calculator, neighborhood, real estate market, realty, schools, trulia, yelp, zillow,MLS, Multiple Listing Service, properties, property, property listing, property management, realtor, RETS, IDX
+Tags: wordpress real estate, real estate, wp real estate, IDX, listings, MLS, properties, property, property management, property listings, real estate cms, RETS, wp-property, wp-realestate, simple real estate pack
 Requires at least: 4.0
-Tested up to: 4.2.2
-Last Updated: 2015-Jun-1
-Stable tag: tags/1.5
+Tested up to: 4.3.1
+Last Updated: 2015-Oct-15
+Stable tag: tags/1.6
 License: GPLv2 or later
 
-Great Real Estate provides functionality to turn your WordPress installation into a content managed real estate website.
+Great Real Estate WordPress Plugin allows you to create and manage any kind of real estate on your WordPress site, from commercial and residential listings to a property management site.  
 
 == Description ==
 
@@ -94,6 +94,76 @@ There's quite a bit that you can do if you are comfortable with HTML, PHP and th
 
 
 == Changelog ==
+= 1.6 =
+* Add shortcodes to show listings For Rent and For Sale.
+* Add listings-list template.
+* Add gre_get_queried_objects and gre_get_return_url template functions.
+* Add Search Listings Widget and Shortcode.
+* Add support for searching by property type.
+* Capture Property Type in Edit Page screen.
+* Add function to retrieve listings information from custom fields.
+* Add functions to render HTML elements.
+* Fix: drop geolocation info if address is empty.
+* Add settings to control the title of listings sections.
+* Make sure the listing's thumbnail fits the container width (Closes #19).
+* Use property address as the primary source for location.
+* Increase default zoom level in Google Maps.
+* Move new templates to <plugin-dir>/theme/great-real-estate.
+* Add documentation about how to customize templates.
+* Show 'No photo availble' message when the property has no images.
+* Replace 'Under Air' with 'Living'.
+* Increase font size for fieldset's legend.
+* Add a Publish button to the bottom of the Edit Listing page.
+* Rename Downloads section to Attachments.
+* Update appearance and description of Location Fields in Edit Listing.
+* Add setting to control the default display type for listings images.
+* Improve appearance of listings index and listing individual pages.
+* Add new template for individual Listing page.
+* Move code that renders default index and individual pages to run late on init.
+* Enable pagination in Manage Listings section.
+* Show listings order by list date (newest first).
+* Add Active, Sold and Pending filter views to the Manage Listings section.
+* Add views to the table in Manage Listings admin section.
+* Add Listings Table (subclass of WP_List_Table) for the Manage Listings section.
+* Change name and description of setting to control stylesheet inclusion.
+* Allow users to define custom stylesheets.
+* Show listings ordered by post_date in Manage Listings section.
+* Update appearance of default Listings Index page.
+* Add clearfix CSS rules to plugin's stylesheet.
+* Fix PHP notice in NextGen Gallery interface code.
+* Update 'Sort by' form fields in Listings Widget form.
+* Fix error in NextGen Gallery.
+* Add Random Listings Widget.
+* Change 'Display type' form field's name to 'Layout' in Widget forms.
+* Add function to return Random Listings.
+* Remove setting for Google Base feed.
+* Split Feeds setting into individual setttings for each setting.
+* Fix multiple errors in feeds.
+* Update the name and description of the Add Plugin CSS setting.
+* Move Settings submenu to the second position (right after Great Real Estate).
+* Drop support for WordTube.
+* Make Google Maps API Key optional.
+* Update Featured Listings widget to use WP_Widget API.
+* Remove Built In Features section from Plugin Status Dashboard Widget.
+* Update Plugin Status Dashboard Widget.
+* Change title, icon and position of admin menu.
+* Replace WP Downloads Manager integration (frontend)
+* Remove GREFOLDER constant
+* Replace FPP-Pano integration with PanoPress.
+* Avoid defining constants already defined in other plugins.
+* Remove unused undefined variable to avoid PHP warning.
+* Fix PHP Warning in Settings screen.
+* Add new downloads system
+* Change installation and update procedure * Update schema on demand * Migrate downloads from WP Download Manager
+* Remove Feed Wrangler status icon
+* Remove FeedWrangler requirement
+* Make NGGallery work better when toggling between thumbs/slides
+* Some admin UI improvements
+* Several usability fixes
+* Various backend fixes
+* Add 'Add Listing' to listings screen
+* Update links in About and Main admin screens
+
 = 1.5 =
 * Revamped internals of plugin to function on WordPress 4.x
 * Migrated add-on plugins to modern versions (PanoPress, NextGen Gallery) as appropriate, removed others (Feeds, Downloads) as support for these was no longer available

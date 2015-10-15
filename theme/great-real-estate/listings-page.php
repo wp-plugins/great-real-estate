@@ -29,7 +29,7 @@ Template Name: Great Real Estate - Listings Index
         <?php endwhile; endif; ?>
         <?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 
-        <?php get_template_part( 'great-real-estate/listings-page-content' ); ?>
+        <?php gre_load_template_part( 'great-real-estate/listings-page-content' ); ?>
 
 <?php get_sidebar(); ?>
 

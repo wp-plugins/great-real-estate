@@ -21,6 +21,33 @@ class GRE_Plugin_Settings {
 
         $settings->add_setting(
             $section,
+            'active-listings-title',
+            __( 'Active Listings Title', 'greatrealestate' ),
+            'text',
+            __( 'My Active Listings', 'greatrealestate' ),
+            ''
+        );
+
+        $settings->add_setting(
+            $section,
+            'pending-sale-listings-title',
+            __( 'Pending Sale Listings Title', 'greatrealestate' ),
+            'text',
+            __( 'Pending Sale', 'greatrealestate' ),
+            ''
+        );
+
+        $settings->add_setting(
+            $section,
+            'sold-listings-title',
+            __( 'Sold Listings Title', 'greatrealestate' ),
+            'text',
+            __( 'Sold or Leased', 'greatrealestate' ),
+            ''
+        );
+
+        $settings->add_setting(
+            $section,
             'genindex',
             __( 'Listings Summary', 'greatrealestate' ),
             'boolean',
@@ -95,7 +122,7 @@ class GRE_Plugin_Settings {
             __( 'Google API Key','greatrealestate' ),
             'text',
             '',
-            __( 'Optional. Paste your domain\'s <a title="Get a Google API key" href="https://developers.google.com/maps/signup">Google API key</a> here to monitor your website\'s usage of the Maps API.', 'greatrealestate' )
+            __( 'Optional. By default, Google will allow up to 100 requests for map data per day. Paste your domain\'s <a title="Get a Google API key" href="https://developers.google.com/maps/signup">Google API key</a> here to allow for higher limits or monitoring of the API.', 'greatrealestate' )
         );
     }
 

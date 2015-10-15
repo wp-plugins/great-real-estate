@@ -12,7 +12,7 @@ Template Name: Great Real Estate - Single Listing
         <div class="post" id="post-<?php the_ID(); ?>">
             <h2><?php the_title(); ?></h2>
             <div class="entry">
-            <?php get_template_part( 'great-real-estate/listing-page-content' ); ?>
+            <?php gre_load_template_part( 'great-real-estate/listing-page-content' ); ?>
             </div>
         </div>
     <?php endwhile; endif; ?>

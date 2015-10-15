@@ -284,6 +284,10 @@
     text-align: center;
     width: 50%;
 }
+.gre-listings-widget-item-thumbnail img,
+.gre-listings-widget-item .prop-thumb img {
+    width: 100%;
+}
 .gre-listings-widget-item-title {
 }
 .gre-listings-widget-item-title > a {
@@ -292,4 +296,49 @@
 .gre-listings-widget-item-blurb,
 .gre-listings-widget-item-list-price {
     margin-top: 5px;
+}
+
+
+/* Search Listings Widget
+ --------------------------------------------------------------------------- */
+.gre-search-listings-widget .gre-search-listings-form input[type="text"],
+.gre-search-listings-widget .gre-search-listings-form select {
+    width: 100%;
+}
+.gre-search-listings-widget .gre-search-listings-form .submit {
+    margin-top: 20px;
+}
+
+
+/* Search Listings Shortcode
+ --------------------------------------------------------------------------- */
+
+.gre-search-listings-shortcode label {
+    width: 120px;
+}
+.gre-search-listings-shortcode .gre-search-listings-form-min-price-field,
+.gre-search-listings-shortcode .gre-search-listings-form-max-price-field,
+.gre-search-listings-shortcode .gre-search-listings-form-bedrooms-field,
+.gre-search-listings-shortcode .gre-search-listings-form-bathrooms-field {
+    float: left;
+    width: 50%;
+}
+.gre-search-listings-shortcode .gre-search-listings-form-min-price-field label,
+.gre-search-listings-shortcode .gre-search-listings-form-max-price-field label,
+.gre-search-listings-shortcode .gre-search-listings-form-bedrooms-field label,
+.gre-search-listings-shortcode .gre-search-listings-form-bathrooms-field label {
+    width: 90px;
+}
+.gre-search-listings-shortcode .gre-search-listings-form-min-price-field input,
+.gre-search-listings-shortcode .gre-search-listings-form-max-price-field input,
+.gre-search-listings-shortcode .gre-search-listings-form-bedrooms-field input,
+.gre-search-listings-shortcode .gre-search-listings-form-bathrooms-field input {
+    width: 100px;
+}
+.gre-search-listings-shortcode .gre-search-listings-form-property-status-field {
+    clear: both;
+    padding-top: 10px;
+}
+.gre-search-listings-shortcode .gre-search-listings-form-submit-button {
+    margin-top: 20px;
 }

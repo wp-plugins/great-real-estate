@@ -131,7 +131,7 @@ function greatrealestate_defaultlistingindex() {
 
 <?php 	if ($pageposts): ?>
 <div id="activelistings">
-<h2><?php _e('My Active Listings','greatrealestate'); ?></h2>
+<h2><?php echo esc_html( gre_get_option( 'active-listings-title' ) ); ?></h2>
 	<?php foreach ($pageposts as $post): ?>
 		<?php setup_postdata($post); ?>
 		<?php setup_listingdata($post); ?>
@@ -196,7 +196,7 @@ function greatrealestate_defaultlistingindex() {
 
 <?php if ($pageposts): ?>
   <div id="pendingsales">
-  <h2><?php _e('Pending Sale','greatrealestate'); ?></h2>
+  <h2><?php echo esc_html( gre_get_option( 'pending-sale-listings-title', 'greatrealestate' ) ); ?></h2>
   <?php foreach ($pageposts as $post): ?>
     <?php setup_postdata($post); ?>
     <?php setup_listingdata($post); ?>
@@ -227,7 +227,7 @@ function greatrealestate_defaultlistingindex() {
 
 <?php if ($pageposts): ?>
   <div id="soldlistings">
-  <h2><?php _e('I Sold or Leased','greatrealestate'); ?></h2>
+  <h2><?php echo esc_html( gre_get_option( 'sold-listings-title', 'greatrealestate' ) ); ?></h2>
   <?php foreach ($pageposts as $post): ?>
     <?php setup_postdata($post); ?>
     <?php setup_listingdata($post); ?>

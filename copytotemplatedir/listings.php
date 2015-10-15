@@ -40,7 +40,7 @@ if (function_exists(get_pages_with_active_listings)) {
 
 <?php if ($pageposts): ?>
 <div id="activelistings">
-<h2>My Active Listings</h2>
+<h2><?php echo esc_html( gre_get_option( 'active-listings-title' ) ); ?></h2>
 	<?php foreach ($pageposts as $post): ?>
 		<?php setup_postdata($post); ?>
 		<?php setup_listingdata($post); ?>
@@ -98,7 +98,7 @@ if (function_exists(get_pages_with_active_listings)) {
 
 <?php if ($pageposts): ?>
   <div id="pendingsales">
-  <h2>Pending Sale</h2>
+  <h2><?php echo esc_html( gre_get_option( 'pending-sale-listings-title', 'greatrealestate' ) ); ?></h2>
   <?php foreach ($pageposts as $post): ?>
     <?php setup_postdata($post); ?>
     <?php setup_listingdata($post); ?>
@@ -128,7 +128,7 @@ if (function_exists(get_pages_with_active_listings)) {
 
 <?php if ($pageposts): ?>
   <div id="soldlistings">
-  <h2>I Sold or Leased</h2>
+  <h2><?php echo esc_html( gre_get_option( 'sold-listings-title', 'greatrealestate' ) ); ?></h2>
   <?php foreach ($pageposts as $post): ?>
     <?php setup_postdata($post); ?>
     <?php setup_listingdata($post); ?>

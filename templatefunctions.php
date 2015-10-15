@@ -112,11 +112,14 @@ function get_listing_status() {
 	global $re_status;
 	return $re_status[$listing->status];
 }
+
 function the_listing_status() {
 	global $listing;
 	global $re_status;
-	echo $re_status[$listing->status];
+
+	echo isset( $re_status[ $listing->status ] ) ? $re_status[ $listing->status ] : '';
 }
+
 function get_listing_hasclosed() {
 	global $listing;
 	global $re_status;
@@ -140,14 +143,52 @@ function the_listing_thumbnail() {
 	echo listings_showfirstpic($galleryid);
 }
 
-# Geocode info - Latitude and Longitude - digital format
+/**
+ * Return listing's latitude.
+ *
+ * If the user entered a latitude manually, the function returns
+ * that value. If not, the plugin will use the geocode that Google
+ * Maps API generated based on the information in the Address,
+ * City, State and ZIP code fields.
+ */
 function get_listing_latitude() {
 	global $listing;
-	return $listing->latitude;
+
+	if ( isset( $listing->latitude ) && ! empty( $listing->latitude ) ) {
+		return $listing->latitude;
+	}
+
+	$location = get_post_meta( $listing->pageid, '_gre[google-maps][geolocation]', true );
+
+	if ( is_object( $location ) && isset( $location->lat ) ) {
+		return $location->lat;
+	}
+
+	return false;
 }
+
+/**
+ * Return listing's longitude.
+ *
+ * If the user entered a latitude manually, the function returns
+ * that value. If not, the plugin will use the geocode that Google
+ * Maps API generated based on the information in the Address,
+ * City, State and ZIP code fields.
+ */
 function get_listing_longitude() {
 	global $listing;
-	return $listing->longitude;
+
+	if ( isset( $listing->longitude ) && ! empty( $listing->longitude ) ) {
+		return $listing->longitude;
+	}
+
+	$location = get_post_meta( $listing->pageid, '_gre[google-maps][geolocation]', true );
+
+	if ( is_object( $location ) && isset( $location->lng ) ) {
+		return $location->lng;
+	}
+
+	return false;
 }
 
 # Note: these interface functions can be utilized in your themes 
@@ -847,6 +888,12 @@ function gre_get_random_listings( $count, $filter, $orderby ) {
  */
 function gre_build_listings_query_conditions( $filter ) {
     switch ( $filter ) {
+    	case 'for-sale':
+    		$clause = 'AND status = ' . RE_FORSALE . ' ';
+    		break;
+    	case 'for-rent':
+    		$clause = 'AND status = ' . RE_FORRENT . ' ';
+    		break;
         case 'allrentals' :
             $clause =
                     "AND (status = " . RE_FORRENT .
@@ -1044,6 +1091,42 @@ function setup_listingdata($row) {
 	}
 }
 
+function gre_get_listing_field( $listing_id, $name, $default = null ) {
+    $value = get_post_meta( $listing_id, "_gre[$name]", true );
+    return empty( $value ) ? $default : $value;
+}
 
+/**
+ * @since next-release
+ */
+function gre_get_queried_objects() {
+    return gre_query()->get_queried_objects();
+}
 
-?>
+/**
+ * @since next-release
+ */
+function gre_set_queried_objects( $objects ) {
+	return gre_query()->set_queried_objects( $objects );
+}
+
+/**
+ * @since next-release
+ */
+function gre_get_return_url() {
+    return gre_query()->get_var( 'return_url' );
+}
+
+/**
+ * @since next-release
+ */
+function gre_set_view_title( $title ) {
+	return gre_query()->set_var( 'return_url', $title );
+}
+
+/**
+ * @since next-release
+ */
+function gre_get_view_title() {
+	return gre_query()->get_var( 'title' );
+}
